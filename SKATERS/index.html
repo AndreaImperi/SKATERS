@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .grid {
+            display: grid;
+            grid-template:
+                ' i '
+                ' s '
+                ' m '
+                ' t ' / 1fr;
+            border: solid 1px;
+            text-align: center;
+            /* Imposta la terza riga per occupare tutto lo spazio disponibile */
+            grid-template-rows: 1fr 1fr auto;
+            
+        }
+        .grid > div {
+            
+            border: solid 1px;
+            padding: 2em 1em;
+        }
+        .c1 {
+            grid-area: i;   
+            margin-top: 74px;
+            padding: 0;
+            background-image: url('immagini/sfondo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .c2 {
+            grid-area: s;
+        }
+        .c3{
+            grid-area: m;
+        }
+        .c4{
+            grid-area: t
+        }
+        .fixed-bar {
+            position: fixed;
+            top: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            height: 75px;
+            z-index: 9999;
+        }
+        .content {
+            margin-top: 50px; /* Altezza della barra di pulsanti */
+            padding: 20px;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="fixed-bar">
+        <button>LOGO</button>
+        <button>SHOP</button>
+        <button>MAPPE</button>
+        <button>TUTORIAL</button>
+        <button>ACCEDI</button>
+    </div>
+    <div class="grid">
+        <div class="c1">
+            <div id="myCarousel" class="carousel carousel-fade w-75 m-auto" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button data-bs-target="#myCarousel" data-bs-slide-to="1" ></button>
+                    <button data-bs-target="#myCarousel" data-bs-slide-to="2" ></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="immagini/img1.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="immagini/img2.jpg">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="immagini/img3.jpg">
+                    </div>
+                </div>
+                    <button class="carousel-control-prev" data-bs-target="#myCarousel"      data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+        </div>
+    
+        <div class="c2">shop</div>
+        <div class="c3">mappe</div>
+        <div class="c4">tutorial</div>
+    </div>
+    </div>
+</body>
+</html>
+
+
+
