@@ -16,11 +16,11 @@
             border: solid 1px;
             text-align: center;
             /* Imposta la terza riga per occupare tutto lo spazio disponibile */
-            grid-template-rows: 1fr 1fr auto;
+            grid-template-rows: auto auto auto;
             
         }
         .grid > div {
-            
+            overflow: auto;
             border: 0px;
             padding: 2em 1em; 
         }
@@ -36,7 +36,7 @@
         .c2 {
             grid-area: s;
             
-}
+        }
         
         .c3{
             grid-area: m;
@@ -86,21 +86,20 @@
 <body>
     <div class="fixed-bar">
         <button>LOGO</button>
-        <div style="display: flex; justify-content:right; align-items:end; height:0vh; width: 96vw;">
-            <button>VIDEOS </button>
+        <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
+            <button>VIDEOS</button>
             <button>MAPPE</button>
             <button>SHOP</button>
             <button>ACCEDI</button>
         </div>
-        
     </div>
     <div class="grid">
         <div class="c1">
             <div id="myCarousel" class="carousel carousel-fade w-75 m-auto" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button data-bs-target="#myCarousel" data-bs-slide-to="1" ></button>
-                    <button data-bs-target="#myCarousel" data-bs-slide-to="2" ></button>
+                    <button data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+                    <button data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -113,51 +112,50 @@
                         <img src="immagini/Carosello3.jpg">
                     </div>
                 </div>
-                    <button class="carousel-control-prev" data-bs-target="#myCarousel"      data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
-                </div>
+                <button class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
         </div>
-        
+
         <div class="c2">
-            <h2 style="font-weight: 700; text-align: left; ">
+            <h2 style="font-weight: 700; text-align: left;">
                 Videos
             </h2>
-            <hr style="border-color: #333; border-width: 3px;margin-bottom: 5px;margin-top: 1px; opacity: 1;">
-            <a id="black" class="video" href="https://www.youtube.com/watch?v=9nWMi9Cbgmw"target="_blank" >
+            <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+            <a id="black" class="video" href="https://www.youtube.com/watch?v=9nWMi9Cbgmw" target="_blank">
                 <img class="copertina" src="immagini/Ollie.jpg">
-                <h2 class="titolo" id="black" >Come fare l'Ollie?</h2>
+                <h2 class="titolo" id="black">Come fare l'Ollie?</h2>
             </a>
             <a id="black" class="video" href="https://www.youtube.com/watch?v=aM6Zd4Y25xE">
-                <img class="copertina" src="immagini/frontside.jpg" >
+                <img class="copertina" src="immagini/frontside.jpg">
                 <h2 class="titolo" id="black">Come fare il Frontside Smith?</h2>
+            </a>
+            <a id="black" class="video" href="https://www.youtube.com/watch?v=aM6Zd4Y25xE">
+                <img class="copertina" src="immagini/frontside.jpg">
+                <h2 class="titolo" id="black">Come fare il Frontside Smith? 2</h2>
             </a>
         </div>
         <div class="c3">
-            <h2 style="font-weight: 700; text-align: left; ">
+            <h2 style="font-weight: 700; text-align: left; margin-top: 10px;">
                 Mappe
             </h2>
-            <hr style="border-color: #333; border-width: 3px;margin-bottom: 5px;margin-top: 1px; opacity: 1;">
+            <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c8j8WkH4jeMGuteNeM0njMlEE4byEwM&ehbc=2E312F" width="640" height="480"></iframe>
         </div>
         <div class="c4">
-            <h2 style="font-weight: 700; text-align: left; ">
+            <h2 style="font-weight: 700; text-align: left;">
                 Shop
             </h2>
-            <hr style="border-color: #333; border-width: 3px;margin-bottom: 5px;margin-top: 1px; opacity: 1;">
-            <div style="display: flex; justify-content: center; align-items: center; height:45vh; width: 100vw;">
-                <img src="immagini/Shop.jpg" style="width: 500px; ">
+            <hr style="border-color: #333; border-width: 3px; margin-bottom: 5px; margin-top: 1px; opacity: 1;">
+            <div style="display: flex; justify-content: center; align-items: center; height: 45vh; width: 100%;">
+                <img src="immagini/Shop.jpg" style="width: 500px;">
                 <button style="position: absolute;">SHOP</button>
-              
             </div>
         </div>
     </div>
-    </div>
 </body>
 </html>
-
-
-
