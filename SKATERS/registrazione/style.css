@@ -1,0 +1,24 @@
+.grid {
+    display: grid;
+    grid-template:
+        ' i ' / 1fr;
+    border: solid 0px;
+    text-align: center;
+    /* Imposta la terza riga per occupare tutto lo spazio disponibile */
+    grid-template-rows: auto;
+    
+    
+}
+.grid > div {
+    margin-top: 1px;
+    overflow: auto;
+    border: 0px;
+    padding: 2em 1em; 
+}
+.c1 {
+    width: 90%;
+    grid-area: i;   
+    margin-top: 1px;
+    margin-left: 3.5%;
+    padding: 0;
+}
