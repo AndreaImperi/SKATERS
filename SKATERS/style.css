@@ -4,7 +4,8 @@
         ' i '
         ' s '
         ' m '
-        ' t ' / 1fr;
+        ' t ' 
+        ' b '/ 1fr;
     border: solid 1px;
     text-align: center;
     /* Imposta la terza riga per occupare tutto lo spazio disponibile */
@@ -43,6 +44,9 @@
     width: 90%;
     margin: auto;
 }
+.c5{
+    grid-area: b;
+}
 .fixed-bar {
     position: fixed;
     top: 0;
@@ -53,6 +57,7 @@
     height: 75px;
     z-index: 9999;
 }
+
 .content {
     margin-top: 50px; /* Altezza della barra di pulsanti */
     padding: 20px;

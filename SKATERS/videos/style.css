@@ -62,6 +62,8 @@
 }
 .titolo{
     font-size: 20px;
+    height: 60px;
+
 }
 .fixed-bar {
     position: fixed;
