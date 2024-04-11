@@ -10,7 +10,7 @@
     
 }
 .grid > div {
-    margin-top: 1px;
+    margin-top: 7%;
     overflow: auto;
     border: 0px;
     padding: 2em 1em; 
@@ -18,7 +18,7 @@
 .c1 {
     width: 90%;
     grid-area: i;   
-    margin-top: 1px;
+    margin-top: 50%;
     margin-left: 3.5%;
     padding: 0;
 }
@@ -33,4 +33,15 @@
 #linea-grigia{
     width: 70%;
     margin-left: 16%;
+}
+
+.fixed-bar {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    height: 75px;
+    z-index: 9999;
 }
