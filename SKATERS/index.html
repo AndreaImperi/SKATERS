@@ -11,10 +11,10 @@
     <div class="fixed-bar">
         <button>LOGO</button>
         <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
-            <button>VIDEOS</button>
-            <button>MAPPE</button>
-            <button>SHOP</button>
-            <button>ACCEDI</button>
+            <button id="Bvideo">VIDEOS</button>
+            <button id="Bmappe">MAPPE</button>
+            <button id="Bshop">SHOP</button>
+            <button id="Baccedi">ACCEDI</button>
         </div>
     </div>
     <div class="grid">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="c2">
-            <h2 style="font-weight: 700; text-align: left;">
+            <h2 id="Tvideo" style="font-weight: 700; text-align: left;">
                 Videos
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
@@ -63,11 +63,18 @@
                 <h2 class="titolo" id="black">Come fare il Frontside Smith? 2</h2>
             </a>
         </div>
-        <div class="c3">
+        <div class="c3" id="cellaMappe">
             <h2 style="font-weight: 700; text-align: left; margin-top: 10px;">
                 Mappe
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+
+            <div style="margin-bottom: 2%;">
+                <p style="font-size: larger; font-weight: 600;">Cosa stai cercando?</p>
+                <label><input type="checkbox"> Skatepark</label>
+                <label style="margin-left: 1%;"><input type="checkbox"> Skateshop</label>
+            </div>
+
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=155q4x6fTGhEwpfhM4LlcNZPMwiq_G2w&ehbc=2E312F" width="640" height="480"></iframe>
         </div>
         <div class="c4" >
@@ -81,9 +88,9 @@
             </div>
         </div>
         <div class="c5" style="display: flex; align-items: center; justify-content: space-between; background-color: #333; height: 100px; ">
-            <div>
+            <div align="left">
                 
-                <input type="text" placeholder="Facci una domanda" style="margin-bottom: 7%;">
+                <input type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%;">
                 <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255);">
                     CONTATTACI: skaters@gmail.com
                 </h1>
@@ -96,7 +103,9 @@
                 <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
             </div>
         </div>
-    </div>
+    </div>  
+
     
+    <script src="script.js"></script>
 </body>
 </html>
