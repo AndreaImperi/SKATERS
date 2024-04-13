@@ -9,38 +9,61 @@
         <title>ACCESSO</title>
     </head>
     <body style="margin-top: 5%;">
-        <div style="text-align: center; margin-top: 1%;">
-            <button>Logo</button>
+        <div class="fixed-bar" style="margin-top: 0%;">
+            <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
+                <button>LOGO</button> 
+            </div>
+            <h2 style="color: black; font-weight: 700;">Accedi</h2>
+            <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
         </div>
-        <div>
-            <h2 class="titolo" style="font-weight: 700;">Accedi</h2>
-            <hr class="linea" style="border-color: #333;margin-top: 0%; ">
+        
+        <div class="grid">
+            <div class="c1" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <table>
+                    <tr>
+                        <td>
+                            <h2 class="input">Username</h2>
+                            <input type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 class="input">Password</h2>
+                            <input type="password">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <a href="">Hai dimenticato la password?</a>
+                <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;margin-right: 15%;">
+            <div style="text-align: center;">
+                <h1 style="font-size: small; color: grey;">Non hai un account?</h1>
+            </div>
+            <div style="text-align: center;">
+                <button id="Bregistrazione" style="margin-top: 0%;">REGISTRATI</button>
+            </div>
+            </div>
+            <div class="c2" style="display: flex; align-items: center; justify-content: space-between; background-color: #333; height: 100px;overflow: hidden; position: fixed; bottom: 0; width: 100%;">
+                <div align="left" style="margin-left: 1%;">
+                    
+                    <input type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%;">
+                    <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255);">
+                        CONTATTACI: skaters@gmail.com
+                    </h1>
+                </div>
+               
+                <button style="text-align: center;">LOGO</button>
+    
+                <div style="margin-right: 1%;">
+                    <h1 style="font-weight: 700; text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
+                    <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
+                </div>
         </div>
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <table>
-                <tr>
-                    <td>
-                        <h2 class="input">Username</h2>
-                        <input type="text">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h2 class="input">Password</h2>
-                        <input type="password">
-                    </td>
-                </tr>
-            </table>
-            <br>
-            <a href="">Hai dimenticato la password?</a>
+
+            </div>
         </div>
-        <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;">
-        <div style="text-align: center;">
-            <h1 style="font-size: small; color: grey;">Non hai un account?</h1>
-        </div>
-        <div style="text-align: center;">
-            <button id="Bregistrazione" style="margin-top: 0%;">REGISTRATI</button>
-        </div>
+        
+        
         
         <script src="script.js"></script>
     </body>

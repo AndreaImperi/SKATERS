@@ -18,10 +18,13 @@
 }
 
 .c1 {
-    grid-area: s;
+    grid-area: i;
     width: 90%;
     margin: auto;
     
+}
+.c2{
+    grid-area:s ;
 }
 
 .video{

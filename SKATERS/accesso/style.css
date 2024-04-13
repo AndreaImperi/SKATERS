@@ -1,3 +1,26 @@
+.grid {
+    display: grid;
+    grid-template:
+        ' i ' 
+        ' s '/ 1fr;
+    border: solid 0px;
+    text-align: center;
+    /* Imposta la terza riga per occupare tutto lo spazio disponibile */
+    grid-template-rows: auto;
+}
+
+.c1 {
+    width: 90%;
+    grid-area: i;   
+    margin-top: 7%;
+    margin-left: 3.5%;
+    padding: 0;
+}
+.c2{
+    grid-area: s;
+    margin-bottom: 0%;
+}
+
 .titolo {
     font-weight: 700;
     text-align: left;
@@ -20,4 +43,14 @@
 .input {
     margin-bottom: 0%;
     margin-left: 0%;
+}
+.fixed-bar {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    height: 75px;
+    z-index: 9999;
 }
