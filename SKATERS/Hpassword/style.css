@@ -13,20 +13,32 @@
     
 }
 
+.grid > div {
+    overflow: hidden;
+    border: 0px;
+    padding: 2em 1em; 
+}
+
 .c1 {
     background-color: rgb(136, 136, 136);
     border-radius: 10px;
     grid-area: i;   
     margin-top: 4%;
     padding: 5%; 
-    height: 550px;
-    width: 50;
+    height: 300px;
+    width: 400px;
     margin-left: 4%;
     margin-right: 4%;
+    margin-top: 100px;
+    
    
 }
 .c2{
     grid-area: s;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
 .titolo {

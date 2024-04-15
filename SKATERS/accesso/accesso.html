@@ -6,10 +6,10 @@
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
         <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="style.css">
-        <title>ACCESSO</title>
+        <title>RECUPERO PASSWORD</title>
     </head>
-    <body style="margin-top: 5%;">
-        <div class="fixed-bar" style="margin-top: 0%;">
+    <body style="overflow: hidden;">
+        <div class="fixed-bar">
             <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
                 <button>LOGO</button> 
             </div>
@@ -19,31 +19,27 @@
         
         <div class="grid">
             <div class="c1" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <table>
-                    <tr>
-                        <td>
-                            <h2 class="input">Username</h2>
-                            <input type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h2 class="input">Password</h2>
-                            <input type="password">
-                        </td>
-                    </tr>
-                </table>
+                <h3 style="margin-top: 2%;">SKATERS</h3>
+                <H1 style="font-size: small;margin-bottom:0%;">Entra con le tue credenziali</H1>
+                <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
+                <form action="" method="post">
+                    <label for="username" style="color: white;">Username:</label><br>
+                    <input type="text" id="username" name="username"><br>
+                    <label for="password" style="color: white;">Password:</label><br>
+                    <input type="password" id="password" name="password">
+                    <input type="submit" value="Submit">
+                    </form>
                 <br>
-                <a href="">Hai dimenticato la password?</a>
-                <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;margin-right: 15%;">
-            <div style="text-align: center;">
-                <h1 style="font-size: small; color: grey;">Non hai un account?</h1>
+                <a href="../Hpassword/Hpassword.html">Hai dimenticato la password?</a>
+                <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
+            <div style="text-align: center;margin-bottom: 4%;">
+                <h1 style="font-size: small; color: rgb(255, 255, 255);display: inline-block">Non hai un account?</h1>
+                <a href="../registrazione/registrazione.html" id="Bregistrazione" style="margin-top: 0%;display: inline-block;font-size: small">REGISTRATI</a>
             </div>
-            <div style="text-align: center;">
-                <button id="Bregistrazione" style="margin-top: 0%;">REGISTRATI</button>
-            </div>
-            </div>
-            <div class="c2" style="display: flex; align-items: center; justify-content: space-between; background-color: #333; height: 100px;overflow: hidden; position: fixed; bottom: 0; width: 100%;">
+        </div>
+
+<!--
+    <div class="c2" style="display: flex; align-items: center; justify-content: space-between; background-color: #333; height: 100px;overflow: hidden; position: fixed; bottom: 0; width: 100%; margin-top: 5%;">
                 <div align="left" style="margin-left: 1%;">
                     
                     <input type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%;">
@@ -62,6 +58,8 @@
 
             </div>
         </div>
+-->
+            
         
         
         
