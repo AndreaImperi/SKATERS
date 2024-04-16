@@ -1,27 +1,27 @@
 .grid {
     display: grid;
     grid-template:
-        ' i ' 
-        ' s '/ 1fr;
+        ' i ' / 1fr;
     border: solid 0px;
     text-align: center;
     /* Imposta la terza riga per occupare tutto lo spazio disponibile */
     grid-template-rows: auto;
     
-    
+    top: 75px;
 }
+
 .grid > div {
     overflow: auto;
     border: 0px;
-    padding: 2em 1em; 
+    padding: 2em 1em;
+    margin-top: 7%; /* Move the grid up */
 }
+
 .c1 {
     width: 90%;
     grid-area: i;   
-    margin-top: 10%;
+    margin-top: 0%;
     margin-left: 3.5%;
-    padding: 0;
-    
 }
 .c2{
     grid-area: s;
@@ -50,3 +50,39 @@
     margin-bottom: 0%;
     z-index: 9999;
 }
+
+table{
+    border: 0px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+table td {
+    width: 33%; /* Imposta larghezza uguale per tutte le colonne */
+    text-align: left;
+}
+
+.immaginesx {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: 40%;
+    left: 0;
+    margin-left: 100px;
+    transition: transform 0.5s ease;
+  }
+
+  .immaginedx {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: 40%;
+    right: 0;
+    margin-right: 100px;
+    transition: transform 0.5s ease;
+}
+
+
+

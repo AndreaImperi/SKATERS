@@ -17,21 +17,25 @@
                 <div class="barra">
                     <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
                     <label>Taglia:</label>
-                    <select class="Taglia" dir="dtu" style="margin-left: 1%;">
+                    <select class="Taglia" id="select" style="margin-left: 1%;">
                         <option value="nessuna"></option>
                         <option value="S">S</option>
                         <option value="M">M</option>
                         <option value="L">L</option>
                     </select> 
+                    
                 </div>
                 <div class="pallini">
                     <div class="sinistra"></div>
                     <div class="destra"></div>
                 </div>
             </div>
-            <div class="marca">Marca</div>
-            <div class="nome">Nome dell'articolo</div>
-            <div class="prezzo">€99.99</div>
+            
+                <div class="marca" style>Marca</div>
+                <div class="nome">Nome dell'articolo</div>
+                <div class="prezzo">€99.99</div>
+            
+            
         </div>
 
         <div class="articolo">
@@ -108,6 +112,59 @@
             <div class="nome">Nome dell'articolo</div>
             <div class="prezzo">€99.99</div>
         </div>
+
+        <div class="articolo">
+            <div class="immagine" align="center">
+                <img class="default" src="../immagini/scarpa1.webp">
+                <img class="sinistra" src="../immagini/scarpa2.webp">
+                <img class="destra" src="../immagini/scarpa3.webp">
+                <div class="barra">
+                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
+                    <label>Taglia:</label>
+                    <select class="Taglia" style="margin-left: 1%;">
+                        <option value="nessuna"></option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select> 
+                </div>
+                <div class="pallini">
+                    <div class="sinistra"></div>
+                    <div class="destra"></div>
+                </div>
+            </div>
+            <div class="marca">Marca</div>
+            <div class="nome">Nome dell'articolo</div>
+            <div class="prezzo">€99.99</div>
+        </div>
+
+        <div class="articolo">
+            <div class="immagine" align="center">
+                <img class="default" src="../immagini/scarpa1.webp">
+                <img class="sinistra" src="../immagini/scarpa2.webp">
+                <img class="destra" src="../immagini/scarpa3.webp">
+                <div class="barra">
+                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
+                    <label>Taglia:</label>
+                    <select class="Taglia" style="margin-left: 1%;">
+                        <option value="nessuna"></option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select> 
+                    
+                </div>
+                <div class="pallini">
+                    <div class="sinistra"></div>
+                    <div class="destra"></div>
+                </div>
+            </div>
+            <div class="marca">Marca</div>
+            <div class="nome">Nome dell'articolo</div>
+            <div class="prezzo">€99.99</div>
+        </div>
+
+
     </div>
     <!-- Ripeti il div .articolo per ogni articolo -->
     <script>
@@ -133,6 +190,9 @@
                 }
             });
             immagine.addEventListener('mouseleave', function(){
+                var elemento = document.getElementById("select");
+            
+                console.log(elemento.value);
                 immagine.querySelector('.sinistra').style.display = 'none';
                 immagine.querySelector('.destra').style.display = 'none';
                 immagine.querySelector('.default').style.display = 'block';
@@ -140,6 +200,7 @@
                 pallinoDestra.classList.remove('active');
                 var newbarra = immagine.querySelector('.barra');
                 newbarra.classList.remove('clicked');
+        
                 // newbarra.querySelector('.Taglia').display = 'none'; 
             });
             });
@@ -149,8 +210,12 @@
                 barre[i].querySelector('.Bacquista').addEventListener('click', function() {
                     // this.nextElementSibling.style.display = 'inline-block';
                     this.parentElement.classList.add('clicked');
-                });
+                }
+            );
+                
             }
+            
+
         });
     </script>
 </body>

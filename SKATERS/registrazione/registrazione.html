@@ -15,9 +15,11 @@
         <h2 style="color: black; font-weight: 700;">Registrati</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
+    <img src="../immagini/ruota.webp" class="immaginesx" >
+    
     <div class="grid">
-        <div class="c1" style="overflow: hidden;">
-            <table style="border: 0px; width: 50%; ">
+        <div class="c1" style="overflow: hidden; text-align: center;">
+            <table>
                 <form action="" method="post" name="restrazione" enctype="multipart/form-data"> <!-- vedere che fa enctype-->
                 <tr>
                     <td colspan='3' style="text-align: left;">Nome:</td>
@@ -37,16 +39,16 @@
                             <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
                     </td>
                 </tr>
-                <tr style="height: 20px; vertical-align: bottom;">
+                <tr style="height: 20px; margin-bottom: 10%;">
                     <td colspan='3' style="text-align: left;">Data di nascita:</td>
                 </tr>
                 
                 <tr>
-                    <td style="width: 30%; text-align: left;"> 
-                        <label style="margin-right: 5px;">giorno:</label>
-                        <input type="text" name="giorno" maxlength="2" style="width: 80px; margin: 0;">
+                    <td style="width: 33%; text-align: left;"> 
+                        <label style="width: 30%;">Giorno:</label>
+                        <input type="text" name="giorno" maxlength="2" style="width:60%; margin: 0;">
                     </td>
-                    <td style="width: 30%; text-align: left; margin: 0;">
+                    <td style="width: 33%; text-align: center;">
                         <label style="margin-right: 5px;">Mese:</label>
                         <select name="mese" size="1" cols="13">
                             <option value="nessuna"></option>
@@ -64,7 +66,7 @@
                             <option value="Dicembre">Dicembre</option>
                         </select>
                     </td>
-                    <td style="width: 30%; text-align: left;">
+                    <td style="width: 33%; text-align: left;">
                         <label style="margin-right: 5px;">Anno:</label>
                         <input type="text" name="anno" maxlength="4" style="width: 80px; margin: 0;">
                     </td>
@@ -130,27 +132,36 @@
                     </td>
                 </tr>
             </table>
-            <div style="display: flex; justify-content: left; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 15%; font-size: larger;">
-                <button>REGISTRATI</button> 
-            </div>
+            <button style="margin-top: 5%;">
+                REGISTRATI
+            </button>
         </div>
-        <div class="c2" style="display: flex; align-items: center; justify-content: space-between; background-color: #333; height: 100px;overflow: hidden; margin-top: 5%;">
-            <div align="left">
-                
-                <input type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%;">
-                <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255);">
-                    CONTATTACI: skaters@gmail.com
-                </h1>
-            </div>
-           
-            <button style="text-align: center;">LOGO</button>
 
-            <div>
-                <h1 style="font-weight: 700; text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-                <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
-            </div>
-    </div>
-    </div>
+        
+        <img src="../immagini/ruota.webp" class="immaginedx"  >
+
+        
+    <script>
+
+    window.addEventListener('scroll', function() {
+        // Ottieni la posizione verticale dello scrolling della pagina
+        var scrollPosition = window.scrollY;
+    
+        // Calcola l'angolo di rotazione in base alla posizione dello scrolling
+        var rotationAngle = scrollPosition * 0.9; // Modifica il fattore 0.5 per regolare la velocità di rotazione
+    
+        // Seleziona tutte le immagini con le classi 'immaginedx' e 'immaginesx'
+        var immagined = document.querySelector('.immaginedx');
+        var immagines = document.querySelector('.immaginesx');
+    
+        // Applica la rotazione a ciascuna immagine utilizzando CSS
+        immagined.style.transform = 'rotate(' + rotationAngle + 'deg)';
+        immagines.style.transform = 'rotate(' + rotationAngle + 'deg)';
+    });
+
+
+    </script>
+
 </body>
 </html>
 
