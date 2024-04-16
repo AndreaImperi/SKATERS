@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
-        <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+        <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,12 +15,94 @@
                 <img class="sinistra" src="../immagini/scarpa2.webp">
                 <img class="destra" src="../immagini/scarpa3.webp">
                 <div class="barra">
-                    <a href="link-di-acquisto">Acquista</a>
+                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
+                    <label>Taglia:</label>
+                    <select class="Taglia" dir="dtu" style="margin-left: 1%;">
+                        <option value="nessuna"></option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select> 
+                </div>
+                <div class="pallini">
+                    <div class="sinistra"></div>
+                    <div class="destra"></div>
                 </div>
             </div>
-            <div class="pallini">
-                <div class="sinistra"></div>
-                <div class="destra"></div>
+            <div class="marca">Marca</div>
+            <div class="nome">Nome dell'articolo</div>
+            <div class="prezzo">€99.99</div>
+        </div>
+
+        <div class="articolo">
+            <div class="immagine" align="center">
+                <img class="default" src="../immagini/scarpa1.webp">
+                <img class="sinistra" src="../immagini/scarpa2.webp">
+                <img class="destra" src="../immagini/scarpa3.webp">
+                <div class="barra">
+                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
+                    <label>Taglia:</label>
+                    <select class="Taglia" dir="dtu" style="margin-left: 1%;">
+                        <option value="nessuna"></option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select> 
+                </div>
+                <div class="pallini">
+                    <div class="sinistra"></div>
+                    <div class="destra"></div>
+                </div>
+            </div>
+            <div class="marca">Marca</div>
+            <div class="nome">Nome dell'articolo</div>
+            <div class="prezzo">€99.99</div>
+        </div>
+
+        <div class="articolo">
+            <div class="immagine" align="center">
+                <img class="default" src="../immagini/scarpa1.webp">
+                <img class="sinistra" src="../immagini/scarpa2.webp">
+                <img class="destra" src="../immagini/scarpa3.webp">
+                <div class="barra">
+                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
+                    <label>Taglia:</label>
+                    <select class="Taglia" dir="dtu" style="margin-left: 1%;">
+                        <option value="nessuna"></option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select> 
+                </div>
+                <div class="pallini">
+                    <div class="sinistra"></div>
+                    <div class="destra"></div>
+                </div>
+            </div>
+            <div class="marca">Marca</div>
+            <div class="nome">Nome dell'articolo</div>
+            <div class="prezzo">€99.99</div>
+        </div>
+
+        <div class="articolo">
+            <div class="immagine" align="center">
+                <img class="default" src="../immagini/scarpa1.webp">
+                <img class="sinistra" src="../immagini/scarpa2.webp">
+                <img class="destra" src="../immagini/scarpa3.webp">
+                <div class="barra">
+                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
+                    <label>Taglia:</label>
+                    <select class="Taglia" dir="dtu" style="margin-left: 1%;">
+                        <option value="nessuna"></option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select> 
+                </div>
+                <div class="pallini">
+                    <div class="sinistra"></div>
+                    <div class="destra"></div>
+                </div>
             </div>
             <div class="marca">Marca</div>
             <div class="nome">Nome dell'articolo</div>
@@ -30,32 +112,45 @@
     <!-- Ripeti il div .articolo per ogni articolo -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var immagine = document.querySelector('.immagine');
-            var pallinoSinistra = document.querySelector('.pallini .sinistra');
-            var pallinoDestra = document.querySelector('.pallini .destra');
+            var immagini = document.querySelectorAll('.immagine');
+            immagini.forEach(function(immagine) {
+            var pallinoSinistra = immagine.querySelector('.pallini .sinistra');
+            var pallinoDestra = immagine.querySelector('.pallini .destra');
             immagine.addEventListener('mousemove', function(event) {
                 var x = event.clientX - immagine.getBoundingClientRect().left;
                 if(x < immagine.offsetWidth / 2){
-                    document.querySelector('.default').style.display = 'none';
-                    document.querySelector('.destra').style.display = 'none';
-                    document.querySelector('.sinistra').style.display = 'block';
+                    immagine.querySelector('.default').style.display = 'none';
+                    immagine.querySelector('.destra').style.display = 'none';
+                    immagine.querySelector('.sinistra').style.display = 'block';
                     pallinoSinistra.classList.add('active');
                     pallinoDestra.classList.remove('active');
                 } else {
-                    document.querySelector('.default').style.display = 'none';
-                    document.querySelector('.sinistra').style.display = 'none';
-                    document.querySelector('.destra').style.display = 'block';
+                    immagine.querySelector('.default').style.display = 'none';
+                    immagine.querySelector('.sinistra').style.display = 'none';
+                    immagine.querySelector('.destra').style.display = 'block';
                     pallinoDestra.classList.add('active');
                     pallinoSinistra.classList.remove('active');
                 }
             });
             immagine.addEventListener('mouseleave', function(){
-                document.querySelector('.sinistra').style.display = 'none';
-                document.querySelector('.destra').style.display = 'none';
-                document.querySelector('.default').style.display = 'block';
+                immagine.querySelector('.sinistra').style.display = 'none';
+                immagine.querySelector('.destra').style.display = 'none';
+                immagine.querySelector('.default').style.display = 'block';
                 pallinoSinistra.classList.remove('active');
                 pallinoDestra.classList.remove('active');
+                var newbarra = immagine.querySelector('.barra');
+                newbarra.classList.remove('clicked');
+                // newbarra.querySelector('.Taglia').display = 'none'; 
             });
+            });
+
+            var barre = document.querySelectorAll('.barra');
+            for (var i = 0; i < barre.length; i++) {
+                barre[i].querySelector('.Bacquista').addEventListener('click', function() {
+                    // this.nextElementSibling.style.display = 'inline-block';
+                    this.parentElement.classList.add('clicked');
+                });
+            }
         });
     </script>
 </body>

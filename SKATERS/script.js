@@ -23,3 +23,7 @@ document.getElementById("Bmappe").addEventListener("click", function() {
 document.getElementById("Baccedi").addEventListener("click", function() {
     window.location.href = "accesso/accesso.html";
 });
+
+document.getElementById("Bshop").addEventListener("click", function() {
+    window.location.href = "shop/shop2.html";
+});
