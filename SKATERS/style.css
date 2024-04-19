@@ -10,8 +10,6 @@
     text-align: center;
     /* Imposta la terza riga per occupare tutto lo spazio disponibile */
     grid-template-rows: auto;
-    
-    
 }
 .grid > div {
     overflow: auto;
@@ -36,6 +34,9 @@
     background-image: url('immagini/sfondo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    max-width: 100%;
+    
+    
 }
 
 .sfondo-trasparente {
@@ -51,7 +52,6 @@
     grid-area: s;
     width: 90%;
     margin: auto;
-    
 }
 
 .c3{
@@ -96,6 +96,8 @@
 .carousel-inner img {
     width: 100%;
     height: auto;
+    
+    
 }
 .video{
     display: inline-block;

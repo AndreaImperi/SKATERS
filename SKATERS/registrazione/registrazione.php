@@ -7,10 +7,11 @@
     <body>
         <?php
 
-        print_r($_POST);
-        print_r($GLOBALS);
+    print_r($_SERVER["REQUEST_METHOD"]);
+    print_r($_POST);
+       
 
-        $connessione = pg_connect("host=localhost port=5432 dbname=Skaterss user=postgres password=Lamborghini02!") or die("errore di connessione: " . pg_last_error() );
+        $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
 
         if (!$connessione){
             die("Connessione al database fallita: " . pg_last_error());
