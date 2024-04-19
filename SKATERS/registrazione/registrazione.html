@@ -20,121 +20,123 @@
     <div class="grid">
         <div class="c1" style="overflow: hidden; text-align: center;">
             <table>
-                <form action="" method="post" name="restrazione" enctype="multipart/form-data"> <!-- vedere che fa enctype-->
-                <tr>
-                    <td colspan='3' style="text-align: left;">Nome:</td>
-                </tr>
-                <tr>
-                    <td colspan='3' style="text-align: left;"><input type="text" name="nome" size="30" maxlength="20"></td>
-                </tr>
-                <tr style="height: 60px; vertical-align: bottom;">
-                    <td colspan='3' style="text-align: left;">Cognome:</td>
-                </tr>
-                <tr>
-                    <td colspan='3' style="text-align: left;"><input type="text" name="cognome" size="30" maxlength="30"></td>
-                </tr>
-                <!-- <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 80%; margin-left: 25% ;"> -->
-                <tr style="height: 120px;">
-                    <td colspan="3">
-                            <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
-                    </td>
-                </tr>
-                <tr style="height: 20px; margin-bottom: 10%;">
-                    <td colspan='3' style="text-align: left;">Data di nascita:</td>
-                </tr>
-                
-                <tr>
-                    <td style="width: 33%; text-align: left;"> 
-                        <label style="width: 30%;">Giorno:</label>
-                        <input type="text" name="giorno" maxlength="2" style="width:60%; margin: 0;">
-                    </td>
-                    <td style="width: 33%; text-align: center;">
-                        <label style="margin-right: 5px;">Mese:</label>
-                        <select name="mese" size="1" cols="13">
-                            <option value="nessuna"></option>
-                            <option value="Gennaio">Gennaio</option>
-                            <option value="Febbraio">Febbraio</option>
-                            <option value="Marzo">Marzo</option>
-                            <option value="Aprile">Aprile</option>
-                            <option value="Maggio">Maggio</option>
-                            <option value="Giugno">Giugno</option>
-                            <option value="Luglio">Luglio</option>
-                            <option value="Agosto">Agosto</option>
-                            <option value="Settembre">Settembre</option>
-                            <option value="Ottobre">Ottobre</option>
-                            <option value="Novembre">Novembre</option>
-                            <option value="Dicembre">Dicembre</option>
-                        </select>
-                    </td>
-                    <td style="width: 33%; text-align: left;">
-                        <label style="margin-right: 5px;">Anno:</label>
-                        <input type="text" name="anno" maxlength="4" style="width: 80px; margin: 0;">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan='2' style="text-align: left; height: 60px; vertical-align: bottom;">Genere:</td>
-                </tr>
-                <tr>
-                    <td colspan='3' style="width: 30%; text-align: left; margin: 0; ">
-                        <select name="genere" size="1" cols="4">
-                            <option value="nessuna"></option>
-                            <option value="uomo">Uomo</option>
-                            <option value="donna">Donna</option>
-                            <option value="pnd">Preferisco non dirlo</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr style="height: 120px;">
-                    <td colspan="3">
-                            <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
-                    </td>
-                </tr>
-                <tr>
-                   <td colspan='3' style="text-align: left;">E-mail:</td>
-                </tr>
-                <tr>
-                    <td colspan='3' style="text-align: left;"><input type="email" name="username" size="30" maxlength="30"></td>
-                </tr>
-                <tr style="height: 60px; vertical-align: bottom;">
-                    <td colspan='3' style="text-align: left;">Password:</td>
-                </tr>
-                <tr>
-                    <td colspan='3' style="text-align: left;"><input type="text" name="password" size="30" maxlength="30"></td>
-                </tr>
-                <tr style="height: 60px; vertical-align: bottom;">
-                    <td colspan='3' style="text-align: left;">Conferma:</td>
-                </tr>
-                <tr>
-                    <td colspan='3' style="text-align: left;"><input type="text" name="conferma" size="30" maxlength="30"></td>
-                </tr>
-                <tr>
-                    <td align="left" colspan="2" style="font-size: small;">
-                        <label style="margin-right: 5px;">Mostra password:</label>
-                        <input type="checkbox" name="mostrap">
-                    </td>
-                </tr>
-                <tr style="height: 120px;">
-                    <td colspan="3">
-                            <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
-                    </td>
-                </tr>
-                <tr>
-                    <td align="left">
-                        <select name="paese" style="width: 70%;">
-                            <option value="italia">Italia</option>
-                            <option value="francia">Francia</option>
-                            <option value="germania">Germania</option>
-                            <!-- Aggiungere altre -->
-                        </select>
-                    </td>
-                    <td align="left" style="text-align: left;">
-                        <input type="text" name="numero_telefono" placeholder="Inserisci il numero di telefono" size="22">
-                    </td>
-                </tr>
+                <form name="formReg" action="registrazione.php" method="GET" > 
+                    <tr>
+                        <td colspan='3' style="text-align: left;">Nome:</td>
+                    </tr>
+                    <tr>
+                        <td colspan='3' style="text-align: left;"><input type="text" name="nome" size="30" maxlength="20"></td>
+                    </tr>
+                    <tr style="height: 60px; vertical-align: bottom;">
+                        <td colspan='3' style="text-align: left;">Cognome:</td>
+                    </tr>
+                    <tr>
+                        <td colspan='3' style="text-align: left;"><input type="text" name="cognome" size="30" maxlength="30"></td>
+                    </tr>
+                    <!-- <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 80%; margin-left: 25% ;"> -->
+                    <tr style="height: 120px;">
+                        <td colspan="3">
+                                <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
+                        </td>
+                    </tr>
+                    <tr style="height: 20px; margin-bottom: 10%;">
+                        <td colspan='3' style="text-align: left;">Data di nascita:</td>
+                    </tr>
+                    
+                    <tr>
+                        <td style="width: 33%; text-align: left;"> 
+                            <label style="width: 30%;">Giorno:</label>
+                            <input type="text" name="giorno" maxlength="2" style="width:60%; margin: 0;">
+                        </td>
+                        <td style="width: 33%; text-align: center;">
+                            <label style="margin-right: 5px;">Mese:</label>
+                            <select name="mese" size="1" cols="13">
+                                <option value="nessuna"></option>
+                                <option value="Gennaio">Gennaio</option>
+                                <option value="Febbraio">Febbraio</option>
+                                <option value="Marzo">Marzo</option>
+                                <option value="Aprile">Aprile</option>
+                                <option value="Maggio">Maggio</option>
+                                <option value="Giugno">Giugno</option>
+                                <option value="Luglio">Luglio</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Settembre">Settembre</option>
+                                <option value="Ottobre">Ottobre</option>
+                                <option value="Novembre">Novembre</option>
+                                <option value="Dicembre">Dicembre</option>
+                            </select>
+                        </td>
+                        <td style="width: 33%; text-align: left;">
+                            <label style="margin-right: 5px;">Anno:</label>
+                            <input type="text" name="anno" maxlength="4" style="width: 80px; margin: 0;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan='2' style="text-align: left; height: 60px; vertical-align: bottom;">Genere:</td>
+                    </tr>
+                    <tr>
+                        <td colspan='3' style="width: 30%; text-align: left; margin: 0; ">
+                            <select name="genere" size="1" cols="4">
+                                <option value="nessuna"></option>
+                                <option value="uomo">Uomo</option>
+                                <option value="donna">Donna</option>
+                                <option value="pnd">Preferisco non dirlo</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="height: 120px;">
+                        <td colspan="3">
+                                <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
+                        </td>
+                    </tr>
+                    <tr>
+                    <td colspan='3' style="text-align: left;">E-mail:</td>
+                    </tr>
+                    <tr>
+                        <td colspan='3' style="text-align: left;"><input type="email" name="email" size="30" maxlength="30"></td>
+                    </tr>
+                    <tr style="height: 60px; vertical-align: bottom;">
+                        <td colspan='3' style="text-align: left;">Password:</td>
+                    </tr>
+                    <tr>
+                        <td colspan='3' style="text-align: left;"><input type="text" name="password" size="30" maxlength="30"></td>
+                    </tr>
+                    <tr style="height: 60px; vertical-align: bottom;">
+                        <td colspan='3' style="text-align: left;">Conferma:</td>
+                    </tr>
+                    <tr>
+                        <td colspan='3' style="text-align: left;"><input type="text" name="conferma" size="30" maxlength="30"></td>
+                    </tr>
+                    <tr>
+                        <td align="left" colspan="2" style="font-size: small;">
+                            <label style="margin-right: 5px;">Mostra password:</label>
+                            <input type="checkbox" name="mostrap">
+                        </td>
+                    </tr>
+                    <tr style="height: 120px;">
+                        <td colspan="3">
+                                <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <select name="paese" style="width: 70%;">
+                                <option value="italia">Italia</option>
+                                <option value="francia">Francia</option>
+                                <option value="germania">Germania</option>
+                                <!-- Aggiungere altre -->
+                            </select>
+                        </td>
+                        <td align="left" style="text-align: left;">
+                            <input type="text" name="n_telefono" placeholder="Inserisci il numero di telefono" size="22">
+                        </td>
+                    </tr>
+                    <button type="submit" style="margin-top: 5%;">
+                        REGISTRATI
+                    </button>
+                </form>
             </table>
-            <button style="margin-top: 5%;">
-                REGISTRATI
-            </button>
+            
         </div>
 
         

@@ -27,3 +27,7 @@ document.getElementById("Baccedi").addEventListener("click", function() {
 document.getElementById("Bshop").addEventListener("click", function() {
     window.location.href = "shop/shop2.html";
 });
+document.getElementById("sfondo").addEventListener("mouseenter", function(){
+    var bottone = document.getElementById("Bshop");
+    
+});
