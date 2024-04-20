@@ -1,14 +1,10 @@
 <html>
-    <head>
-        <title>
-            Esempio
-        </title>
-    </head>
+    <head></head>
     <body>
         <?php
 
-    print_r($_SERVER["REQUEST_METHOD"]);
-    print_r($_POST);
+        print_r($_SERVER["REQUEST_METHOD"]);
+        print_r($_POST);
        
 
         $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );

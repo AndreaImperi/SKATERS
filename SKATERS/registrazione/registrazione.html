@@ -16,11 +16,13 @@
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
     <img src="../immagini/ruota.webp" class="immaginesx" >
-    
+
     <div class="grid">
         <div class="c1" style="overflow: hidden; text-align: center;">
             <form name="formReg" action="registrazione.php" method="POST" > 
-            <table>
+                
+
+                <table>
                     <tr>
                         <td colspan='3' style="text-align: left;">Nome:</td>
                     </tr>
@@ -131,39 +133,40 @@
                             <input type="text" name="n_telefono" placeholder="Inserisci il numero di telefono" size="22">
                         </td>
                     </tr>
-                    <tr><td>
-                    <button type="submit" style="margin-top: 5%;">
-                        REGISTRATI
-                    </button></td></tr>
-            </table>
-        </form>
-            
+                    <tr>
+                        <td>
+                            <button type="submit" style="margin-top: 5%;"> REGISTRATI </button>
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
         </div>
 
-        
         <img src="../immagini/ruota.webp" class="immaginedx"  >
 
         
-    <script>
-
-    window.addEventListener('scroll', function() {
-        // Ottieni la posizione verticale dello scrolling della pagina
-        var scrollPosition = window.scrollY;
+        <script>
     
-        // Calcola l'angolo di rotazione in base alla posizione dello scrolling
-        var rotationAngle = scrollPosition * 0.9; // Modifica il fattore 0.5 per regolare la velocità di rotazione
+        window.addEventListener('scroll', function() {
+            // Ottieni la posizione verticale dello scrolling della pagina
+            var scrollPosition = window.scrollY;
+        
+            // Calcola l'angolo di rotazione in base alla posizione dello scrolling
+            var rotationAngle = scrollPosition * 0.9; // Modifica il fattore 0.5 per regolare la velocità di rotazione
+        
+            // Seleziona tutte le immagini con le classi 'immaginedx' e 'immaginesx'
+            var immagined = document.querySelector('.immaginedx');
+            var immagines = document.querySelector('.immaginesx');
+        
+            // Applica la rotazione a ciascuna immagine utilizzando CSS
+            immagined.style.transform = 'rotate(' + rotationAngle + 'deg)';
+            immagines.style.transform = 'rotate(' + rotationAngle + 'deg)';
+        });
     
-        // Seleziona tutte le immagini con le classi 'immaginedx' e 'immaginesx'
-        var immagined = document.querySelector('.immaginedx');
-        var immagines = document.querySelector('.immaginesx');
     
-        // Applica la rotazione a ciascuna immagine utilizzando CSS
-        immagined.style.transform = 'rotate(' + rotationAngle + 'deg)';
-        immagines.style.transform = 'rotate(' + rotationAngle + 'deg)';
-    });
-
-
-    </script>
+        </script>
+    
 
 </body>
 </html>
