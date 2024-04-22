@@ -27,13 +27,17 @@
                         <td colspan='3' style="text-align: left;">Nome:</td>
                     </tr>
                     <tr>
-                        <td colspan='3' style="text-align: left;"><input type="text" name="nome" size="30" maxlength="20"></td>
+                        <td colspan='3' style="text-align: left;">
+                            <input type="text" name="nome" size="30" maxlength="20" pattern="[A-Za-z]+" required>
+                        </td>
                     </tr>
                     <tr style="height: 60px; vertical-align: bottom;">
                         <td colspan='3' style="text-align: left;">Cognome:</td>
                     </tr>
                     <tr>
-                        <td colspan='3' style="text-align: left;"><input type="text" name="cognome" size="30" maxlength="30"></td>
+                        <td colspan='3' style="text-align: left;">
+                            <input type="text" name="cognome" size="30" maxlength="30" pattern="[A-Za-z]+" required>
+                        </td>
                     </tr>
                     <!-- <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 80%; margin-left: 25% ;"> -->
                     <tr style="height: 120px;">
@@ -48,11 +52,11 @@
                     <tr>
                         <td style="width: 33%; text-align: left;"> 
                             <label style="width: 30%;">Giorno:</label>
-                            <input type="text" name="giorno" maxlength="2" style="width:60%; margin: 0;">
+                            <input type="text" name="giorno" maxlength="2" style="width:60%; margin: 0;" pattern="^(0?[1-9]|[12][0-9]|3[01])$" required>
                         </td>
                         <td style="width: 33%; text-align: center;">
                             <label style="margin-right: 5px;">Mese:</label>
-                            <select name="mese" size="1" cols="13">
+                            <select name="mese" size="1" cols="13" required>
                                 <option value="nessuna"></option>
                                 <option value="Gennaio">Gennaio</option>
                                 <option value="Febbraio">Febbraio</option>
@@ -69,8 +73,8 @@
                             </select>
                         </td>
                         <td style="width: 33%; text-align: left;">
-                            <label style="margin-right: 5px;">Anno:</label>
-                            <input type="text" name="anno" maxlength="4" style="width: 80px; margin: 0;">
+                            <label style="margin-right: 5px;" >Anno:</label>
+                            <input type="text" name="anno" maxlength="4" style="width: 80px; margin: 0;" required>
                         </td>
                     </tr>
                     <tr>
@@ -95,19 +99,28 @@
                     <td colspan='3' style="text-align: left;">E-mail:</td>
                     </tr>
                     <tr>
-                        <td colspan='3' style="text-align: left;"><input type="email" name="email" size="30" maxlength="30"></td>
+                        <td colspan='3' style="text-align: left;">
+                            <input type="email" name="email" size="30" maxlength="30" required>
+                        </td>
                     </tr>
                     <tr style="height: 60px; vertical-align: bottom;">
                         <td colspan='3' style="text-align: left;">Password:</td>
                     </tr>
                     <tr>
-                        <td colspan='3' style="text-align: left;"><input type="text" name="password" size="30" maxlength="30"></td>
+                        <td colspan='3' style="text-align: left;">
+                            <input type="text" name="password" id="psw" size="30" maxlength="30" required>
+                        </td>
                     </tr>
                     <tr style="height: 60px; vertical-align: bottom;">
                         <td colspan='3' style="text-align: left;">Conferma:</td>
                     </tr>
                     <tr>
-                        <td colspan='3' style="text-align: left;"><input type="text" name="conferma" size="30" maxlength="30"></td>
+                        <td colspan='3' style="text-align: left;">
+                            <input type="text" name="conferma" id="cpsw" size="30" maxlength="30" required>
+                            <br>
+                            <span id="epsw" style="color: red;"></span>
+                            <br>
+                        </td>
                     </tr>
                     <tr>
                         <td align="left" colspan="2" style="font-size: small;">
@@ -122,7 +135,7 @@
                     </tr>
                     <tr>
                         <td align="left">
-                            <select name="paese" style="width: 70%;">
+                            <select name="paese" style="width: 95%;">
                                 <option value="italia">Italia</option>
                                 <option value="francia">Francia</option>
                                 <option value="germania">Germania</option>
@@ -130,12 +143,12 @@
                             </select>
                         </td>
                         <td align="left" style="text-align: left;">
-                            <input type="text" name="n_telefono" placeholder="Inserisci il numero di telefono" size="22">
+                            <input type="text" name="n_telefono" id="n_telefono" pattern="^\+?[0-9\s()-]{6,20}$" size="22" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button type="submit" style="margin-top: 5%;"> REGISTRATI </button>
+                            <button type="submit" id="registrati" style="margin-top: 5%;"> REGISTRATI </button>
                         </td>
                     </tr>
                 </table>
@@ -162,8 +175,31 @@
             // Applica la rotazione a ciascuna immagine utilizzando CSS
             immagined.style.transform = 'rotate(' + rotationAngle + 'deg)';
             immagines.style.transform = 'rotate(' + rotationAngle + 'deg)';
-        });
-    
+        
+
+             //Conferma Password
+        var password = document.getElementById("psw");
+        var c_password = document.getElementById("cpsw");
+        var password_e = document.getElementById("epsw");
+        var registrati = document.getElementById("registrati");
+
+        function validatePassword(){
+            if (password.value != c_password.value){
+                password_e.innerHTML = "Le Password non corrispondono";
+                registrati.disabled = true;
+            return false;
+            }
+            else{
+                password_e.innerHTML = "";
+                registrati.disabled = false;
+                return true;
+            }
+        }
+        c_password.onkeyup = validatePassword;
+
+
+            
+    });
     
         </script>
     

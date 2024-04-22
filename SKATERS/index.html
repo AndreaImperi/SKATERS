@@ -11,10 +11,10 @@
     <div class="fixed-bar">
         <button class="btn btn-outline-secondary btn-lg">LOGO</button>
         <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
-            <button class="btn btn-outline-secondary" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
-            <button class="btn btn-outline-secondary" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
-            <button class="btn btn-outline-secondary" style="margin-right: 5px;" id="Bshop">SHOP</button>
-            <button class="btn btn-outline-secondary" style="margin-right: 5px;"  id="Baccedi">ACCEDI</button>
+            <button class="btn btn-outline-light" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
+            <button class="btn btn-outline-light" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
+            <button class="btn btn-outline-light" style="margin-right: 5px;" id="Bshop">SHOP</button>
+            <button class="btn btn-outline-light" style="margin-right: 5px;"  id="Baccedi">ACCEDI</button>
         </div>
     </div>
     <div class="grid">
@@ -28,12 +28,21 @@
                 <div class="carousel-inner" >
                     <div class="carousel-item active">
                         <img src="immagini/Carosello1.jpg" class="d-block w-100" alt="..." style="max-height: 100%;" >
+                        <div class="caption">
+                            <h5>IMPARA I TUOI PRIMI TRICK</h5>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="immagini/Carosello2.jpg" class="d-block w-100" alt="..." style="max-height: 100%;" >
+                        <div class="caption">
+                            <h5>SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI</h5>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="immagini/Carosello3.jpg" class="d-block w-100" alt="..." style="max-height: 100%;"  >
+                        <div class="caption">
+                            <h5>COMPRA TUTTO IL NECESSARIO</h5>
+                        </div>
                     </div>
                 </div>
                 <button class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -70,13 +79,20 @@
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
 
-            <div style="margin-bottom: 2%; background-color: rgb(255, 255, 255); vertical-align: top; height: 100px; z-index: 2; position: relative;">
+            <div style="margin-bottom: 1%; background-color: rgb(255, 255, 255); vertical-align: top; height: 110px; z-index: 10; position: relative;">
                 <p style="font-size: larger; font-weight: 600;">Cosa stai cercando?</p>
-                <label><input type="checkbox"> Skatepark</label>
-                <label style="margin-left: 1%;"><input type="checkbox"> Skateshop</label>
-            </div>
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1" >Skatepark</label>
 
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=155q4x6fTGhEwpfhM4LlcNZPMwiq_G2w&ehbc=2E312F" width="90%" height="480" style="margin-top: -95px; z-index: 1; position: relative;"></iframe>
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Skateshop</label>
+                </div>
+            </div>
+            <div class="mappe" style="height: 390px; overflow: hidden;">
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tbl_kXUfzK2p4hQvXCgcGO_ineV_2ks&ehbc=2E312F" width="90%" height="490" style="margin-top: -100px; display:none; position: relative;" id="skateshop"></iframe>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c8j8WkH4jeMGuteNeM0njMlEE4byEwM&ehbc=2E312F" width="90%" height="490" style="margin-top: -100px; position: relative;" id="skatepark"></iframe>
+            </div>
         </div>
         <div class="c4" >
             <h2 style="font-weight: 700; text-align: left; margin-left: 5%;">
@@ -89,7 +105,7 @@
             </div>
             <div class="sfondo-trasparente-shop" id="sfondo" style="z-index: 1;"></div>
         </div>
-        <div class="c5" style="display: flex; align-items: center; justify-content: space-between; background-color: #333; height: 100px;overflow: hidden;">
+        <div class="c5" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">
             <div align="left">
                 
                 <input type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
