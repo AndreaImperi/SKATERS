@@ -8,7 +8,31 @@
         <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="fixed-bar" style="margin-top: 0%;">
+        <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
+            <button>LOGO</button> 
+        </div>
+        <h2 style="color: black; font-weight: 700;">Shop <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
+            <button id="Bcarrello" style="position: fixed; z-index: 9999; margin-right: 5px; font-weight: 300; font-size: x-large;" >carrello</button>
+        </div></h2>
+        <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+    </div>
+
     <div class="grid">
+        <div class="c1">
+            <div style="margin-top: 10%;">
+                <input type="search" placeholder="Cerca">
+                <select name="categorie" size="1" cols="4">
+                    <option value="nessuna">Categoria</option>
+                    <option value="tutorial">Gennaio</option>
+                    <option value="competizioni">Febbraio</option>
+                    <option value="video-part">Marzo</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 5%;text-align: left;">
+                <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;">
+            </div>
+        </div>
         <div class="articolo">
             <div class="immagine" align="center">
                 <img class="default" src="../immagini/scarpa1.webp">
@@ -164,59 +188,57 @@
             <div class="prezzo">€99.99</div>
         </div>
 
+        <!-- Ripeti il div .articolo per ogni articolo -->
 
     </div>
-    <!-- Ripeti il div .articolo per ogni articolo -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var immagini = document.querySelectorAll('.immagine');
-            immagini.forEach(function(immagine) {
-            var pallinoSinistra = immagine.querySelector('.pallini .sinistra');
-            var pallinoDestra = immagine.querySelector('.pallini .destra');
-            immagine.addEventListener('mousemove', function(event) {
-                var x = event.clientX - immagine.getBoundingClientRect().left;
-                if(x < immagine.offsetWidth / 2){
-                    immagine.querySelector('.default').style.display = 'none';
-                    immagine.querySelector('.destra').style.display = 'none';
-                    immagine.querySelector('.sinistra').style.display = 'block';
-                    pallinoSinistra.classList.add('active');
-                    pallinoDestra.classList.remove('active');
-                } else {
-                    immagine.querySelector('.default').style.display = 'none';
-                    immagine.querySelector('.sinistra').style.display = 'none';
-                    immagine.querySelector('.destra').style.display = 'block';
-                    pallinoDestra.classList.add('active');
-                    pallinoSinistra.classList.remove('active');
-                }
-            });
-            immagine.addEventListener('mouseleave', function(){
-                var elemento = document.getElementById("select");
-            
-                console.log(elemento.value);
-                immagine.querySelector('.sinistra').style.display = 'none';
-                immagine.querySelector('.destra').style.display = 'none';
-                immagine.querySelector('.default').style.display = 'block';
-                pallinoSinistra.classList.remove('active');
-                pallinoDestra.classList.remove('active');
-                var newbarra = immagine.querySelector('.barra');
-                newbarra.classList.remove('clicked');
-        
-                // newbarra.querySelector('.Taglia').display = 'none'; 
-            });
-            });
 
-            var barre = document.querySelectorAll('.barra');
-            for (var i = 0; i < barre.length; i++) {
-                barre[i].querySelector('.Bacquista').addEventListener('click', function() {
-                    // this.nextElementSibling.style.display = 'inline-block';
-                    this.parentElement.classList.add('clicked');
-                }
-            );
+    <div class="carrelloSopra" id="carrelloSopra">
+        <div class="carrelloDentro" id="carrelloDentro">
+            <!-- Contenuto del carrello -->
+            <h2 class="titolo_carrello" style="align-self: flex-start; margin-bottom: 5%;">Il Tuo Carrello</h2>
+            
+            <div class="articoloCarrello">
+                <img src="../immagini/scarpa1.webp">
                 
-            }
-            
+                <div class="dettagli" style="display: flex; flex-direction: column;">
+                    <div class="nome">Nome dell'articolo</div>
+                    <div class="taglia">Taglia: M</div>
+                    <div class="prezzo">€99.99</div>
+                    <button class="Brimuovi-articolo">.</button>
+                </div>
+            </div>
 
-        });
-    </script>
+            <div class="articoloCarrello">
+                <img src="../immagini/scarpa1.webp">
+                
+                <div class="dettagli" style="display: flex; flex-direction: column;">
+                    <div class="nome">Nome dell'articolo</div>
+                    <div class="taglia">Taglia: M</div>
+                    <div class="prezzo">€99.99</div>
+                    <button class="Brimuovi-articolo">.</button>
+                </div>
+            </div>
+
+            <div class="articoloCarrello">
+                <img src="../immagini/scarpa1.webp">
+                
+                <div class="dettagli" style="display: flex; flex-direction: column;">
+                    <div class="nome">Nome dell'articolo</div>
+                    <div class="taglia">Taglia: M</div>
+                    <div class="prezzo">€99.99</div>
+                    <button class="Brimuovi-articolo">.</button>
+                </div>
+            </div>
+
+            <div id="termine_carrello" style="align-self: flex-start;">
+                <p>Totale: <span id="totale">0</span> Euro</p>
+                <button class="Bsvuota_carrello">Svuota Carrello</button>
+                <button id="Bchiudi-carrello">Chiudi Carrello</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
 </body>
 </html>

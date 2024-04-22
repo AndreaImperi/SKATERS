@@ -21,12 +21,17 @@ document.getElementById("Bmappe").addEventListener("click", function() {
 });
 
 document.getElementById("Baccedi").addEventListener("click", function() {
-    window.location.href = "accesso/accesso.html";
+    window.location.href = "accesso/accesso.php";
 });
 
 document.getElementById("Bshop").addEventListener("click", function() {
     window.location.href = "shop/shop2.html";
 });
+
+document.getElementById("Bshop2").addEventListener("click", function() {
+    window.location.href = "shop/shop2.html";
+});
+
 document.getElementById("sfondo").addEventListener("mouseenter", function(){
     var bottone = document.getElementById("Bshop");
     

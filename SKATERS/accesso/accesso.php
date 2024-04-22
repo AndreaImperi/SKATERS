@@ -1,33 +1,71 @@
+<!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+        <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>RECUPERO PASSWORD</title>
+    </head>
+    <body style="overflow: hidden;">
         <?php
-
-        print_r($_SERVER["REQUEST_METHOD"]);
-        print_r($_POST);
-       
-
-        $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
-
-        if (!$connessione){
-            die("Connessione al database fallita: " . pg_last_error());
-        } else {
-            $email = $_POST["username"];
-            $q1 = "select * from utente where email = $1";
-            $result=pg_query_params($connessione, $q1, array($email));
-            if ($tuple=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                $pswd = $_POST['password'];
-                $q2= "select * from utente where email = $1 and pswd = $2";
-                $data=pg_query_params($connessione, $q2, array($email, $pswd));
-                if ($data) {
-                    echo "<h1> Login eseguito. <a href=../index.html> Clicca qui per andare alla home </a> <br/></h1>";
-                }
-            } else {
-                echo "<h1> Spiacente, l'indirizzo email non è registrato</h1>
-                    se vuoi, <a href=../registrazione/registrazione.html> clicca qui per registrarti </a>, altrimenti prova con un'altra email";
-            }
-        }
+            $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
         ?>
-    </body>
+
+        <div class="fixed-bar">
+            <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
+                <button>LOGO</button> 
+            </div>
+            <h2 style="color: black; font-weight: 700;">Accedi</h2>
+            <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+        </div>
         
+        <div class="grid">
+            <div class="c1" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <h3 style="margin-top: 2%;">SKATERS</h3>
+                <H1 style="font-size: small;margin-bottom:0%;">Entra con le tue credenziali</H1>
+                <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
+                <form name="formAcc" action="" method="POST">
+                    <label for="email" style="color: white;">E-mail:</label><br>
+                    <input type="text" id="email" name="email"><br>
+                    <label for="password" style="color: white;">Password:</label><br>
+                    <input type="password" id="password" name="password">
+                    <input type="submit" value="Submit">
+                    </form>
+                <br>
+
+                <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        if ($connessione){
+                            $email = $_POST["email"];
+                            $q1 = "select * from utente where email = $1";
+                            $result=pg_query_params($connessione, $q1, array($email));
+                            if ($tuple=pg_fetch_array($result, null, PGSQL_ASSOC)) {
+                                $pswd = $_POST['password'];
+                                $q2= "select * from utente where email = $1 and pswd = $2";
+                                $data=pg_query_params($connessione, $q2, array($email, $pswd));
+                                if ($data) {
+                                    echo "<h1 style=\"font-size: small;display: inline-block; font-size: small\"> Login eseguito. <a href=../index.html> vai alla home </a> <br/></h1>";
+                                }
+                            } else {
+                                echo "<h1 style=\"font-size: small; color: red;display: inline-block; font-size: small\">!l'indirizzo email non risulta registrato!</h1>";
+                            }
+                        }
+                    }
+                ?>
+
+                <a href="../Hpassword/Hpassword.html">Hai dimenticato la password?</a>
+                <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
+            <div style="text-align: center;margin-bottom: 4%;">
+                <h1 style="font-size: small; color: rgb(255, 255, 255);display: inline-block">Non hai un account?</h1>
+                <a href="../registrazione/registrazione.php" id="Bregistrazione" style="margin-top: 0%;display: inline-block;font-size: small">REGISTRATI</a>
+            </div>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
 </html>
+
+
+

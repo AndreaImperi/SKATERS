@@ -1,8 +1,36 @@
+.fixed-bar {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    height: 75px;
+    z-index: 9999;
+}
+
+.linea {
+    border-width: 3px;
+    margin-bottom: 30px;
+    opacity: 1;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     gap: 20px;
+    grid-row-gap: 50px;
     width: 100%;
+    border: solid 0px;
+    text-align: center;
+}
+
+.c1 {
+    grid-column: 1 / -1;
+    width: 90%;
+    margin: auto;
+    
 }
 
 .articolo {
@@ -97,5 +125,52 @@
     margin-left: 18%;
 }
 
+  
+/* Stile per l'overlay del carrello */
+.carrelloSopra {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+  
+/* Stile per il contenuto del carrello */
+.carrelloDentro {
+    position: absolute;
+    width: 30%;
+    height: 85%;
+    top: 11%;
+    right: 1%;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: auto;
+}
+  
+.articoloCarrello {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.articoloCarrello img {
+    align-self: flex-start;
+    width: 50%;
+    height: auto;
+    margin-right: 20px; /* Spazio a destra dell'immagine */
+}
 
+.Brimuovi-articolo {
+    width: 50px; /* Dimensioni del bottone */
+    height: 50px;
+    border: none;
+    background-color: rgb(29, 77, 136); /* Colore di sfondo del bottone */
+    font-size: 16px;
+}

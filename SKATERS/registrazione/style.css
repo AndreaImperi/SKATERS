@@ -71,7 +71,6 @@ table td {
     top: 40%;
     left: 0;
     margin-left: 100px;
-    transition: transform 0.5s ease;
   }
 
   .immaginedx {
@@ -81,7 +80,6 @@ table td {
     top: 40%;
     right: 0;
     margin-right: 100px;
-    transition: transform 0.5s ease;
 }
 
 
