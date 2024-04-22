@@ -226,4 +226,13 @@
                     password_e.innerHTML = "";
                     registrati.disabled = false;
                     return true;
+                }
+            }
+            c_password.onkeyup = validatePassword;
+
+        });
+
+        </script>
+</body>
+</html>
        
