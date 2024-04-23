@@ -14,7 +14,7 @@
 }
 
 .c1 {
-    background-color: rgb(136, 136, 136);
+    background-color: #181818;
     border-radius: 10px;
     grid-area: i;   
     margin-top: 4%;
@@ -72,4 +72,18 @@ input[type="text"], input[type="password"], input[type=email] {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+.skate{
+    width: 30%;
+    position: fixed;
+    right:0;
+    bottom:0;
+}
+.skateF{
+    width: 30%;
+    position: fixed;
+    left:0;
+    bottom:0;
+    transform: scaleX(-1);
 }

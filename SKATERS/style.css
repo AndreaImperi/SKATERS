@@ -72,7 +72,7 @@
     left: 0;
     width: 100%;
     height: 75%;
-    background-color: rgba(90, 89, 89, 0.5); /* Velo semi-trasparente */
+    background-color: rgba(0, 0, 0, 0.5); /* Velo semi-trasparente */
 }
 
 .c5{
@@ -141,8 +141,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    background-color: rgba(90, 89, 89, 0.5); /* Velo semi-trasparente */
+    background-color: rgba(26, 25, 25, 0.5); /* Velo semi-trasparente */
     color: #f1f0f6;
     padding: 20px;
-    width: 100%;
+    width: 500px;
+    
+    border-radius: 10px;
 }
+

@@ -23,8 +23,8 @@
         
         <div class="grid">
             <div class="c1" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <h3 style="margin-top: 2%;">SKATERS</h3>
-                <H1 style="font-size: small;margin-bottom:0%;">Entra con le tue credenziali</H1>
+                <h3 style="margin-top: 2%; color:white">SKATERS</h3>
+                <H1 style="font-size: small;margin-bottom:0%; color:white">Entra con le tue credenziali</H1>
                 <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
                 <form name="formAcc" action="" method="POST">
                     <label for="email" style="color: white;">E-mail:</label><br>
@@ -64,6 +64,8 @@
         </div>
         
         <script src="script.js"></script>
+        <img src="../immagini/accesso.png" class="skate">
+        <img src="../immagini/accesso.png" class="skateF">
     </body>
 </html>
 

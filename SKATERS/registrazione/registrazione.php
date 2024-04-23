@@ -112,7 +112,7 @@
                     </tr>
                     <tr>
                         <td colspan='3' style="text-align: left;">
-                            <input type="text" name="password" id="psw" size="30" maxlength="30" required>
+                            <input type="password" name="password" id="psw" size="30" maxlength="30" required>
                         </td>
                     </tr>
                     <tr style="height: 60px; vertical-align: bottom;">
@@ -120,7 +120,7 @@
                     </tr>
                     <tr>
                         <td colspan='3' style="text-align: left;">
-                            <input type="text" name="conferma" id="cpsw" size="30" maxlength="30" required>
+                            <input type="password" name="conferma" id="cpsw" size="30" maxlength="30" required>
                             <br>
                             <span id="epsw" style="color: red;"></span>
                             <br>
@@ -129,7 +129,7 @@
                     <tr>
                         <td align="left" colspan="2" style="font-size: small;">
                             <label style="margin-right: 5px;">Mostra password:</label>
-                            <input type="checkbox" name="mostrap">
+                            <input type="checkbox" name="mostrap" id="mostra">
                         </td>
                     </tr>
                     <tr style="height: 120px;">
@@ -208,7 +208,7 @@
             // Applica la rotazione a ciascuna immagine utilizzando CSS
             immagined.style.transform = 'rotate(' + rotationAngle + 'deg)';
             immagines.style.transform = 'rotate(' + rotationAngle + 'deg)';
-        
+        });
 
              //Conferma Password
             var password = document.getElementById("psw");
@@ -230,8 +230,24 @@
             }
             c_password.onkeyup = validatePassword;
 
-        });
+                document.addEventListener('DOMContentLoaded', function () {
+                var passwordV = document.getElementById('psw');
+                var passwordN = document.getElementById('cpsw');
+                var mostra =document.getElementById('mostra');
+                
+                mostra.addEventListener('change', function(){
+                    if (mostra.checked){
+                        passwordV.type = 'text';
+                        passwordN.type = 'text';
+                    }else{
+                        passwordV.type = 'password';
+                        passwordN.type = 'password';
+                    }
+                })
 
+
+            });
+          
         </script>
 </body>
 </html>
