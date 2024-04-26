@@ -46,13 +46,19 @@
                                 $q2= "select * from utente where email = $1 and pswd = $2";
                                 $data=pg_query_params($connessione, $q2, array($email, $pswd));
                                 if ($data) {
+                                    session_start();
+
                                     echo "<h1 style=\"font-size: small;display: inline-block; font-size: small\"> Login eseguito. <a href=../index.html> vai alla home </a> <br/></h1>";
+
+                                    $_SESSION['email'] = $email;
+                                    
+
                                 }
                             } else {
                                 echo "<h1 style=\"font-size: small; color: red;display: inline-block; font-size: small\">!l'indirizzo email non risulta registrato!</h1>";
                             }
                         }
-                    }
+                    } 
                 ?>
 
                 <a href="../Hpassword/Hpassword.html">Hai dimenticato la password?</a>

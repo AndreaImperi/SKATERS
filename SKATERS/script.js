@@ -25,11 +25,11 @@ document.getElementById("Baccedi").addEventListener("click", function() {
 });
 
 document.getElementById("Bshop").addEventListener("click", function() {
-    window.location.href = "shop/shop2.html";
+    window.location.href = "shop/shop.php";
 });
 
 document.getElementById("Bshop2").addEventListener("click", function() {
-    window.location.href = "shop/shop2.html";
+    window.location.href = "shop/shop.php";
 });
 
 document.getElementById("sfondo").addEventListener("mouseenter", function(){

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+        <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fixed-bar" style="margin-top: 0%;">
+        <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
+            <button>LOGO</button> 
+        </div>
+        <h2 style="color: black; font-weight: 700;">Shop <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
+            <button id="Bcarrello" style="position: fixed; z-index: 9999; margin-right: 5px; font-weight: 300; font-size: x-large;" >carrello</button>
+        </div></h2>
+        <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+    </div>
+
+    <div class="grid">
+        <div class="c1">
+            <div style="margin-top: 10%;">
+                <input type="search" placeholder="Cerca">
+                <select name="categorie" size="1" cols="4">
+                    <option value="nessuna">Categoria</option>
+                    <option value="tutorial">Gennaio</option>
+                    <option value="competizioni">Febbraio</option>
+                    <option value="video-part">Marzo</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 5%;text-align: left;">
+                <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;">
+            </div>
+        </div>
+        <!-- <div class="articolo">
+            <div class="messaggio_login">!non hai effettuato il login!</div>
+            <div class="immagine" align="center">
+                <img class="default" src="../immagini/scarpa1.webp">
+                <img class="sinistra" src="../immagini/scarpa2.webp">
+                <img class="destra" src="../immagini/scarpa3.webp">
+                
+                <div class="barra">
+                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
+                    <label>Taglia:</label>
+                    <select class="Taglia" id="select" style="margin-left: 1%;">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="nessuna" selected></option>
+                    </select> 
+                    
+                </div>
+                <div class="pallini">
+                    <div class="sinistra"></div>
+                    <div class="destra"></div>
+                </div>
+            </div>
+                <div class="marca" style>Marca</div>
+                <div class="nome">Nome dell'articolo</div>
+                <div><span>€</span><span class="prezzo">99.99</span></div> 
+        </div> -->
+
+        <?php
+        session_start();
+
+        $nome_utente = $_SESSION['email'];
+        // echo "Benvenuto, $nome_utente!";
+
+        // Connessione al database
+        $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("Errore di connessione al database: " . pg_last_error());
+
+        // Query per selezionare tutti gli articoli dalla tabella articolo_shop
+        $query = "SELECT * FROM articolo_shop";
+        $result = pg_query($connessione, $query);
+
+        // Verifica se ci sono risultati
+        if ($result) {
+            // Itera su ogni riga del risultato
+            while ($row = pg_fetch_assoc($result)) {
+                // Stampa l'HTML per ogni articolo
+                echo '<div class="articolo">';
+                echo '<div class="messaggio_login">!non hai effettuato il login!</div>';
+                echo '<div class="immagine" align="center">';
+                echo '<img class="default" src="' . $row['img_d'] . '">';
+                echo '<img class="sinistra" src="' . $row['img_sx'] . '">';
+                echo '<img class="destra" src="' . $row['img_dx'] . '">';
+                echo '<div class="barra">';
+                echo '<button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>';
+                echo '<label>Taglia:</label>';
+
+                echo '<select class="Taglia" style="margin-left: 1%;">';
+                echo '<option value="S">S</option>';
+                echo '<option value="M">M</option>';
+                echo '<option value="L">L</option>';
+
+                echo '<option value="nessuna" selected></option>';
+                echo '</select>'; 
+                echo '</div>';
+                echo '<div class="pallini">';
+                echo '<div class="sinistra"></div>';
+                echo '<div class="destra"></div>';
+                echo '</div>';
+                echo '</div>';
+                echo '<div class="marca">' . $row['marca'] . '</div>';
+                echo '<div class="nome">' . $row['nome'] . '</div>';
+                echo '<div><span>€</span><span class="prezzo">' . $row['prezzo'] . '</span></div>';
+                echo '</div>';
+            }
+        } else {
+            echo "Nessun articolo trovato.";
+        }
+
+        ?>
+
+
+    </div>
+
+    <div class="carrelloSopra" id="carrelloSopra">
+        <div class="carrelloDentro" id="carrelloDentro">
+            <!-- Contenuto del carrello -->
+            <h2 class="titolo_carrello" style="align-self: flex-start; margin-bottom: 5%;">Il Tuo Carrello</h2>
+            
+            <!-- <div class="articoloCarrello">
+                <img src="../immagini/scarpa1.webp">
+                
+                <div class="dettagli" style="display: flex; flex-direction: column;">
+                    <div class="nome">Nome dell'articolo</div>
+                    <div class="taglia">Taglia: M</div>
+                    <div><span>€</span><span class="prezzo">99.99</span></div>
+                    <button class="Brimuovi-articolo">.</button>
+                </div>
+            </div> -->
+
+            <?php
+
+            // Query per selezionare tutti gli articoli dalla tabella articolo_shop
+            $query = "SELECT * FROM articolo_carrello WHERE email = $1";
+            $result = pg_query_params($connessione, $query, array($nome_utente));
+
+            // Verifica se ci sono risultati
+            if ($result) {
+                // Itera su ogni riga del risultato
+                while ($row = pg_fetch_assoc($result)) {
+                    // Stampa l'HTML per ogni articolo
+                    echo '<div class="articoloCarrello">';
+                    echo '<img src="' . $row['img'] . '">';
+                        
+                    echo '<div class="dettagli" style="display: flex; flex-direction: column;">';
+                    echo '<div class="nome">' . $row['nome'] . '</div>';
+                    echo '<div class="taglia">Taglia: ' . $row['taglia'] . '</div>';
+                    echo '<div><span>€</span><span class="prezzo">' . $row['prezzo'] . '</span></div>';
+                    echo '<button class="Brimuovi-articolo">.</button>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo "il carrello è vuoto";
+            }
+
+            ?>
+
+            <div id="termine_carrello" style="align-self: flex-start;">
+            <?php
+                $query = "SELECT SUM(prezzo::numeric) as totale_prezzo FROM articolo_carrello WHERE email=$1";
+                $result = pg_query_params($connessione, $query, array($nome_utente));
+                if ($result) {
+                    $row = pg_fetch_assoc($result);
+                    if ($row['totale_prezzo']!='') {
+                        echo '<p>Totale: <span id="totale">' . $row['totale_prezzo'] . '</span> Euro</p>';
+                    } else {
+                        echo '<p>Totale: <span id="totale">0</span> Euro</p>';
+                    }
+                }
+            ?>
+                <button class="Bsvuota_carrello">Svuota Carrello</button>
+                <button id="Bchiudi-carrello">Chiudi Carrello</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
