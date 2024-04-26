@@ -6,9 +6,15 @@
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
         <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="style.css">
-        <title>RECUPERO PASSWORD</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <title>ACCESSO</title>
     </head>
-    <body style="overflow: hidden;">
+    <body class="quicksand" style="overflow: hidden;">
         <?php
             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
         ?>
@@ -23,13 +29,14 @@
         
         <div class="grid">
             <div class="c1" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <h3 style="margin-top: 2%; color:white">SKATERS</h3>
-                <H1 style="font-size: small;margin-bottom:0%; color:white">Entra con le tue credenziali</H1>
+            <div class="overlay" >
+            <h3 style="margin-top: 2%; color:white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">SKATERS</h3>
+                <H1 style="font-size: small;margin-bottom:0%; color:white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">Entra con le tue credenziali</H1>
                 <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
                 <form name="formAcc" action="" method="POST">
-                    <label for="email" style="color: white;">E-mail:</label><br>
+                    <label for="email" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">E-mail:</label><br>
                     <input type="text" id="email" name="email"><br>
-                    <label for="password" style="color: white;">Password:</label><br>
+                    <label for="password" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">Password:</label><br>
                     <input type="password" id="password" name="password">
                     <input type="submit" value="Submit">
                     </form>
@@ -46,32 +53,28 @@
                                 $q2= "select * from utente where email = $1 and pswd = $2";
                                 $data=pg_query_params($connessione, $q2, array($email, $pswd));
                                 if ($data) {
-                                    session_start();
-
                                     echo "<h1 style=\"font-size: small;display: inline-block; font-size: small\"> Login eseguito. <a href=../index.html> vai alla home </a> <br/></h1>";
-
-                                    $_SESSION['email'] = $email;
-                                    
-
                                 }
                             } else {
                                 echo "<h1 style=\"font-size: small; color: red;display: inline-block; font-size: small\">!l'indirizzo email non risulta registrato!</h1>";
                             }
                         }
-                    } 
+                    }
                 ?>
 
-                <a href="../Hpassword/Hpassword.html">Hai dimenticato la password?</a>
+                <a href="../Hpassword/Hpassword.html" style="color: #ffffff">Hai dimenticato la password?</a>
                 <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
             <div style="text-align: center;margin-bottom: 4%;">
                 <h1 style="font-size: small; color: rgb(255, 255, 255);display: inline-block">Non hai un account?</h1>
-                <a href="../registrazione/registrazione.php" id="Bregistrazione" style="margin-top: 0%;display: inline-block;font-size: small">REGISTRATI</a>
+                <a href="../registrazione/registrazione.php" id="Bregistrazione" style="margin-top: 0%;display: inline-block;font-size: small; color: #ffffff">REGISTRATI</a>
             </div>
+            </div>
+                
         </div>
         
         <script src="script.js"></script>
-        <img src="../immagini/accesso.png" class="skate">
-        <img src="../immagini/accesso.png" class="skateF">
+       
+        <img src="../immagini/accesso1.png" class="basso" alt="">
     </body>
 </html>
 

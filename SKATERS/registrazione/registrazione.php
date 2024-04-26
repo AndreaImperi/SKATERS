@@ -6,8 +6,14 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="quicksand">
     <?php
         $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
     ?>
@@ -19,7 +25,8 @@
         <h2 style="color: black; font-weight: 700;">Registrati</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
-    <img src="../immagini/ruota.webp" class="immaginesx" >
+    <img src="../immagini/ruota.png" class="immaginesxU" >
+    <img src="../immagini/ruota.png" class="immaginesxD" >
 
     <div class="grid">
         <div class="c1" style="overflow: hidden; text-align: center;">
@@ -46,7 +53,7 @@
                     <!-- <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 80%; margin-left: 25% ;"> -->
                     <tr style="height: 120px;">
                         <td colspan="3">
-                                <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
+                                <hr class="linea" style="border-color: #181818; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
                         </td>
                     </tr>
                     <tr style="height: 20px; margin-bottom: 10%;">
@@ -96,7 +103,7 @@
                     </tr>
                     <tr style="height: 120px;">
                         <td colspan="3">
-                                <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
+                                <hr class="linea" style="border-color: #181818; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
                         </td>
                     </tr>
                     <tr>
@@ -134,7 +141,7 @@
                     </tr>
                     <tr style="height: 120px;">
                         <td colspan="3">
-                                <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
+                                <hr class="linea" style="border-color: #181818; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
                         </td>
                     </tr>
                     <tr>
@@ -189,7 +196,12 @@
             </form>
         </div>
 
-        <img src="../immagini/ruota.webp" class="immaginedx"  >
+        <img src="../immagini/ruota.png" class="immaginedxU"  >
+        <img src="../immagini/ruota.png" class="immaginedxD"  >
+
+
+        <img src="../immagini/skatesx1.jpg" class="angolosx" alt="">
+        <img src="../immagini/skatedx1.jpg" class="angolodx" alt="">
 
         
         <script>
@@ -202,12 +214,18 @@
             var rotationAngle = scrollPosition * 0.5; // Modifica il fattore 0.5 per regolare la velocità di rotazione
         
             // Seleziona tutte le immagini con le classi 'immaginedx' e 'immaginesx'
-            var immagined = document.querySelector('.immaginedx');
-            var immagines = document.querySelector('.immaginesx');
+           var immagined = document.querySelector('.immaginedxU');
+            var immagineds = document.querySelector('.immaginedxD');
+            var immaginesu = document.querySelector('.immaginesxU');
+            var immaginesd = document.querySelector('.immaginesxD');
+
         
             // Applica la rotazione a ciascuna immagine utilizzando CSS
             immagined.style.transform = 'rotate(' + rotationAngle + 'deg)';
-            immagines.style.transform = 'rotate(' + rotationAngle + 'deg)';
+            immagineds.style.transform = 'rotate(' + rotationAngle + 'deg)';
+            immaginesu.style.transform = 'rotate(' + rotationAngle + 'deg)';
+            immaginesd.style.transform = 'rotate(' + rotationAngle + 'deg)';
+
         });
 
              //Conferma Password

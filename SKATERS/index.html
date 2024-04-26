@@ -6,15 +6,21 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
     <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="fixed-bar">
         <button class="btn btn-outline-secondary btn-lg">LOGO</button>
         <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
-            <button class="btn btn-outline-light" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
-            <button class="btn btn-outline-light" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
-            <button class="btn btn-outline-light" style="margin-right: 5px;" id="Bshop">SHOP</button>
-            <button class="btn btn-outline-light" style="margin-right: 5px;"  id="Baccedi">ACCEDI</button>
+            <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
+            <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
+            <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bshop">SHOP</button>
+            <button class="btn btn-outline-light quicksand" style="margin-right: 5px;"  id="Baccedi">ACCEDI</button>
         </div>
     </div>
     <div class="grid">
@@ -28,20 +34,20 @@
                 <div class="carousel-inner" >
                     <div class="carousel-item active">
                         <img src="immagini/Carosello1.jpg" class="d-block w-100" alt="..." style="max-height: 100%;" >
-                        <div class="caption">
-                            <h5>IMPARA I TUOI PRIMI TRICK</h5>
+                        <div class="caption1">
+                            <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">IMPARA I TUOI PRIMI TRICK</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="immagini/Carosello2.jpg" class="d-block w-100" alt="..." style="max-height: 100%;" >
-                        <div class="caption">
-                            <h5>SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI</h5>
+                        <div class="caption2">
+                            <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="immagini/Carosello3.jpg" class="d-block w-100" alt="..." style="max-height: 100%;"  >
-                        <div class="caption">
-                            <h5>COMPRA TUTTO IL NECESSARIO</h5>
+                        <div class="caption3">
+                            <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">COMPRA TUTTO IL NECESSARIO</h5>
                         </div>
                     </div>
                 </div>
@@ -56,43 +62,43 @@
         </div>
 
         <div class="c2">
-            <h2 id="Tvideo" style="font-weight: 700; text-align: left;">
+            <h2 id="Tvideo" class="quicksand" style=" text-align: left;">
                 Videos
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=9nWMi9Cbgmw" target="_blank">
                 <img class="copertina" src="immagini/Ollie.jpg">
-                <h2 class="titolo" id="black">Come fare l'Ollie?</h2>
+                <h2 class="titolo quicksand" id="black">Come fare l'Ollie?</h2>
             </a>
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=aM6Zd4Y25xE" target="_blank">
                 <img class="copertina" src="immagini/frontside.jpg">
-                <h2 class="titolo" id="black">Come fare il Frontside Smith?</h2>
+                <h2 class="titolo quicksand" id="black">Come fare il Frontside Smith?</h2>
             </a>
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=aM6Zd4Y25xE" target="_blank">
                 <img class="copertina" src="immagini/frontside.jpg">
-                <h2 class="titolo" id="black">Come fare il Frontside Smith? 2</h2>
+                <h2 class="titolo quicksand" id="black">Come fare il Frontside Smith? 2</h2>
             </a>
         </div>
         <div class="c3" id="cellaMappe">
-            <h2 style="font-weight: 700; text-align: left; margin-top: 10px;">
+            <h2 class="quicksand" style=" text-align: left; margin-top: 10px;">
                 Mappe
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
 
             <div style="margin-bottom: 1%; background-color: rgb(255, 255, 255); vertical-align: top; height: 110px; z-index: 10; position: relative;">
-                <p style="font-size: larger; font-weight: 600;">Cosa stai cercando?</p>
+                <p class="quicksand" style="font-size: larger; font-weight: 600;">Cosa stai cercando?</p>
                 <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio1">Skatepark</label>
+                    <label class="btn btn-outline-primary quicksand" for="btnradio1">Skatepark</label>
             
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked>
-                    <label class="btn btn-outline-primary" for="btnradio2">Tutto</label>
+                    <label class="btn btn-outline-primary quicksand" for="btnradio2">Tutto</label>
             
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btnradio3">Skateshop</label>
+                    <label class="btn btn-outline-primary quicksand" for="btnradio3">Skateshop</label>
                 </div>
             </div>
-            <div class="mappe" style="height: 390px; overflow: hidden;">
+            <div class="mappe" style="height: 390px; overflow: hidden; text-align: center;">
                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tbl_kXUfzK2p4hQvXCgcGO_ineV_2ks&ehbc=2E312F" width="90%" height="490" style="margin-top: -100px; display:none; position: relative;" id="skateshop"></iframe>
                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c8j8WkH4jeMGuteNeM0njMlEE4byEwM&ehbc=2E312F" width="90%" height="490" style="margin-top: -100px; position: relative; display:none;" id="skatepark"></iframe>
                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=155q4x6fTGhEwpfhM4LlcNZPMwiq_G2w&ehbc=2E312F" width="90%" height="490"  style="margin-top: -100px; position: relative; " id="tutto"></iframe>
@@ -100,21 +106,21 @@
             </div>
         </div>
         <div class="c4" >
-            <h2 style="font-weight: 700; text-align: left; margin-left: 5%;">
+            <h2  class="quicksand" style="text-align: left; margin-left: 5%;">
                 Shop
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 5px; margin-top: 1px; opacity: 1; margin-left: 5%; width: 90%;">
             <div style="display: flex; justify-content: center; align-items: center; height: 45vh; width: 100%; margin-top: 2%;">
                 <img src="immagini/shop3.jpg" style="width: 78%;">
-                <button id="Bshop2" type="button" class="btn btn-outline-light" style="position: absolute; z-index: 2;width: 100px;height: 50px;font-size:x-large;">SHOP</button>
+                <button id="Bshop2" type="button" class="btn btn-outline-light quicksand" style="position: absolute; z-index: 2;width: 100px;height: 50px;font-size:x-large;">SHOP</button>
             </div>
             <div class="sfondo-trasparente-shop" id="sfondo" style="z-index: 1;"></div>
         </div>
         <div class="c5" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">
             <div align="left">
                 
-                <input type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
-                <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+                <input class="quicksand" type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
+                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
                     CONTATTACI: skaters@gmail.com
                 </h1>
             </div>
@@ -122,8 +128,8 @@
             <button style="text-align: center;">LOGO</button>
 
             <div>
-                <h1 style="font-weight: 700; text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-                <h1 style="font-weight: 700; text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
+                <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
+                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
             </div>
         </div>
     </div>  

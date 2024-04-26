@@ -12,9 +12,22 @@
    padding-top: 60px;
     
 }
+.overlay{
+    background-color: rgba(0, 0, 0, 0.651);
+    width: 500px;
+    border-radius: 10px;
+    margin-top: 4%;
+    padding: 5%; 
+    height: 550px;
+    width: 500px;
+    margin-left: 4%;
+    margin-right: 4%;
+}
 
 .c1 {
-    background-color: #181818;
+    background-color: #181818b9;
+    background-image: url('../immagini/sfondo_accesso.jpg');
+    background-size: contain;
     border-radius: 10px;
     grid-area: i;   
     margin-top: 4%;
@@ -23,6 +36,7 @@
     width: 500px;
     margin-left: 4%;
     margin-right: 4%;
+    z-index:2;
    
 }
 .c2{
@@ -75,15 +89,38 @@ input[type="text"], input[type="password"], input[type=email] {
 }
 
 .skate{
-    width: 30%;
+    width: 350px;
     position: fixed;
     right:0;
     bottom:0;
 }
 .skateF{
-    width: 30%;
+    width: 350px;
     position: fixed;
     left:0;
     bottom:0;
+    transform: scaleX(-1);
+}
+
+.anton {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
+  }
+  
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.basso{
+    position: fixed;
+    width: 1200px;
+    top: 100px;
+    right:50px;
+    z-index:1;
     transform: scaleX(-1);
 }

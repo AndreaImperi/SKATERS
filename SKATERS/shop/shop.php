@@ -6,14 +6,20 @@
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
         <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="quicksand">
     <div class="fixed-bar" style="margin-top: 0%;">
         <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
             <button>LOGO</button> 
         </div>
-        <h2 style="color: black; font-weight: 700;">Shop <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
-            <button id="Bcarrello" style="position: fixed; z-index: 9999; margin-right: 5px; font-weight: 300; font-size: x-large;" >carrello</button>
+        <h2 style="color: black; font-weight: 700;">Shop<div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
+            <button id="Bcarrello" ></button>
         </div></h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
@@ -33,6 +39,7 @@
                 <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;">
             </div>
         </div>
+        
         <!-- <div class="articolo">
             <div class="messaggio_login">!non hai effettuato il login!</div>
             <div class="immagine" align="center">
@@ -64,7 +71,7 @@
         <?php
         session_start();
 
-        $nome_utente = $_SESSION['email'];
+        
         // echo "Benvenuto, $nome_utente!";
 
         // Connessione al database
@@ -133,35 +140,39 @@
             </div> -->
 
             <?php
+            if (isset($_SESSION['$email'])){
+                // Query per selezionare tutti gli articoli dalla tabella articolo_shop
+                $nome_utente = $_SESSION['email'];
+                $query = "SELECT * FROM articolo_carrello WHERE email = $1";
+                $result = pg_query_params($connessione, $query, array($nome_utente));
 
-            // Query per selezionare tutti gli articoli dalla tabella articolo_shop
-            $query = "SELECT * FROM articolo_carrello WHERE email = $1";
-            $result = pg_query_params($connessione, $query, array($nome_utente));
-
-            // Verifica se ci sono risultati
-            if ($result) {
-                // Itera su ogni riga del risultato
-                while ($row = pg_fetch_assoc($result)) {
-                    // Stampa l'HTML per ogni articolo
-                    echo '<div class="articoloCarrello">';
-                    echo '<img src="' . $row['img'] . '">';
-                        
-                    echo '<div class="dettagli" style="display: flex; flex-direction: column;">';
-                    echo '<div class="nome">' . $row['nome'] . '</div>';
-                    echo '<div class="taglia">Taglia: ' . $row['taglia'] . '</div>';
-                    echo '<div><span>€</span><span class="prezzo">' . $row['prezzo'] . '</span></div>';
-                    echo '<button class="Brimuovi-articolo">.</button>';
-                    echo '</div>';
-                    echo '</div>';
+                // Verifica se ci sono risultati
+                if ($result) {
+                    // Itera su ogni riga del risultato
+                    while ($row = pg_fetch_assoc($result)) {
+                        // Stampa l'HTML per ogni articolo
+                        echo '<div class="articoloCarrello">';
+                        echo '<img src="' . $row['img'] . '">';
+                            
+                        echo '<div class="dettagli" style="display: flex; flex-direction: column;">';
+                        echo '<div class="nome">' . $row['nome'] . '</div>';
+                        echo '<div class="taglia">Taglia: ' . $row['taglia'] . '</div>';
+                        echo '<div><span>€</span><span class="prezzo">' . $row['prezzo'] . '</span></div>';
+                        echo '<button class="Brimuovi-articolo">.</button>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo "il carrello è vuoto";
                 }
-            } else {
-                echo "il carrello è vuoto";
             }
+            
 
             ?>
 
             <div id="termine_carrello" style="align-self: flex-start;">
             <?php
+            if (isset($_SESSION['email'])){
                 $query = "SELECT SUM(prezzo::numeric) as totale_prezzo FROM articolo_carrello WHERE email=$1";
                 $result = pg_query_params($connessione, $query, array($nome_utente));
                 if ($result) {
@@ -172,6 +183,8 @@
                         echo '<p>Totale: <span id="totale">0</span> Euro</p>';
                     }
                 }
+            }
+                
             ?>
                 <button class="Bsvuota_carrello">Svuota Carrello</button>
                 <button id="Bchiudi-carrello">Chiudi Carrello</button>
@@ -181,6 +194,21 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+    <div  style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;">
+            <div align="left" style="margin-left:1%;">
+                
+                <input class="quicksand" type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
+                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+                    CONTATTACI: skaters@gmail.com
+                </h1>
+            </div>
+           
+            <button style="text-align: center;">LOGO</button>
 
+            <div style="margin-right:1%">
+                <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
+                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
+            </div>
+        </div>
 </body>
 </html>

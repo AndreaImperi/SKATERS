@@ -195,3 +195,28 @@
     z-index: 1000;
     display: none;
 }
+.anton {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
+  }
+  
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+#Bcarrello{
+    background-image: url('../immagini/carrello.png');
+    background-size: contain; 
+    position: fixed; 
+    z-index: 9999;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    border:none;
+    background-color: white;
+}
