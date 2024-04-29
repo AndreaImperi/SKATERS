@@ -12,7 +12,7 @@ function apriPaginaVideo(url) {
 
 document.getElementById("Bmappe").addEventListener("click", function() {
     var cellaM = document.getElementById("cellaMappe");
-    var posizione = cellaM.getBoundingClientRect().top - 50;
+    var posizione = cellaM.offsetTop - 50;
 
     window.scrollTo({
         top: posizione,

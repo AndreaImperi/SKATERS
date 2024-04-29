@@ -70,9 +70,11 @@
 
         <?php
         session_start();
+        error_reporting(0);
 
         
         // echo "Benvenuto, $nome_utente!";
+        $nome_utente = $_SESSION['email'];
 
         // Connessione al database
         $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("Errore di connessione al database: " . pg_last_error());
@@ -140,6 +142,7 @@
             </div> -->
 
             <?php
+            error_reporting(0);
             if (isset($_SESSION['$email'])){
                 // Query per selezionare tutti gli articoli dalla tabella articolo_shop
                 $nome_utente = $_SESSION['email'];
@@ -183,6 +186,8 @@
                         echo '<p>Totale: <span id="totale">0</span> Euro</p>';
                     }
                 }
+            }else{
+                echo '<p>Totale: <span id="totale">0</span> Euro</p>';
             }
                 
             ?>
