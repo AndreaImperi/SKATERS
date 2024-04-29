@@ -95,10 +95,10 @@
                 echo '<img class="sinistra" src="' . $row['img_sx'] . '">';
                 echo '<img class="destra" src="' . $row['img_dx'] . '">';
                 echo '<div class="barra">';
-                echo '<button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>';
+                echo '<button class="btn btn-outline-light quicksand Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>';
                 echo '<label>Taglia:</label>';
 
-                echo '<select class="Taglia" style="margin-left: 1%;">';
+                echo '<select class="Taglia" style="margin-left: 1%;border-radius: 5px;">';
                 echo '<option value="S">S</option>';
                 echo '<option value="M">M</option>';
                 echo '<option value="L">L</option>';
