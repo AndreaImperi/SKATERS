@@ -181,11 +181,13 @@
                                         $n_tel = $_POST['n_telefono'];
                                         $q2="insert into utente (email, nome, cognome, giorno, mese, anno, genere, pswd, n_tel) values ($1, $2, $3, $4, $5, $6, $7, $8, $9)";
                                         $data=pg_query_params($connessione, $q2, array($email, $nome, $cognome, $giorno, $mese, $anno, $genere, $pswd, $n_tel));
+                                        $_SESSION['$nome'] = $nome;
                                         if ($data) {
                                             echo "<br/><h1 style=\"font-size: medium;\"> Registrazione completata. <a href=../accesso/accesso.php style=\"font-size: medium; color: red; \"> clicca qui per loggarti </a></h1> ";
                                         }
                                     }
                                 }
+                                
                             }
                         ?>
                         </td>
