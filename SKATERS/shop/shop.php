@@ -35,8 +35,14 @@
                     <option value="trucks">trucks</option>
                 </select>
             </div>
-            <div style="margin-bottom: 5%;text-align: left;">
+            <!-- <div style="margin-bottom: 5%;text-align: left;">
                 <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;">
+            </div> -->
+            <div style="margin-bottom: 5%;text-align: left; margin-top: 5%;">
+                    <h3 id="etichetta_tavole" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Tavole</h3>
+                    <h3 id="etichetta_ruote" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Ruote</h3>
+                    <h3 id="etichetta_trucks" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Trucks</h3>
+                    <hr class="linea" id="linea-grigia" style="color: rgb(93, 83, 83) ;margin-top: 1%;">
             </div>
         </div>
         
@@ -69,8 +75,9 @@
         </div> -->
 
         <?php
-        session_start();
         error_reporting(0);
+        session_start();
+        
 
         
         // echo "Benvenuto, $nome_utente!";
