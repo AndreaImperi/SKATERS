@@ -40,10 +40,10 @@
     <div class="fixed-bar">
         <!-- <button class="btn btn-outline-secondary btn-lg">LOGO</button> -->
         <img src="immagini/logo.PNG" style="height: 120%; margin-top: -0.4%; margin-left: 2%;">
-        <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw; margin-top: -1%;">
-            <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
-            <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
-            <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bshop">SHOP</button>
+        <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw; margin-top: -1.3%;">
+            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
+            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
+            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bshop">SHOP</button>
             <?php
             //session_start();
             error_reporting(0);
@@ -51,7 +51,7 @@
             
             if (isset($_SESSION['utente_loggato']) && $_SESSION['utente_loggato'] === true) {
             // Se l'utente è loggato, mostra l'immagine al posto del bottone Accedi
-            echo '<button style="background-image: url(./immagini/ruota.jpg); height: 39px; width: 39px;background-size: cover; background-position: center; border-radius:5px; display:block;" id="bruota"></button>
+            echo '<button style="background-image: url(./immagini/ruota.jpg); margin-left:20px ;height: 50px; width: 50px;background-size: cover; background-position: center; border-radius:5px; display:block;" id="bruota"></button>
             <button class="btn btn-outline-light quicksand" style="margin-right: 5px; display:none;" id="Baccedi" onclick="location.href=\'accesso.php\'" >ACCEDI</button>';
         } else {
             // Se l'utente non è loggato, mostra il normale bottone Accedi
