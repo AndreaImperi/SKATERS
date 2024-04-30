@@ -14,20 +14,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-<?php
-session_start();
-error_reporting(0);
-$nomeUtente = $_SESSION['email'];
-
-
-?>
 
 
 <div id="profilo" style="background-color: rgb(255, 255, 255); height: 600px; width: 500px; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px;z-index: 9999; border: 3px solid black; display:none">
             
                 <img src="./ruota.jpg" id="ruotaUtente" alt="" style="width: 20%; margin-top: 3%; margin-left: 40%; z-index:2;border-radius: 10px;">
                 <img src="./immagini/x-removebg-preview.png" id="closed" alt="" style="height: 40px; width: 40px; position: fixed; right: 3%; top:2%">
-                <h3 style="margin-left: 7%;">Ciao <?php echo $nomeUtente; ?> !</h3>
+                <h3 style="margin-left: 7%;">Ciao 
+                
+                <?php 
+                    session_start();
+                    //error_reporting(0);
+                    $nomeUtente = $_SESSION['email'];
+                    $ciao = $_SESSION['nome'];
+                    echo " $ciao";
+                    //echo "benvenuto, $nomeUtente";
+                ?> 
+                !</h3>
                 <h5 style="margin-left: 4%; margin-top: 30px;">Informazioni personali:</h5>
                 <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 4%;" >
                 <h5 style="margin-left: 2%;">bla bla bla</h5>
@@ -42,7 +45,7 @@ $nomeUtente = $_SESSION['email'];
             <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
             <button class="btn btn-outline-light quicksand" style="margin-right: 5px;" id="Bshop">SHOP</button>
             <?php
-            session_start();
+            //session_start();
             error_reporting(0);
               
             

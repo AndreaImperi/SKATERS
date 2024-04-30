@@ -57,13 +57,15 @@
                                     session_start();
 
                                     $_SESSION['email'] = $email;
-                                    //$_SESSION['nome'] = $tuple['nome'];
-                                    $ciao = $tuple['nome'];
-                                    echo "benvenuto, $ciao";
+                                    $nome = $tuple['nome'];
+                                    $_SESSION['nome'] = $nome;
+                                    //$session = $_SESSION['nome'];
+                                    //$ciao = $tuple['nome'];
+                                    //echo "benvenuto, $session";
 
                                     $_SESSION['utente_loggato'] = true;
                                         // Reindirizzamento alla pagina index del tuo sito dopo la registrazione
-                                    //header("Location: ../index.php");
+                                    header("Location: ../index.php");
 
                         
                                     
