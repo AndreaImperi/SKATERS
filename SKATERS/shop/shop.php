@@ -28,11 +28,11 @@
         <div class="c1">
             <div style="margin-top: 10%;">
                 <input type="search" placeholder="Cerca">
-                <select name="categorie" size="1" cols="4">
+                <select name="categorie" id="select_categorie" size="1" cols="4">
                     <option value="nessuna">Categoria</option>
-                    <option value="tutorial">Gennaio</option>
-                    <option value="competizioni">Febbraio</option>
-                    <option value="video-part">Marzo</option>
+                    <option value="decks">deck</option>
+                    <option value="ruote">ruote</option>
+                    <option value="trucks">trucks</option>
                 </select>
             </div>
             <div style="margin-bottom: 5%;text-align: left;">
@@ -88,7 +88,16 @@
             // Itera su ogni riga del risultato
             while ($row = pg_fetch_assoc($result)) {
                 // Stampa l'HTML per ogni articolo
-                echo '<div class="articolo">';
+
+                
+                if ($row['categoria']=='deck') {
+                    echo '<div class="articolo deck">';
+                } else if ($row['categoria']=='ruota') {
+                    echo '<div class="articolo ruota">';
+                } if ($row['categoria']=='truck') {
+                    echo '<div class="articolo truck">';
+                }
+
                 echo '<div class="messaggio_login">!non hai effettuato il login!</div>';
                 echo '<div class="immagine" align="center">';
                 echo '<img class="default" src="' . $row['img_d'] . '">';
@@ -98,10 +107,25 @@
                 echo '<button class="btn btn-outline-light quicksand Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>';
                 echo '<label>Taglia:</label>';
 
-                echo '<select class="Taglia" style="margin-left: 1%;border-radius: 5px;">';
-                echo '<option value="S">S</option>';
-                echo '<option value="M">M</option>';
-                echo '<option value="L">L</option>';
+                if ($row['categoria']=='deck') {
+                    echo '<select class="Taglia" style="margin-left: 1%;border-radius: 5px;">';
+                    echo '<option value="8.0">8.0</option>';
+                    echo '<option value="8.25">8.25</option>';
+                    echo '<option value="8.375">8.375</option>';
+                    echo '<option value="8.5">8.5</option>';
+                } else if ($row['categoria']=='ruota') {
+                    echo '<select class="Taglia" style="margin-left: 1%;border-radius: 5px;">';
+                    echo '<option value="52mm">52mm</option>';
+                    echo '<option value="54mm">54mm</option>';
+                    echo '<option value="58mm">58mm</option>';
+                    echo '<option value="60mm">60mm</option>';
+                } if ($row['categoria']=='truck') {
+                    echo '<select class="Taglia" style="margin-left: 1%;border-radius: 5px;">';
+                    echo '<option value="146">146</option>';
+                    echo '<option value="147">147</option>';
+                    echo '<option value="149">149</option>';
+                    echo '<option value="151">151</option>';
+                }
 
                 echo '<option value="nessuna" selected></option>';
                 echo '</select>'; 
@@ -143,7 +167,7 @@
 
             <?php
             error_reporting(0);
-            if (isset($_SESSION['$email'])){
+            if ($_SESSION['email']!=null){
                 // Query per selezionare tutti gli articoli dalla tabella articolo_shop
                 $nome_utente = $_SESSION['email'];
                 $query = "SELECT * FROM articolo_carrello WHERE email = $1";
@@ -199,7 +223,7 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
-    <div  style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;">
+    <div  style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;bottom:0%;">
             <div align="left" style="margin-left:1%;">
                 
                 <input class="quicksand" type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
@@ -214,6 +238,6 @@
                 <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
                 <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
             </div>
-        </div>
+    </div>
 </body>
 </html>

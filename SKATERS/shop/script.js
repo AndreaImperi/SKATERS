@@ -159,6 +159,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+
+
     });
 
     
@@ -213,4 +215,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
+    var selectCategorie = document.getElementById("select_categorie");
+    selectCategorie.addEventListener("change", function() {
+        var valoreSelezionato = selectCategorie.value;
+        var elementi_ruota = document.querySelectorAll(".ruota");
+        var elementi_truck = document.querySelectorAll(".truck");
+        var elementi_deck = document.querySelectorAll(".deck");
+
+        if (valoreSelezionato=="nessuna") {
+            for (var i = 0; i < elementi_ruota.length; i++) {
+                elementi_ruota[i].style.display = "block";
+            }
+            for (var j = 0; j < elementi_truck.length; j++) {
+                elementi_truck[j].style.display = "block";
+            }
+            for (var h = 0; h < elementi_deck.length; h++) {
+                elementi_deck[h].style.display = "block";
+            }
+        } else if (valoreSelezionato=="decks") {
+            for (var h = 0; h < elementi_deck.length; h++) {
+                elementi_deck[h].style.display = "block";
+            }
+            for (var i = 0; i < elementi_ruota.length; i++) {
+                elementi_ruota[i].style.display = "none";
+            }
+            for (var j = 0; j < elementi_truck.length; j++) {
+                elementi_truck[j].style.display = "none";
+            }
+        } else if (valoreSelezionato=="ruote") {
+            for (var i = 0; i < elementi_ruota.length; i++) {
+                elementi_ruota[i].style.display = "block";
+            }
+            for (var i = 0; i < elementi_deck.length; i++) {
+                elementi_deck[i].style.display = "none";
+            }
+            for (var j = 0; j < elementi_truck.length; j++) {
+                elementi_truck[j].style.display = "none";
+            }
+        } else if (valoreSelezionato=="trucks") {
+            for (var j = 0; j < elementi_truck.length; j++) {
+                elementi_truck[j].style.display = "block";
+            }
+            for (var i = 0; i < elementi_ruota.length; i++) {
+                elementi_ruota[i].style.display = "none";
+            }
+            for (var j = 0; j < elementi_deck.length; j++) {
+                elementi_deck[j].style.display = "none";
+            }
+        } 
+    });
 });
+
+
+

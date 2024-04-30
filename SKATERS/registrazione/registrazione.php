@@ -200,8 +200,8 @@
         <img src="../immagini/ruota.png" class="immaginedxD"  >
 
 
-        <img src="../immagini/skatesx1.jpg" class="angolosx" alt="">
-        <img src="../immagini/skatedx1.jpg" class="angolodx" alt="">
+        <img src="../immagini/tavola_reg.JPG" class="angolosx" alt="">
+        <img src="../immagini/tavola_reg.JPG" class="angolodx" alt="">
 
         
         <script>
