@@ -16,7 +16,8 @@
 <body class="quicksand">
     <div class="fixed-bar" style="margin-top: 0%;">
         <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
-            <button>LOGO</button> 
+            <!-- <button>LOGO</button>  -->
+            <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
         </div>
         <h2 style="color: black; font-weight: 700;">Shop<div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
             <button id="Bcarrello" ></button>
@@ -30,9 +31,9 @@
                 <input type="search" placeholder="Cerca">
                 <select name="categorie" id="select_categorie" size="1" cols="4">
                     <option value="nessuna">Categoria</option>
-                    <option value="decks">deck</option>
-                    <option value="ruote">ruote</option>
-                    <option value="trucks">trucks</option>
+                    <option value="decks">Tavole</option>
+                    <option value="ruote">Ruote</option>
+                    <option value="trucks">Trucks</option>
                 </select>
             </div>
             <!-- <div style="margin-bottom: 5%;text-align: left;">
@@ -239,7 +240,8 @@
                 </h1>
             </div>
            
-            <button style="text-align: center;">LOGO</button>
+            <!-- <button style="text-align: center;">LOGO</button> -->
+            <img src="../immagini/logo.png" style="height: 80%;">
 
             <div style="margin-right:1%">
                 <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>

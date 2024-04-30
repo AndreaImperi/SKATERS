@@ -1,9 +1,9 @@
 document.getElementById("Bvideo").addEventListener("click", function() {
-    apriPaginaVideo("videos/video.html")
+    apriPaginaVideo("videos/video.php")
 });
 
 document.getElementById("Tvideo").addEventListener("click", function() {
-    apriPaginaVideo("videos/video.html")
+    apriPaginaVideo("videos/video.php")
 });
 
 function apriPaginaVideo(url) {
@@ -12,7 +12,7 @@ function apriPaginaVideo(url) {
 
 document.getElementById("Bmappe").addEventListener("click", function() {
     var cellaM = document.getElementById("cellaMappe");
-    var posizione = cellaM.offsetTop - 50;
+    var posizione = cellaM.offsetTop - 70;
 
     window.scrollTo({
         top: posizione,

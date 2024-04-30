@@ -25,8 +25,8 @@
         <h2 style="color: black; font-weight: 700;">Registrati</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
-    <img src="../immagini/ruota.png" class="immaginesxU" >
-    <img src="../immagini/ruota.png" class="immaginesxD" >
+    <img src="../immagini/ruota2.png" class="immaginesxU" >
+    <img src="../immagini/ruota3.png" class="immaginesxD" >
 
     <div class="grid">
         <div class="c1" style="overflow: hidden; text-align: center;">
@@ -198,8 +198,8 @@
             </form>
         </div>
 
-        <img src="../immagini/ruota.png" class="immaginedxU"  >
-        <img src="../immagini/ruota.png" class="immaginedxD"  >
+        <img src="../immagini/ruota4.png" class="immaginedxU"  >
+        <img src="../immagini/ruota1.png" class="immaginedxD"  >
 
 
         <img src="../immagini/tavola_reg.JPG" class="angolosx" alt="">

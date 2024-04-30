@@ -39,7 +39,7 @@
     <div class="corpo" id="corpo">
     <div class="fixed-bar">
         <!-- <button class="btn btn-outline-secondary btn-lg">LOGO</button> -->
-        <img src="immagini/logo.PNG" style="height: 120%; margin-top: -0.4%; margin-left: 2%;">
+        <img src="immagini/logo.png" style="height: 120%; margin-top: -0.6%; margin-left: 1%;">
         <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw; margin-top: -1.3%;">
             <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
             <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
@@ -117,15 +117,15 @@
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=P3T_znRTZMQ" target="_blank">
                 <img class="copertina" src="immagini/ride.webp">
-                <h2 class="titolo quicksand" id="black">Come andare in skate?</h2>
+                <h2 class="titolo quicksand" id="black" style="margin-top: 2%;">Come andare in skate?</h2>
             </a>
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=QUttPNF9KzM" target="_blank">
                 <img class="copertina" src="immagini/ollie.webp">
-                <h2 class="titolo quicksand" id="black">Come fare l'Ollie?</h2>
+                <h2 class="titolo quicksand" id="black" style="margin-top: 2%;">Come fare l'Ollie?</h2>
             </a>
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=Xb771zBX1Gg" target="_blank">
                 <img class="copertina" src="immagini/shove.webp">
-                <h2 class="titolo quicksand" id="black">Come fare lo Shove It?</h2>
+                <h2 class="titolo quicksand" id="black" style="margin-top: 2%;">Come fare lo Shove It?</h2>
             </a>
         </div>
         <div class="c3" id="cellaMappe">
@@ -174,7 +174,8 @@
                 </h1>
             </div>
            
-            <button style="text-align: center;">LOGO</button>
+            <!-- <button style="text-align: center;">LOGO</button> -->
+            <img src="immagini/logo.png" style="height: 170%;">
 
             <div>
                 <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>

@@ -14,7 +14,7 @@
 .grid > div {
     overflow: auto;
     border: 0px;
-    padding: 2em 1em; 
+    padding: 2em 1em;
 }
 /* .c1 {
     grid-area: i;   
@@ -28,7 +28,7 @@
 
 .c1 {
     grid-area: i;   
-    margin-top: 74px;
+    margin-top: 6.7%;
     padding: 0;
     position: relative;
     background-image: url('immagini/sfondo.jpg');

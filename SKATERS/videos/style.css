@@ -1,73 +1,80 @@
-.grid {
+/* .grid {
     display: grid;
     grid-template:
         ' i '
         ' s ' / 1fr;
     border: solid 0px;
     text-align: center;
-    /* Imposta la terza riga per occupare tutto lo spazio disponibile */
+   
     grid-template-rows: auto auto auto;
     
     
+} */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 40px;
+    grid-row-gap: 50px;
+    width: 90%;
+    border: solid 0px;
+    text-align: center;
+    margin-left: 5%;
 }
 
-.grid > div {
+/* .grid > div {
     overflow: auto;
     border: 0px;
     padding: 2em 1em; 
-}
+} */
 
-.c1 {
+/* .c1 {
     grid-area: i;
     width: 90%;
     margin: auto;
     
-}
-.c2{
-    grid-area:s ;
+} */
+.c1 {
+    grid-column: 1 / -1;
+    width: 90%;
+    margin: auto;
+    
 }
 
-.video{
+/* .c2{
+    grid-area:s ;
+} */
+
+/* .video{
     display: inline-block;
     margin-right: 2.5%;
     margin-left: 2.5%;
+} */
+
+.video{
+    width: 100%;
+    float: left;
+    text-align: center;
+    position: relative;
 }
 
 .copertina{
-    width: 350px;   
+    width: 100%;   
+    margin-bottom: 2%;
 }
 #black{
     color: black;
 }
 .titolo{
     font-size: 20px;
+    font-weight: 600;
 }
 
 .linea {
     border-width: 3px;
     margin-bottom: 30px;
     opacity: 1;
-}
-#linea-grigia{
-    width: 90%;
-    margin-left: 5%;
-    
-}
-.video{
-    display: inline-block;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-}
-.copertina{
-    width: 350px;   
-}
-#black{
-    color: black;
-}
-.titolo{
-    font-size: 20px;
-    height: 60px;
-
 }
 .fixed-bar {
     position: fixed;
