@@ -15,22 +15,15 @@
 </head>
 <body>
 <?php 
-                    session_start();
-                    //error_reporting(0);
-                    $nomeUtente = $_SESSION['email'];
-                    $ciao = $_SESSION['nome'];
-                ?> 
+    session_start();
+    error_reporting(0);
+    $nomeUtente = $_SESSION['email'];
+    $ciao = $_SESSION['nome'];
+?> 
 
-        <form action="" method="post">
-            <div id="profilo" style="background-color: rgb(0, 0, 0); height: 50px; width: 100px; position: relative; right: 1.3%; top: 10%; border-radius: 10px;z-index: 9999; border: 3px solid black; display:none; text-align:center;  ">    
-                    <button type="submit" name="logout" id="logout" style="height: 45px; width: 95px;" class="btn btn-outline-light quicksand" >LOGOUT</button>
-                </div>
-        </form>
-            
-          
-           
-
-
+    
+    
+   
 
     <div class="corpo" id="corpo">
     <div class="fixed-bar">
@@ -44,15 +37,21 @@
             //session_start();
             error_reporting(0); 
             if (isset($_SESSION['email'])) {
-            // Se l'utente è loggato, mostra l'immagine al posto del bottone Accedi
-            echo '<button style="background-image: url(./immagini/account.jpg); margin-left:20px ;height: 50px; width: 50px;background-size: cover; background-position: center; border-radius:100px; display:block;" id="bruota"></button>
-            <h5 class="quicksand" style=" position: absolute; margin-bottom: -1.2%; margin-right: -0.4% ">'.$ciao.'</h5>
-            <button  class="btn btn-outline-light quicksand" style="margin-right: 5px; display:none;" id="Baccedi" onclick="location.href=\'accesso.php\'" >ACCEDI</button>';
+                $display1 = 'block';
+                $display2 = $ciao;
+                $display3 = 'none';
+                // Se l'utente è loggato, mostra l'immagine al posto del bottone Accedi
+                //echo '<button style="background-image: url(./immagini/account.jpg); margin-left:35px; height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:block;" id="bruota"></button>
+                //<h5 class="quicksand" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%;">'.$ciao.'</h5>
+                //<button class="btn btn-outline-light quicksand" style="margin-right: 5px; display:none; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>';
             } else {
-            // Se l'utente non è loggato, mostra il normale bottone Accedi
-            echo '<button style="background-image: url(./immagini/account.jpg); height: 50px; width: 50px;background-size: cover; background-position: center; border-radius:100px; display:none;" id="bruota"></button>
-            
-            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:block;" id="Baccedi" onclick="location.href=\'accesso.php\'" >ACCEDI</button>';
+                $display1 = 'none';
+                $display2 = '';
+                $display3 = 'block';
+                // Se l'utente non è loggato, mostra il normale bottone Accedi
+                //echo '<button style="background-image: url(./immagini/account.jpg); height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:none;" id="bruota"></button>
+                //<h5 class="quicksand" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%; display:none;">'.$ciao.'</h5>
+                //<button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:block; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>';
             }
             $email = $_SESSION['email'];
             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("Errore di connessione al database: " . pg_last_error());
@@ -64,11 +63,19 @@
                 $utente = pg_fetch_assoc($result);
                 $nomeUtente = $utente['nome'];
             }
-        
         ?>
+        <button style="background-image: url(./immagini/account.jpg); margin-left:35px; height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:<?php echo $display1; ?>;" id="bruota"></button>
+        <h5 class="quicksand" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%;"><?php echo $display2; ?></h5>
+        <button class="btn btn-outline-light quicksand" style="margin-right: 5px; display:<?php echo $display3; ?>; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>
+
+        </div>
+        <div id="profilo" style="background-color: #181818; height: 50px; width: 105px; position: absolute; margin-left: 90.5%; margin-top: 1.1%; border-radius: 10px;z-index: 9999; border: 3px solid black; display:none; text-align:center;  ">    
+            <button type="submit" name="logout" id="logout" style="height: 45px; width: 100px;" class="btn btn-outline-light quicksand" >LOGOUT</button>
         </div>
     </div>
-    <div class="grid">
+    
+    <div class="grid" style="margin-top:6.5%">
+        
         <div class="c1" id="c1">
             <div id="myCarousel" class="carousel carousel-fade w-75 m-auto" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -181,7 +188,7 @@
     </div>
     </div>
       
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>
 

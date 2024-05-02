@@ -1,16 +1,13 @@
 <?php
-        header('Content-Type: application/json');
-                // Distruggi tutte le variabili di sessione
-                
-                $_SESSION = array();
+        
+        session_start();
 
-                // Distruggi la sessione
-                //session_destroy();
+        unset($_SESSION['email']);
 
-
-                // Reindirizza l'utente alla pagina di accesso
-                //header("Location: index.php");
-                $risposta = array($_POST['ciao']);
-                echo json_encode($risposta);
+        if (!isset($_SESSION['email'])) {
+                echo "successo";
+        } else {
+                echo "non successo";
+        }
 
 ?>

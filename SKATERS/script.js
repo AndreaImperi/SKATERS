@@ -85,19 +85,24 @@ document.getElementById("sfondo").addEventListener("mouseenter", function(){
         }
 
 
-        document.getElementById("logout").onclick = function() {
-            $.post("logout.php", { ciao: "ciao"}, function(data) {
-                // Se la richiesta è riuscita, reindirizza l'utente alla pagina di accesso
-                console.log(data);
-                        if (data.errore) {
-                            console.log(data.errore);
-                        } else {
-                            console.log('Inserimento avvenuto con successo');
-                        }
-                //window.location.href = "index.php";
-            });
-        }
+        // document.getElementById("logout").onclick = function() {
+        //     $.post("logout.php", {}, function(data) {
+        //         // Se la richiesta è riuscita, reindirizza l'utente alla pagina di accesso
+        //         if (data.errore) {
+        //             console.log('errore non so cosa');
+        //         } else {
+        //             console.log('Inserimento avvenuto con successo');
+        //         }
+        //         //window.location.href = "index.php";
+        //     });
+        // }
         
+    });
+
+    document.getElementById("logout").addEventListener("click", function() {
+        $.post("logout.php", {}, function(data) {
+            window.location.href = "index.php";
+        });
     });
     
 
