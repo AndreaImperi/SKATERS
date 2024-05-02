@@ -55,10 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (document.getElementById("carrelloSopra").style.display == "block") {
             document.getElementById("carrelloSopra").style.display = "none";
         } else {
-
-
-
-
             document.getElementById("carrelloSopra").style.display = "block";
         }
     }

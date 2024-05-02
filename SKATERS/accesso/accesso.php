@@ -63,8 +63,7 @@
                                     //$ciao = $tuple['nome'];
                                     //echo "benvenuto, $session";
 
-                                    $_SESSION['utente_loggato'] = true;
-                                        // Reindirizzamento alla pagina index del tuo sito dopo la registrazione
+                                    
                                     header("Location: ../index.php");
 
                         

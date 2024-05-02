@@ -14,28 +14,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-
-<div id="profilo" style="background-color: rgb(255, 255, 255); height: 600px; width: 500px; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 10px;z-index: 9999; border: 3px solid black; display:none">
-            
-                <img src="./ruota.jpg" id="ruotaUtente" alt="" style="width: 20%; margin-top: 3%; margin-left: 40%; z-index:2;border-radius: 10px;">
-                <img src="./immagini/x-removebg-preview.png" id="closed" alt="" style="height: 40px; width: 40px; position: fixed; right: 3%; top:2%">
-                <h3 style="margin-left: 7%;">Ciao 
-                
-                <?php 
+<?php 
                     session_start();
                     //error_reporting(0);
                     $nomeUtente = $_SESSION['email'];
                     $ciao = $_SESSION['nome'];
-                    echo " $ciao";
-                    //echo "benvenuto, $nomeUtente";
                 ?> 
-                !</h3>
-                <h5 style="margin-left: 4%; margin-top: 30px;">Informazioni personali:</h5>
-                <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 4%;" >
-                <h5 style="margin-left: 2%;">bla bla bla</h5>
-                <button style="margin-top: 50%; margin-left: 43%;" class="btn btn-outline-primary quicksand" >LOGOUT</button>
-           </div>
+
+        <form action="" method="post">
+            <div id="profilo" style="background-color: rgb(0, 0, 0); height: 50px; width: 100px; position: relative; right: 1.3%; top: 10%; border-radius: 10px;z-index: 9999; border: 3px solid black; display:none; text-align:center;  ">    
+                    <button type="submit" name="logout" id="logout" style="height: 45px; width: 95px;" class="btn btn-outline-light quicksand" >LOGOUT</button>
+                </div>
+        </form>
+            
+          
+           
+
+
+
     <div class="corpo" id="corpo">
     <div class="fixed-bar">
         <!-- <button class="btn btn-outline-secondary btn-lg">LOGO</button> -->
@@ -46,35 +42,35 @@
             <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bshop">SHOP</button>
             <?php
             //session_start();
-            error_reporting(0);
-              
-            
-            if (isset($_SESSION['utente_loggato']) && $_SESSION['utente_loggato'] === true) {
+            error_reporting(0); 
+            if (isset($_SESSION['email'])) {
             // Se l'utente è loggato, mostra l'immagine al posto del bottone Accedi
-            echo '<button style="background-image: url(./immagini/ruota.jpg); margin-left:20px ;height: 50px; width: 50px;background-size: cover; background-position: center; border-radius:5px; display:block;" id="bruota"></button>
-            <button class="btn btn-outline-light quicksand" style="margin-right: 5px; display:none;" id="Baccedi" onclick="location.href=\'accesso.php\'" >ACCEDI</button>';
-        } else {
+            echo '<button style="background-image: url(./immagini/account.jpg); margin-left:20px ;height: 50px; width: 50px;background-size: cover; background-position: center; border-radius:100px; display:block;" id="bruota"></button>
+            <h5 class="quicksand" style=" position: absolute; margin-bottom: -1.2%; margin-right: -0.4% ">'.$ciao.'</h5>
+            <button  class="btn btn-outline-light quicksand" style="margin-right: 5px; display:none;" id="Baccedi" onclick="location.href=\'accesso.php\'" >ACCEDI</button>';
+            } else {
             // Se l'utente non è loggato, mostra il normale bottone Accedi
-            echo '<button style="background-image: url(./immagini/ruota.jpg); height: 39px; width: 39px;background-size: cover; background-position: center; border-radius:5px; display:none;" id="bruota"></button>
-            <button class="btn btn-outline-light quicksand" style="margin-right: 5px; display:block;" id="Baccedi" onclick="location.href=\'accesso.php\'" >ACCEDI</button>';
-        }
-        $email = $_SESSION['utente_loggato'];
-        $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("Errore di connessione al database: " . pg_last_error());
+            echo '<button style="background-image: url(./immagini/account.jpg); height: 50px; width: 50px;background-size: cover; background-position: center; border-radius:100px; display:none;" id="bruota"></button>
+            
+            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:block;" id="Baccedi" onclick="location.href=\'accesso.php\'" >ACCEDI</button>';
+            }
+            $email = $_SESSION['email'];
+            $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("Errore di connessione al database: " . pg_last_error());
 
-        $query = "SELECT * FROM utente WHERE email = $1";
-        $result = pg_query($connessione, $query);
+            $query = "SELECT * FROM utente WHERE email = $1";
+            $result = pg_query($connessione, $query);
 
-        if ($result){
-            $utente = pg_fetch_assoc($result);
-            $nomeUtente = $utente['nome'];
-        }
+            if ($result){
+                $utente = pg_fetch_assoc($result);
+                $nomeUtente = $utente['nome'];
+            }
         
         ?>
         </div>
     </div>
     <div class="grid">
-        <div class="c1" >
-            <div id="myCarousel" class="carousel carousel-fade w-75 m-auto" data-bs-ride="carousel" >
+        <div class="c1" id="c1">
+            <div id="myCarousel" class="carousel carousel-fade w-75 m-auto" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
                     <button data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
@@ -188,4 +184,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

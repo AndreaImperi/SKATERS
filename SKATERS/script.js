@@ -74,26 +74,44 @@ document.getElementById("sfondo").addEventListener("mouseenter", function(){
                 skateshopFrame.style.display = 'none';
             }
         })
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        var b = document.getElementById("bruota");
-        var corpo = document.getElementById("corpo");
-        var profilo = document.getElementById("profilo");
-        var closed = document.getElementById("closed");
 
-        function primoPinao(){
-            corpo.style.filter = 'blur(5px)';
-            profilo.style.display = 'block';
-        }
-        function secondoPiano(){
-            corpo.style.filter = 'blur(0px)';
-            profilo.style.display = 'none';
+
+        document.getElementById("bruota").onclick = function() {
+            if (document.getElementById("profilo").style.display == "none") {
+                document.getElementById("profilo").style.display = "block";
+            } else {
+                document.getElementById("profilo").style.display = "none";
+            }
         }
 
-        bruota.addEventListener("click", primoPinao);
-        closed.addEventListener("click", secondoPiano);
 
-
-
+        document.getElementById("logout").onclick = function() {
+            $.post("logout.php", { ciao: "ciao"}, function(data) {
+                // Se la richiesta è riuscita, reindirizza l'utente alla pagina di accesso
+                console.log(data);
+                        if (data.errore) {
+                            console.log(data.errore);
+                        } else {
+                            console.log('Inserimento avvenuto con successo');
+                        }
+                //window.location.href = "index.php";
+            });
+        }
+        
     });
- 
+    
+
+    
+
+        
+
+
+
+        // $.post("inserimento.php", { nome: nome, img: immagine, taglia: taglia, prezzo: prezzo, email: email}, function(data) {
+        //     console.log(data);
+        //     if (data.errore) {
+        //         console.log(data.errore);
+        //     } else {
+        //         console.log('Inserimento avvenuto con successo');
+        //     }
+        // });
