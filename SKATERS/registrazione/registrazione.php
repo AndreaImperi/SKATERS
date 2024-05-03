@@ -20,7 +20,10 @@
 
     <div class="fixed-bar" style="margin-top: 0%;">
         <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
-            <button>LOGO</button> 
+            <!-- <button>LOGO</button>  -->
+            <a href="../index.php" style="margin-top:1.1%;">
+                <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
+            </a> 
         </div>
         <h2 style="color: black; font-weight: 700;">Registrati</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">

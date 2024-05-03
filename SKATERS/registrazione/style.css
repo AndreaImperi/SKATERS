@@ -70,39 +70,35 @@ table td {
 }
 
 .immaginesxU{
-    width: 150px;
-    height: 150px;
+    height: 18%;
     position: fixed;
-    top: 24%;
-    left: 7.3%;
+    top: 26%;
+    left: 6.4%;
     margin-left: 100px;
     z-index:2;
   }
   .immaginesxD{
-    width: 150px;
-    height: 150px;
+    height: 18%;
     position: fixed;
-    top: 63%;
-    left: 7.5%;
+    top: 65%;
+    left: 6.2%;
     margin-left: 100px;
     z-index:2;
   }
 
   .immaginedxU {
-    width: 150px;
-    height: 150px;
+    height: 18%;
     position: fixed;
-    top: 24%;
-    right: 7.3%;
+    top: 26%;
+    right: 6.4%;
     margin-right: 100px;
     z-index:2;
 }
 .immaginedxD {
-    width: 150px;
-    height: 150px;
+    height: 18%;
     position: fixed;
-    top: 63%;
-    right: 7.5%;
+    top: 65%;
+    right: 6.2%;
     margin-right: 100px;
     z-index:2;
 }
@@ -132,16 +128,16 @@ select{
 }
 .angolosx{
     position: fixed;
-    top: 80px;
-    left: 90px;
-    height: 700px;
+    top: 15%;
+    left: 6%;
+    height: 80%;
     z-index:1;
 }
 .angolodx{
     position: fixed;
-    top: 80px;
-    right: 90px;
-    height: 700px;
+    top: 15%;
+    right: 6%;
+    height: 80%;
     transform: scaleX(-1);
     z-index:1;
 }
