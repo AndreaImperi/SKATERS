@@ -26,10 +26,11 @@
    
 
     <div class="corpo" id="corpo">
-    <div class="fixed-bar">
+        
+    <div class="fixed-bar" style="align-items: center; justify-content:right;">
         <!-- <button class="btn btn-outline-secondary btn-lg">LOGO</button> -->
-        <img src="immagini/logo.png" style="height: 120%; margin-top: -0.6%; margin-left: 1%;">
-        <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw; margin-top: -1.3%;">
+        <img src="immagini/logo.png" style="height: 120%; margin-top: -0.6%; margin-right: auto;">
+        <div style="display: flex; justify-content: right; align-items: end; margin-right:2%;">
             <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
             <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
             <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bshop">SHOP</button>
@@ -64,17 +65,18 @@
                 $nomeUtente = $utente['nome'];
             }
         ?>
-        <button style="background-image: url(./immagini/account.jpg); margin-left:35px; height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:<?php echo $display1; ?>;" id="bruota"></button>
-        <h5 class="quicksand" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%;"><?php echo $display2; ?></h5>
-        <button class="btn btn-outline-light quicksand" style="margin-right: 5px; display:<?php echo $display3; ?>; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>
+        <button style="background-image: url(./immagini/account.jpg); margin-left:35px; height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:<?php echo $display1; ?>; margin-bottom:3px" id="bruota"></button>
+        <h5 class="quicksand" style="position: fixed; height:0vh"><?php echo $display2; ?></h5>
+        <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:<?php echo $display3; ?>; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>
+        
 
         </div>
-        <div id="profilo" style="background-color: #181818; height: 50px; width: 105px; position: absolute; margin-left: 90.5%; margin-top: 1.1%; border-radius: 10px;z-index: 9999; border: 3px solid black; display:none; text-align:center;  ">    
-            <button type="submit" name="logout" id="logout" style="height: 45px; width: 100px;border:0px" class="btn btn-outline-light quicksand" >LOGOUT</button>
+        <div id="profilo" style="background-color: #181818; height: 55px; width: 105px; position: absolute; margin-left: 89.5%; margin-top: 100px; border-radius: 10px;z-index: 9999; display:none; text-align:center; border-top-left-radius:0; border-top-right-radius:0; ">    
+            <button type="submit" name="logout" id="logout" style="height: 45px; width: 100px; border:0px; margin-top: 7%" class="btn btn-outline-light quicksand" >LOGOUT</button>
         </div>
     </div>
     
-    <div class="grid" style="margin-top:6.5%">
+    <div class="grid" style="margin-top:100px">
         
         <div class="c1" id="c1">
             <div id="myCarousel" class="carousel carousel-fade w-75 m-auto" data-bs-ride="carousel">
@@ -85,19 +87,19 @@
                 </div>
                 <div class="carousel-inner" >
                     <div class="carousel-item active">
-                        <img src="immagini/Carosello1.jpg" class="d-block w-100" alt="..." style="max-height: 100%;" >
+                        <img src="immagini/Carosello1.jpg" class="d-block w-100" alt="...">
                         <div class="caption1">
                             <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">IMPARA I TUOI PRIMI TRICK</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="immagini/Carosello2.jpg" class="d-block w-100" alt="..." style="max-height: 100%;" >
+                        <img src="immagini/Carosello2.jpg" class="d-block w-100" alt="...">
                         <div class="caption2">
                             <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="immagini/Carosello3.jpg" class="d-block w-100" alt="..." style="max-height: 100%;"  >
+                        <img src="immagini/Carosello3.jpg" class="d-block w-100" alt="...">
                         <div class="caption3">
                             <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">COMPRA TUTTO IL NECESSARIO</h5>
                         </div>
@@ -118,18 +120,20 @@
                 Videos
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+            <div class="container_vid">
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=P3T_znRTZMQ" target="_blank">
                 <img class="copertina" src="immagini/ride.webp">
-                <h2 class="titolo quicksand" id="black" style="margin-top: 2%;">Come andare in skate?</h2>
+                <h2 class="titolo quicksand" style="margin-top: 2%;">Come andare in skate?</h2>
             </a>
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=QUttPNF9KzM" target="_blank">
                 <img class="copertina" src="immagini/ollie.webp">
-                <h2 class="titolo quicksand" id="black" style="margin-top: 2%;">Come fare l'Ollie?</h2>
+                <h2 class="titolo quicksand" style="margin-top: 2%;">Come fare l'Ollie?</h2>
             </a>
             <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=Xb771zBX1Gg" target="_blank">
                 <img class="copertina" src="immagini/shove.webp">
-                <h2 class="titolo quicksand" id="black" style="margin-top: 2%;">Come fare lo Shove It?</h2>
+                <h2 class="titolo quicksand" style="margin-top: 2%;">Come fare lo Shove It?</h2>
             </a>
+        </div>
         </div>
         <div class="c3" id="cellaMappe">
             <h2 class="quicksand" style=" text-align: left; margin-top: 10px;">
@@ -162,11 +166,13 @@
                 Shop
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 5px; margin-top: 1px; opacity: 1; margin-left: 5%; width: 90%;">
-            <div style="display: flex; justify-content: center; align-items: center; height: 45vh; width: 100%; margin-top: 2%;">
+            
+            <div class="sezione-shop" style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 2%;">
                 <img src="immagini/shop3.jpg" style="width: 78%;">
                 <button id="Bshop2" type="button" class="btn btn-outline-light quicksand" style="position: absolute; z-index: 2;width: 100px;height: 50px;font-size:x-large;">SHOP</button>
             </div>
-            <div class="sfondo-trasparente-shop" id="sfondo" style="z-index: 1;"></div>
+            <div class="sfondo-trasparente-shop" id="sfondo" style="z-index: 1; position: absolute;"></div>
+            
         </div>
         
         <div class="c5" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">

@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body class="quicksand">
+    <?php session_start(); ?>
     <div class="fixed-bar" style="margin-top: 0%;">
         <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
             <!-- <button>LOGO</button>  -->
@@ -77,7 +78,7 @@
 
         <?php
         error_reporting(0);
-        session_start();
+        //session_start();
         
 
         

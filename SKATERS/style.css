@@ -6,7 +6,7 @@
         ' m '
         ' t ' 
         ' b '/ 1fr;
-    border: solid 1px;
+    border: solid 0px;
     text-align: center;
     /* Imposta la terza riga per occupare tutto lo spazio disponibile */
     grid-template-rows: auto;
@@ -65,6 +65,7 @@
     grid-area: t;
     width: 100%;
     margin: auto;
+    height: auto;
 }
 
 .sfondo-trasparente-shop {
@@ -88,6 +89,7 @@
     width: 100%;
     height: 100px;
     z-index: 9998;
+    display: flex;
 }
 
 .content {
@@ -100,21 +102,47 @@
     
     
 }
-.video{
+/* .video{
     display: inline-block;
     margin-right: 2.5%;
     margin-left: 2.5%;
 }
 
 .copertina{
-    width: 350px;   
+    width: 10%;   
 }
 #black{
     color: black;
 }
 .titolo{
     font-size: 20px;
+} */
+
+.container_vid {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
+
+.video {
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.copertina {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.titolo {
+  font-size: large;
+  color: black;
+}
+
 .btn1{
     width: 100px;
     height: 50px;
@@ -147,11 +175,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    justify-content: center;
     background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
     color: #f1f0f6;
     padding: 20px;
-    width: 500px;
-    height: 70px;
+    width: 47%;
+    height: 15%;
     border-radius: 10px;
 }
 .caption3 {
@@ -160,11 +189,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    justify-content: center;
     background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
     color: #f1f0f6;
     padding: 20px;
-    width: 350px;
-    height: 70px;
+    width: 33%;
+    height: 15%;
     border-radius: 10px;
 }
 .caption1 {
@@ -173,20 +203,22 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    justify-content: center;
     background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
     color: #f1f0f6;
     padding: 20px;
-    width: 300px;
+    width: 30%;
     border-radius: 10px;
-    height: 70px;
+    height: 15%;
+    font-size: 1.2vw;
 }
 
 .anton {
     font-family: "Anton", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: x-large;
-  }
+    font-size: 1.5em;
+}
   
 
 .quicksand {

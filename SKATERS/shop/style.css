@@ -26,6 +26,12 @@
     text-align: center;
 }
 
+@media screen and (max-width: 1025px) {
+	.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .c1 {
     grid-column: 1 / -1;
     width: 90%;
@@ -153,6 +159,13 @@
     justify-content: space-between;
     align-items: flex-end;
     overflow: auto;
+}
+
+@media screen and (max-width: 1025px) {
+	.carrelloDentro {
+        top: 10%;
+        width: 60%;
+    }
 }
   
 .articoloCarrello {
