@@ -70,7 +70,7 @@
 
         </div>
         <div id="profilo" style="background-color: #181818; height: 50px; width: 105px; position: absolute; margin-left: 90.5%; margin-top: 1.1%; border-radius: 10px;z-index: 9999; border: 3px solid black; display:none; text-align:center;  ">    
-            <button type="submit" name="logout" id="logout" style="height: 45px; width: 100px;" class="btn btn-outline-light quicksand" >LOGOUT</button>
+            <button type="submit" name="logout" id="logout" style="height: 45px; width: 100px;border:0px" class="btn btn-outline-light quicksand" >LOGOUT</button>
         </div>
     </div>
     
@@ -152,7 +152,7 @@
             </div>
             <div class="mappe" style="height: 390px; overflow: hidden; text-align: center;">
                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tbl_kXUfzK2p4hQvXCgcGO_ineV_2ks&ehbc=2E312F" width="90%" height="490" style="margin-top: -100px; display:none; position: relative;" id="skateshop"></iframe>
-                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c8j8WkH4jeMGuteNeM0njMlEE4byEwM&ehbc=2E312F" width="90%" height="490" style="margin-top: -100px; position: relative; display:none;" id="skatepark"></iframe>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c8j8WkH4jeMGuteNeM0njMlEE4byEwM&ehbc=2E312F"width="90%" height="490" style="margin-top: -100px; display:none; position: relative;" id="skatepark"></iframe>
                 <iframe src="https://www.google.com/maps/d/u/0/embed?mid=155q4x6fTGhEwpfhM4LlcNZPMwiq_G2w&ehbc=2E312F" width="90%" height="490"  style="margin-top: -100px; position: relative; " id="tutto"></iframe>
                 
             </div>
@@ -168,12 +168,14 @@
             </div>
             <div class="sfondo-trasparente-shop" id="sfondo" style="z-index: 1;"></div>
         </div>
+        
         <div class="c5" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">
             <div align="left">
-                
-                <input class="quicksand" type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
+
+            
+                <button class="quicksand" id="Bemail" type="text" size="22" style="margin-bottom: 7%; border-radius: 5px; ">Facci una domanda</button>
                 <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
-                    CONTATTACI: skaters@gmail.com
+                    CONTATTACI: skaterss.ltw@gmail.com
                 </h1>
             </div>
            
@@ -185,8 +187,24 @@
                 <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
             </div>
         </div>
+        
     </div>
     </div>
+    <div class="email" id="email" style="display: none;"> 
+        <h2 class="quicksand" style=" text-align: center; margin-top: 3%">
+                Facci una domanda
+            </h2>
+            <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 5%; margin-right:5%; margin-top:1%">
+            <h5 class="quicksand" style="margin-left:2%"> INVIA UN E-MAIL A SKATERSS</h5>
+            <form class="quicksand" action="send.php" method="post" id="formemail">
+                <label for="oggetto" style="margin-left:1%">Oggetto:</label><br>
+                    <input type="text" id="oggetto" name="oggetto" style="margin-left:1%;width:40%;border:0.5px solid black; border-radius:5px"><br>
+                <label for="messaggio" style="margin-left:1%">Messaggio:</label><br>
+                    <textarea id="messaggio" name="messaggio" rows="7" cols="110" style="margin-left:1%;border:0.5px solid black; border-radius:5px;WIDTH: 98%"></textarea><br>
+                <button type="submit" class="btn btn-outline-primary quicksand " style="margin-left:1%;margin-top:1%;border:2px solid black; border-radius:5px">Invia Email</button>
+                <img src="./immagini/x-removebg-preview.png" alt="" id="xchiusura" style=" position:fixed; right:25.5%; bottom:68.5% ; width:50px; cursor: pointer">
+            </form>
+             </div>
       
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>

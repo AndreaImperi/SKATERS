@@ -27,8 +27,9 @@
     <div class="grid">
         <div class="c1">
         <div style="margin-top: 10%;">
-                <input type="search" placeholder="Cerca">
-                <select name="categorie" id="select_categorie" size="1" cols="4">
+                <input type="text" placeholder="Cerca" id="barra" style="border: 2px solid black; border-radius:5px; width: 200px">
+                <img id="searchInput" src='../immagini/lenteIngrandimento.png' class="lente" style="width: 50px;margin-bottom:0.3%; cursor: pointer"></img>
+                <select name="categorie" id="select_categorie" size="1" cols="4" style="margin-left: 50%; border: 2px solid black;border-radius:5px">
                     <option value="nessuna">Categoria</option>
                     <option value="tutorial">Tutorial</option>
                     <option value="part">Video Part</option>
@@ -71,6 +72,7 @@
                 echo "Nessun video trovato.";
             }
             ?>
+
         
     </div>
             
@@ -161,8 +163,30 @@
                     etichetta_part.style.display = 'none';
                     etichetta_sls.style.display = 'block';
                 } 
+            }); 
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+        var searchButton = document.getElementById("searchInput"); 
+        searchButton.addEventListener("click", function() { 
+                var ricerca = document.getElementById('barra');
+                var valore = ricerca.value.toLowerCase(); // Converto il valore della ricerca in minuscolo per fare una ricerca case-insensitive
+                var videoContainers = document.querySelectorAll(".video"); // Seleziono tutti gli elementi con la classe "video"
+                // Itero su tutti i contenitori dei video
+                videoContainers.forEach(function(videoContainer) {
+                    var titoloVideo = videoContainer.querySelector(".titolo").textContent.toLowerCase(); // Ottengo il testo del titolo del video e lo converto in minuscolo
+                    if (titoloVideo.includes(valore)) { // Controllo se il titolo del video contiene la stringa di ricerca
+                        videoContainer.style.display = "block"; // Mostro il contenitore del video
+                    } else {
+                        videoContainer.style.display = "none"; // Nascondo il contenitore del video se non corrisponde alla ricerca
+                    }
             });
         });
+    });
+        
+
+
+  
+
     </script>
   
 </body>

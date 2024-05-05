@@ -62,6 +62,7 @@
 .copertina{
     width: 100%;   
     margin-bottom: 2%;
+    border: 3px solid black;
 }
 #black{
     color: black;
@@ -99,4 +100,8 @@
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+}
+.lente.clicked {
+    border: 2px solid black;
+    border-radius: 5px;
 }

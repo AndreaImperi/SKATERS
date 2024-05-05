@@ -162,7 +162,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <button type="submit" id="registrati" style="margin-top: 10%;"> REGISTRATI </button>
+                            <button type="submit" id="registrati" style="margin-top: 10%;" class="btn btn-outline-primary quicksand"> REGISTRATI </button>
                         </td>
                         <td colspan="4" style="vertical-align: middle;">
                         <?php

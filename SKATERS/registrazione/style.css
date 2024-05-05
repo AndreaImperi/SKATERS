@@ -141,3 +141,21 @@ select{
     transform: scaleX(-1);
     z-index:1;
 }
+.btn.btn-outline-primary {
+    color: #000000; 
+    background-color: #ffffff; 
+    border-color: #000;
+}
+.btn.btn-outline-primary:hover,
+.btn.btn-outline-primary:focus,
+.btn.btn-outline-primary:active {
+    color: #ffffff; 
+    background-color: #000000; 
+    border-color: #000; 
+}
+.btn-check:checked + .btn-outline-primary,
+.btn-check:checked + .btn-outline-primary:focus{
+    color: #ffffff; 
+    background-color: #000000; 
+    border-color: #000;
+}

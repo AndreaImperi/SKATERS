@@ -21,7 +21,9 @@
 
         <div class="fixed-bar">
             <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
-                <button>LOGO</button> 
+            <a href="../index.php" style="margin-top:1.1%;">
+                <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
+            </a> 
             </div>
             <h2 style="color: black; font-weight: 700;">Accedi</h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
@@ -38,7 +40,7 @@
                     <input type="text" id="email" name="email"><br>
                     <label for="password" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">Password:</label><br>
                     <input type="password" id="password" name="password">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="btn btn-outline-primary quicksand" style="margin-top:5%">
                     </form>
                 <br>
 
@@ -78,8 +80,7 @@
             
                 ?>
 
-                <a href="../Hpassword/Hpassword.html" style="color: #ffffff">Hai dimenticato la password?</a>
-                <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
+                <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 0%;margin-right: 15%;">
             <div style="text-align: center;margin-bottom: 4%;">
                 <h1 style="font-size: small; color: rgb(255, 255, 255);display: inline-block">Non hai un account?</h1>
                 <a href="../registrazione/registrazione.php" id="Bregistrazione" style="margin-top: 0%;display: inline-block;font-size: small; color: #ffffff">REGISTRATI</a>

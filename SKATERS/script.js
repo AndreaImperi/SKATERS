@@ -96,6 +96,28 @@ document.getElementById("sfondo").addEventListener("mouseenter", function(){
         //         //window.location.href = "index.php";
         //     });
         // }
+
+         document.getElementById("Bemail").onclick = function() {
+            if (document.getElementById("email").style.display == "none") {
+                document.getElementById("email").style.display = "block";
+            } else {
+                document.getElementById("email").style.display = "none";
+            }
+        }
+
+
+        document.getElementById("xchiusura").onclick = function(){
+            document.getElementById("email").style.display = "none";
+        }
+
+
+ 
+        function resetForm() {
+        var form = document.getElementById("formemail");
+        form.reset();
+    }
+
+
         
     });
 
@@ -120,3 +142,5 @@ document.getElementById("sfondo").addEventListener("mouseenter", function(){
         //         console.log('Inserimento avvenuto con successo');
         //     }
         // });
+
+       
