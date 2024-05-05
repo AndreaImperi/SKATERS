@@ -201,16 +201,35 @@
                 Facci una domanda
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 5%; margin-right:5%; margin-top:1%">
-            <h5 class="quicksand" style="margin-left:2%"> INVIA UN E-MAIL A SKATERSS</h5>
-            <form class="quicksand" action="send.php" method="post" id="formemail">
-                <label for="oggetto" style="margin-left:1%">Oggetto:</label><br>
-                    <input type="text" id="oggetto" name="oggetto" style="margin-left:1%;width:40%;border:0.5px solid black; border-radius:5px"><br>
+            <h5 class="quicksand" style="margin-left:2%">TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
+            <form class="quicksand" action="index.php" method="post" id="formemail">
                 <label for="messaggio" style="margin-left:1%">Messaggio:</label><br>
-                    <textarea id="messaggio" name="messaggio" rows="7" cols="110" style="margin-left:1%;border:0.5px solid black; border-radius:5px;WIDTH: 98%"></textarea><br>
-                <button type="submit" class="btn btn-outline-primary quicksand " style="margin-left:1%;margin-top:1%;border:2px solid black; border-radius:5px">Invia Email</button>
+                    <textarea id="messaggio" name="messaggio"   style="margin-left:1%;border:0.5px solid black; border-radius:5px;WIDTH: 98%; HEIGHT: 25vh"></textarea><br>
+                <button type="submit" class="btn btn-outline-primary quicksand " style="margin-left:1%;margin-top:1%;border:2px solid black; border-radius:5px">Invia</button>
                 <img src="./immagini/x-removebg-preview.png" alt="" id="xchiusura" style=" position:fixed; right:25.5%; bottom:68.5% ; width:50px; cursor: pointer">
             </form>
              </div>
+             <?php
+             session_start();
+             if(isset($_SESSION['email'])) {
+             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
+                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                if ($connessione){
+                                    $email = $_SESSION["email"];
+                                        $messaggio = $_POST['messaggio'];
+                                        $q2="insert into messaggio (email, messaggio) values ($1, $2)";
+                                        $data=pg_query_params($connessione, $q2, array($email, $messaggio));
+                                        if ($data) {
+                                            echo "<br/><h1 style=\"font-size: medium;\"> Messaggio inviato! </h1> ";
+                                        }
+                                    }
+                                }
+                            }else{
+                                echo "";
+                            }
+                                
+                            
+                        ?>
       
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>

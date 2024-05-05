@@ -185,7 +185,8 @@
     width: 50px; /* Dimensioni del bottone */
     height: 50px;
     border: none;
-    background-color: rgb(29, 77, 136); /* Colore di sfondo del bottone */
+    background-image: url('../immagini/cestino.jpg');
+    background-size: cover;
     font-size: 16px;
 }
 
@@ -233,3 +234,17 @@
     border:none;
     background-color: white;
 }
+.btn.btn-outline-primary {
+    color: #000000; 
+    background-color: #ffffff; 
+    border-color: #000;
+}
+
+.btn.btn-outline-primary:hover {
+    color: #ffffff; 
+    background-color: #000000; 
+    border-color: #000; 
+}
+
+
+

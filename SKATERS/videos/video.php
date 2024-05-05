@@ -27,14 +27,14 @@
     <div class="grid">
         <div class="c1">
         <div style="margin-top: 10%;">
-                <input type="text" placeholder="Cerca" id="barra" style="border: 2px solid black; border-radius:5px; width: 200px">
-                <img id="searchInput" src='../immagini/lenteIngrandimento.png' class="lente" style="width: 50px;margin-bottom:0.3%; cursor: pointer"></img>
-                <select name="categorie" id="select_categorie" size="1" cols="4" style="margin-left: 50%; border: 2px solid black;border-radius:5px">
+                <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
                     <option value="nessuna">Categoria</option>
                     <option value="tutorial">Tutorial</option>
                     <option value="part">Video Part</option>
                     <option value="sls">Competizioni</option>
                 </select>
+                <input type="text" placeholder="Cerca" id="barra" style="border: 2px solid black; border-radius:5px; width: 200px;margin-left:0.5%">
+                <img id="searchInput" src='../immagini/lenteIngrandimento.png' class="lente" style="width: 50px;margin-bottom:0.3%; cursor: pointer;"></img>
             </div>
             
             <div style="margin-bottom: 5%;text-align: left; margin-top: 5%;">
@@ -75,11 +75,13 @@
 
         
     </div>
+    <h2 id="novideo" style="display: none; margin-left:37%; margin-top: 5%; color: rgb(93, 83, 83)">Non ci sono video disponibili :(</h2>
+
             
-    <div  style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;bottom:0%;">
+    <div   id="finale" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;bottom:0%;">
             <div align="left" style="margin-left:1%;">
                 
-                <input class="quicksand" type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
+            <button class="quicksand" id="Bemail" type="text" size="22" style="margin-bottom: 7%; border-radius: 5px; ">Facci una domanda</button>
                 <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
                     CONTATTACI: skaters@gmail.com
                 </h1>
@@ -93,6 +95,39 @@
                 <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
             </div>
     </div>
+    <div class="email" id="email" style="display: none;"> 
+        <h2 class="quicksand" style=" text-align: center; margin-top: 3%">
+                Facci una domanda
+            </h2>
+            <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 5%; margin-right:5%; margin-top:1%">
+            <h5 class="quicksand" style="margin-left:2%">TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
+            <form class="quicksand" action="video.php" method="post" id="formemail">
+                <label for="messaggio" style="margin-left:1%">Messaggio:</label><br>
+                    <textarea id="messaggio" name="messaggio"   style="margin-left:1%;border:0.5px solid black; border-radius:5px;WIDTH: 98%; HEIGHT: 25vh"></textarea><br>
+                <button type="submit" class="btn btn-outline-primary quicksand " style="margin-left:1%;margin-top:1%;border:2px solid black; border-radius:5px">Invia</button>
+                <img src="./immagini/x-removebg-preview.png" alt="" id="xchiusura" style=" position:fixed; right:25.5%; bottom:68.5% ; width:50px; cursor: pointer">
+            </form>
+             </div>
+             <?php
+             
+             if(isset($_SESSION['email'])) {
+                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                if ($connessione){
+                                    $email = $_SESSION["email"];
+                                        $messaggio = $_POST['messaggio'];
+                                        $q2="insert into messaggio (email, messaggio) values ($1, $2)";
+                                        $data=pg_query_params($connessione, $q2, array($email, $messaggio));
+                                        if ($data) {
+                                            echo "<br/><h1 style=\"font-size: medium;\"> Messaggio inviato! </h1> ";
+                                        }
+                                    }
+                                }
+                            }else{
+                                echo "";
+                            }
+                                
+                            
+                        ?>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -172,18 +207,45 @@
                 var valore = ricerca.value.toLowerCase(); // Converto il valore della ricerca in minuscolo per fare una ricerca case-insensitive
                 var videoContainers = document.querySelectorAll(".video"); // Seleziono tutti gli elementi con la classe "video"
                 // Itero su tutti i contenitori dei video
+                var barra = document.getElementById('finale');
+                var novideo =document.getElementById('novideo');
+                var min = 0;
                 videoContainers.forEach(function(videoContainer) {
                     var titoloVideo = videoContainer.querySelector(".titolo").textContent.toLowerCase(); // Ottengo il testo del titolo del video e lo converto in minuscolo
                     if (titoloVideo.includes(valore)) { // Controllo se il titolo del video contiene la stringa di ricerca
                         videoContainer.style.display = "block"; // Mostro il contenitore del video
+                        min = 1;
                     } else {
                         videoContainer.style.display = "none"; // Nascondo il contenitore del video se non corrisponde alla ricerca
+                        min = 0;
+                    }
+                    if (valore === '') min = 1;
+                    if (min === 0){
+                        novideo.style.display = "block";
+                        barra.style.position = "fixed";
+                        barra.style.bottom = "0%";
+                        barra.style.width = "100%";
+                    }else{
+                        barra.style.position = "static";
+                        novideo.style.display = "none";
+                        
                     }
             });
         });
+        document.getElementById("Bemail").onclick = function() {
+            if (document.getElementById("email").style.display == "none") {
+                document.getElementById("email").style.display = "block";
+            } else {
+                document.getElementById("email").style.display = "none";
+            }
+        }
+
+
+        document.getElementById("xchiusura").onclick = function(){
+            document.getElementById("email").style.display = "none";
+        }
     });
         
-
 
   
 

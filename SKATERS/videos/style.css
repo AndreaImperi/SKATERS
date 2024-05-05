@@ -57,12 +57,15 @@
     float: left;
     text-align: center;
     position: relative;
+    
 }
 
 .copertina{
     width: 100%;   
     margin-bottom: 2%;
-    border: 3px solid black;
+    border-radius: 5px;
+    
+
 }
 #black{
     color: black;
@@ -101,7 +104,29 @@
   font-weight: 700;
   font-style: normal;
 }
-.lente.clicked {
-    border: 2px solid black;
-    border-radius: 5px;
+.lente {
+    margin-left: -0.5%;
+    margin-top:-0.3%;
+}
+.email{
+    z-index: 9999;
+    border-radius: 10px;
+    width: 50%;
+    height: 50%;
+    background-color: #ffffff;
+    border: 5px solid black;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+}
+.btn.btn-outline-primary {
+    color: #000000; 
+    background-color: #ffffff; 
+    border-color: #000;
+}
+
+.btn.btn-outline-primary:hover {
+    color: #ffffff; 
+    background-color: #000000; 
+    border-color: #000; 
 }

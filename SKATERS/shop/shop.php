@@ -31,13 +31,14 @@
     <div class="grid">
         <div class="c1">
             <div style="margin-top: 10%;">
-                <input type="search" placeholder="Cerca">
-                <select name="categorie" id="select_categorie" size="1" cols="4">
+            <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
                     <option value="nessuna">Categoria</option>
-                    <option value="decks">Tavole</option>
-                    <option value="ruote">Ruote</option>
-                    <option value="trucks">Trucks</option>
+                    <option value="tutorial">Deck</option>
+                    <option value="part">Ruota</option>
+                    <option value="sls">Truck</option>
                 </select>
+                <input type="text" placeholder="Cerca" id="barra" style="border: 2px solid black; border-radius:5px; width: 200px;margin-left:0.5%">
+                <img id="searchInput" src='../immagini/lenteIngrandimento.png' class="lente" style="width: 50px;margin-bottom:0.3%; cursor: pointer;"></img>
             </div>
             <!-- <div style="margin-bottom: 5%;text-align: left;">
                 <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;">
@@ -157,7 +158,7 @@
 
 
     </div>
-
+        <h2 id="novideo" style="display: none; margin-left:37%; margin-top: 5%; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
     <div class="carrelloSopra" id="carrelloSopra">
         <div class="carrelloDentro" id="carrelloDentro">
             <!-- Contenuto del carrello -->
@@ -224,15 +225,15 @@
             }
                 
             ?>
-                <button class="Bsvuota_carrello">Svuota Carrello</button>
-                <button id="Bchiudi-carrello">Chiudi Carrello</button>
+                <button class="Bsvuota_carrello btn btn-outline-primary quicksand">Svuota Carrello</button>
+                <button id="Bchiudi-carrello" class="btn btn-outline-primary quicksand">Chiudi Carrello</button>
             </div>
         </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
-    <div  style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;bottom:0%;">
+    <div id="finale" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;bottom:0%;">
             <div align="left" style="margin-left:1%;">
                 
                 <input class="quicksand" type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
