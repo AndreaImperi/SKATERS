@@ -239,3 +239,11 @@
     top: 25%;
     left: 25%;
 }
+
+
+@media screen and (max-width: 1025px) {
+	.sfondo-trasparente-shop { 
+        height: 70%;
+        top:25%;
+    }
+}
