@@ -27,13 +27,13 @@
 
     <div class="corpo" id="corpo">
         
-    <div class="fixed-bar" style="align-items: center; justify-content:right;">
+    <div class="fixed-bar adjusted" style="align-items: center; justify-content:right;">
         <!-- <button class="btn btn-outline-secondary btn-lg">LOGO</button> -->
-        <img src="immagini/logo.png" style="height: 120%; margin-top: -0.6%; margin-right: auto;">
+        <img class="logo iphone" src="immagini/logo.png">
         <div style="display: flex; justify-content: right; align-items: end; margin-right:2%;">
-            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
-            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
-            <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bshop">SHOP</button>
+            <button class="Bfix adjusted btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
+            <button class="Bfix adjusted btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
+            <button class="Bfix adjusted btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bshop">SHOP</button>
             <?php
             //session_start();
             error_reporting(0); 
@@ -42,8 +42,8 @@
                 $display2 = $ciao;
                 $display3 = 'none';
                 // Se l'utente è loggato, mostra l'immagine al posto del bottone Accedi
-                //echo '<button style="background-image: url(./immagini/account.jpg); margin-left:35px; height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:block;" id="bruota"></button>
-                //<h5 class="quicksand" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%;">'.$ciao.'</h5>
+                //echo '<button class="profilo adjusted" style="background-image: url(./immagini/account.jpg); margin-left:35px; height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:block;" id="bruota"></button>
+                //<h5 class="quicksand nomeUtente" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%;">'.$ciao.'</h5>
                 //<button class="btn btn-outline-light quicksand" style="margin-right: 5px; display:none; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>';
             } else {
                 $display1 = 'none';
@@ -51,7 +51,7 @@
                 $display3 = 'block';
                 // Se l'utente non è loggato, mostra il normale bottone Accedi
                 //echo '<button style="background-image: url(./immagini/account.jpg); height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:none;" id="bruota"></button>
-                //<h5 class="quicksand" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%; display:none;">'.$ciao.'</h5>
+                //<h5 class="quicksand nomeUtente font-size-adjusted" style="position: absolute; margin-bottom: -1.3%; margin-right: -0.1%; display:none;">'.$ciao.'</h5>
                 //<button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:block; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>';
             }
             $email = $_SESSION['email'];
@@ -88,20 +88,20 @@
                 <div class="carousel-inner" >
                     <div class="carousel-item active">
                         <img src="immagini/Carosello1.jpg" class="d-block w-100" alt="...">
-                        <div class="caption1">
-                            <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">IMPARA I TUOI PRIMI TRICK</h5>
+                        <div class="caption1 iphone">
+                            <h5 class="scritta1 ipad iphone anton" >IMPARA I TUOI PRIMI TRICK</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="immagini/Carosello2.jpg" class="d-block w-100" alt="...">
-                        <div class="caption2">
-                            <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI</h5>
+                        <div class="caption2 iphone">
+                            <h5 class="scritta2 ipad iphone anton">SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="immagini/Carosello3.jpg" class="d-block w-100" alt="...">
-                        <div class="caption3">
-                            <h5 class="anton" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">COMPRA TUTTO IL NECESSARIO</h5>
+                        <div class="caption3 iphone">
+                            <h5 class="scritta3 ipad iphone anton">COMPRA TUTTO IL NECESSARIO</h5>
                         </div>
                     </div>
                 </div>
@@ -129,13 +129,13 @@
                 <img class="copertina" src="immagini/ollie.webp">
                 <h2 class="titolo quicksand" style="margin-top: 2%;">Come fare l'Ollie?</h2>
             </a>
-            <a style="color: white;" class="video" href="https://www.youtube.com/watch?v=Xb771zBX1Gg" target="_blank">
+            <a style="color: white;" class="video fantasma" href="https://www.youtube.com/watch?v=Xb771zBX1Gg" target="_blank">
                 <img class="copertina" src="immagini/shove.webp">
                 <h2 class="titolo quicksand" style="margin-top: 2%;">Come fare lo Shove It?</h2>
             </a>
         </div>
         </div>
-        <div class="c3" id="cellaMappe">
+        <div class="c3 iphone" id="cellaMappe">
             <h2 class="quicksand" style=" text-align: left; margin-top: 10px;">
                 Mappe
             </h2>
@@ -161,52 +161,52 @@
                 
             </div>
         </div>
-        <div class="c4" >
+        <div class="c4 " >
             <h2  class="quicksand" style="text-align: left; margin-left: 5%;">
                 Shop
             </h2>
-            <hr style="border-color: #333; border-width: 3px; margin-bottom: 5px; margin-top: 1px; opacity: 1; margin-left: 5%; width: 90%;">
+            <hr class="lineshop">
             
-            <div class="sezione-shop" style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 2%;">
+            <div class="sezione-shop iphone" style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 2%;">
                 <img src="immagini/shop3.jpg" style="width: 78%;">
-                <button id="Bshop2" type="button" class="btn btn-outline-light quicksand" style="position: absolute; z-index: 2;width: 100px;height: 50px;font-size:x-large;">SHOP</button>
+                <button id="Bshop2" type="button" class="bshop iphone btn btn-outline-light quicksand">SHOP</button>
             </div>
-            <div class="sfondo-trasparente-shop" id="sfondo" style="z-index: 1; position: absolute;"></div>
+            <div class="sfondo-trasparente-shop ipad iphone" id="sfondo" style="z-index: 1; position: absolute;"></div>
             
         </div>
         
-        <div class="c5" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">
+        <div class="c5 " style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">
             <div align="left">
 
             
-                <button class="quicksand" id="Bemail" type="text" size="22" style="margin-bottom: 7%; border-radius: 5px; ">Facci una domanda</button>
-                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+                <button class=" Bemail quicksand iphone " id="Bemail" type="text" size="22">Facci una domanda</button>
+                <h1 class=" cont iphone quicksand">
                     CONTATTACI: skaterss.ltw@gmail.com
                 </h1>
             </div>
            
             <!-- <button style="text-align: center;">LOGO</button> -->
-            <img src="immagini/logo.png" style="height: 170%;">
+            <img src="immagini/logo.png" style="height: 170%;" class="logoB iphone">
 
             <div>
                 <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
+                <h1 class="creatori iphone quicksand">Finocchiaro Dario  Imperi Andrea   </h1>
             </div>
         </div>
         
     </div>
     </div>
-    <div class="email" id="email" style="display: none;"> 
-        <h2 class="quicksand" style=" text-align: center; margin-top: 3%">
+    <div class="email iphone" id="email" style="display: none;"> 
+        <h2 class="titemail iphone quicksand">
                 Facci una domanda
             </h2>
             <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 5%; margin-right:5%; margin-top:1%">
-            <h5 class="quicksand" style="margin-left:2%">TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
+            <h5 class=" avviso iphone quicksand">TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
             <form class="quicksand" action="index.php" method="post" id="formemail">
-                <label for="messaggio" style="margin-left:1%">Messaggio:</label><br>
-                    <textarea id="messaggio" name="messaggio"   style="margin-left:1%;border:0.5px solid black; border-radius:5px;WIDTH: 98%; HEIGHT: 25vh"></textarea><br>
-                <button type="submit" class="btn btn-outline-primary quicksand " style="margin-left:1%;margin-top:1%;border:2px solid black; border-radius:5px">Invia</button>
-                <img src="./immagini/x-removebg-preview.png" alt="" id="xchiusura" style=" position:fixed; right:25.5%; bottom:68.5% ; width:50px; cursor: pointer">
+                <label class="label iphone" for="messaggio">Messaggio:</label><br>
+                    <textarea class="messaggio iphone" id="messaggio" name="messaggio"></textarea><br>
+                <button type="submit" class=" binvia iphone btn btn-outline-primary quicksand">Invia</button>
+                <img src="./immagini/x-removebg-preview.png" class="x iphone" alt="" id="xchiusura">
             </form>
              </div>
              <?php

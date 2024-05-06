@@ -169,50 +169,6 @@
     border-color: #000;
 }
 
-.caption2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    justify-content: center;
-    background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
-    color: #f1f0f6;
-    padding: 20px;
-    width: 47%;
-    height: 15%;
-    border-radius: 10px;
-}
-.caption3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    justify-content: center;
-    background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
-    color: #f1f0f6;
-    padding: 20px;
-    width: 33%;
-    height: 15%;
-    border-radius: 10px;
-}
-.caption1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    justify-content: center;
-    background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
-    color: #f1f0f6;
-    padding: 20px;
-    width: 30%;
-    border-radius: 10px;
-    height: 15%;
-    font-size: 1.2vw;
-}
-
 .anton {
     font-family: "Anton", sans-serif;
     font-weight: 400;
@@ -228,6 +184,7 @@
   font-style: normal;
 }
 
+
 .email{
     z-index: 9999;
     border-radius: 10px;
@@ -239,11 +196,309 @@
     top: 25%;
     left: 25%;
 }
+.x{
+    position:fixed; 
+    right:25.5%; 
+    bottom:68.5% ; 
+    width:50px; 
+    cursor: pointer
+}
 
 
-@media screen and (max-width: 1025px) {
-	.sfondo-trasparente-shop { 
+.caption1 {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
+    color: #f1f0f6;
+    padding: 1.5%;
+    width: 30%;
+    border-radius: 10px;
+    height: 14%;
+    font-size: 130%;
+}
+.scritta1{
+    color: white;
+    text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
+    position: absolute;
+    top: 27%;
+    left:13%;
+}
+
+
+.lineshop{
+    border-color: #333; 
+    border-width: 3px; 
+    margin-bottom: 5px; 
+    margin-top: 1px; 
+    opacity: 1; 
+    margin-left: 5%; 
+    width: 90%
+}
+
+.x{
+    position:fixed; 
+    right:25.5%; 
+    bottom:68.5% ; 
+    width:50px; 
+    cursor: pointer;
+}
+.titemail{
+    text-align: center; 
+    margin-top: 3%
+}
+.messaggio{
+    margin-left:1%;
+    border:0.5px solid black; 
+    border-radius:5px;
+    WIDTH: 98%; 
+    HEIGHT: 25vh;
+}
+
+.label{
+    margin-left:1%
+}
+.avviso{
+    margin-left:2%;
+}
+.binvia{
+    margin-left:1%;
+    margin-top:1%;
+    border:2px solid black; 
+    border-radius:5px
+}
+
+.caption2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
+    color: #f1f0f6;
+    padding: 3%;
+    width: 45%;
+    height: 14%;
+    border-radius: 10px;
+    font-size: 130%;
+}
+
+.scritta2{
+    color: white;
+    text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
+    position: absolute;
+    top:27%;
+    left:8%;
+}
+
+
+
+.caption3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
+    color: #f1f0f6;
+    padding: 1.5%;
+    width: 31%;
+    height: 15%;
+    border-radius: 10px;
+    font-size: 130%;
+}
+
+.scritta3{
+    color: white;
+    text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
+    position: absolute;
+    top:27%;
+    left:10%;
+}
+.bshop{
+    position: absolute; 
+    z-index: 2;
+    width: 100px;
+    height: 50px;
+    font-size:x-large;
+}
+.bdomanda{
+    text-align: center; 
+    margin-top: 3%
+}
+
+.Bemail{
+    margin-bottom: 7%; 
+    border-radius: 5px; 
+}
+.cont{
+    text-align: left; 
+    font-size: small; 
+    color: rgb(255, 255, 255); 
+}
+.creatori{
+    text-align: left; 
+    font-size: small; 
+    color: rgb(255, 255, 255);
+}
+.logo{
+    height: 120%; 
+    margin-top: -0.6%; 
+    margin-right: auto;
+}
+
+
+
+/* MEDIA QUERY*/
+
+/*IPAD PRO*/
+@media screen and (max-width: 1024px) {
+    .scritta1.ipad{
+        font-size: 85%;
+        left:11%
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .scritta2.ipad{
+        font-size: 80%;
+        left:7%
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .scritta3.ipad{
+        font-size: 85%;
+        left:8.5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nomeUtente.ipad{
+        margin-right: -0.9%
+    }
+}
+
+@media screen and (max-width: 1024px) {
+	.sfondo-trasparente-shop.ipad { 
         height: 70%;
         top:25%;
     }
 }
+
+
+/*IPHONE XR*/
+
+    @media screen and (max-width: 414px) {
+        .logo.iphone{
+            height: 60%;
+            margin-right: -4%;
+        }
+        .Bfix.adjusted{
+            width: 10%;
+            font-size: xx-small;
+        }
+        .profilo.adjusted{
+            height: 20px;
+            width: 20px;
+        }
+        .sfondo-trasparente-shop.iphone{
+            height: 50%;
+            top:38%;
+        }
+        .video.fantasma{
+            display: none;
+        }
+        .lineshop{
+            margin-bottom: 35px;
+        }
+        .sfondo-trasparente-shop.iphone{
+            top:42%;
+        }
+        .bshop.iphone{
+            display: flex;
+            align-items: center;
+            width: 70px;
+            height: 25px;
+            font-size: medium;
+            text-align: center;
+            
+        }
+        .Bemail.iphone{
+            display: flex;
+            align-items: center;
+            width: 60%;
+            height: 30px;
+            font-size: x-small;
+            margin-bottom: 9%;
+        }
+        .cont.iphone{
+            font-size: x-small;
+        }
+        .creatori.iphone{
+            font-size: 10px;
+            text-align: end;
+        }
+        .logoB.iphone{
+            margin-bottom: 5%;
+        }
+        .caption1.iphone{
+            height: 25%;
+        }
+        .scritta1.iphone{
+            font-size: 50%;
+            top:20%;
+            left:3%;
+        }
+        .caption2.iphone{
+            height: 25%;
+        }
+        .scritta2.iphone{
+            font-size: 50%;
+            top:13%;
+            left:3%;
+        }
+        .caption3.iphone{
+            height: 25%;
+        }
+        .scritta3.iphone{
+            font-size: 50%;
+            top:13%;
+            left:3%;
+        }
+        .email.iphone{
+            width: 80%;
+            left: 10%;
+        }
+        .x.iphone{
+            right: 12.5%;
+            bottom:70% ;
+            width:35px; 
+        }
+        .titemail.iphone{
+            font-size: large;
+            margin-top: 5%;
+           
+        }
+
+        .avviso.iphone{
+            margin-left:5%
+        }
+
+        .messaggio.iphone{
+            width: 90%;
+            margin-left: 5%
+        }
+        .label.iphone{
+            margin-left: 5%;
+        }
+        .binvia.iphone{
+            margin-left:5%;
+        }
+    }
