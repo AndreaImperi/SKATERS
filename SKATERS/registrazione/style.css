@@ -157,7 +157,7 @@ select{
     border-color: #000;
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1030px) {
 	.angolodx { display: none;}
     .angolosx { display: none;}
     .immaginedxD { display: none;}

@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body class="quicksand">
+<?php session_start(); ?>
     <div class="fixed-bar" style="margin-top: 0%;">
         <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
             <!-- <button>LOGO</button>  -->
@@ -105,7 +106,7 @@
                 <label for="messaggio" style="margin-left:1%">Messaggio:</label><br>
                     <textarea id="messaggio" name="messaggio"   style="margin-left:1%;border:0.5px solid black; border-radius:5px;WIDTH: 98%; HEIGHT: 25vh"></textarea><br>
                 <button type="submit" class="btn btn-outline-primary quicksand " style="margin-left:1%;margin-top:1%;border:2px solid black; border-radius:5px">Invia</button>
-                <img src="./immagini/x-removebg-preview.png" alt="" id="xchiusura" style=" position:fixed; right:25.5%; bottom:68.5% ; width:50px; cursor: pointer">
+                <img src="./immagini/x-removebg-preview.png" alt="" id="xchiusura" style=" position:fixed; right:25.5%; bottom:67.5% ; width:50px; cursor: pointer">
             </form>
              </div>
              <?php

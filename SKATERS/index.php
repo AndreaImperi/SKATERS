@@ -31,9 +31,9 @@
         <!-- <button class="btn btn-outline-secondary btn-lg">LOGO</button> -->
         <img class="logo iphone" src="immagini/logo.png">
         <div style="display: flex; justify-content: right; align-items: end; margin-right:2%;">
-            <button class="Bfix adjusted btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bvideo" >VIDEOS</button>
-            <button class="Bfix adjusted btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bmappe">MAPPE</button>
-            <button class="Bfix adjusted btn btn-outline-light quicksand btn1" style="margin-right: 5px;" id="Bshop">SHOP</button>
+            <button class="Bfix iphone btn btn-outline-light quicksand btn1" id="Bvideo" >VIDEOS</button>
+            <button class="Bfix iphone btn btn-outline-light quicksand btn1" id="Bmappe">MAPPE</button>
+            <button class="Bfix iphone btn btn-outline-light quicksand btn1"  id="Bshop">SHOP</button>
             <?php
             //session_start();
             error_reporting(0); 
@@ -65,14 +65,14 @@
                 $nomeUtente = $utente['nome'];
             }
         ?>
-        <button style="background-image: url(./immagini/account.jpg); margin-left:35px; height: 50px; width: 50px; background-size: cover; background-position: center; border-radius:100px; display:<?php echo $display1; ?>; margin-bottom:3px" id="bruota"></button>
-        <h5 class="quicksand" style="position: fixed; height:0vh"><?php echo $display2; ?></h5>
-        <button class="btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:<?php echo $display3; ?>; height: 50px;" id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>
+        <button class="bprofilo iphone" style=" display:<?php echo $display1; ?>; margin-bottom:3px" id="bruota"></button>
+        <h5 class="username iphone quicksand" style="position: fixed; height:0vh"><?php echo $display2; ?></h5>
+        <button class=" Bfix baccedi iphone btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:<?php echo $display3; ?>; " id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>
         
 
         </div>
         <div id="profilo" style="background-color: #181818; height: 55px; width: 105px; position: absolute; margin-left: 89.5%; margin-top: 100px; border-radius: 10px;z-index: 9999; display:none; text-align:center; border-top-left-radius:0; border-top-right-radius:0; ">    
-            <button type="submit" name="logout" id="logout" style="height: 45px; width: 100px; border:0px; margin-top: 7%" class="btn btn-outline-light quicksand" >LOGOUT</button>
+            <button  type="submit" name="logout" id="logout" style="height: 45px; width: 100px; border:0px; margin-top: 7%" class="logout iphone btn btn-outline-light quicksand" >LOGOUT</button>
         </div>
     </div>
     
@@ -174,12 +174,33 @@
             <div class="sfondo-trasparente-shop ipad iphone" id="sfondo" style="z-index: 1; position: absolute;"></div>
             
         </div>
+        <?php
+        $place = 'Facci una domanda';
+        $stato = 'disabled';
+        if(isset($_SESSION['email'])) {
+                $stato = '';
+                $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
+                                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                    if ($connessione){
+                                        $email = $_SESSION["email"];
+                                            $messaggio = $_POST['messaggio'];
+                                            $q2="insert into messaggio (email, messaggio) values ($1, $2)";
+                                            $data=pg_query_params($connessione, $q2, array($email, $messaggio));
+                                            if ($data) {
+                                                $place = 'Messaggio inviato';
+                                                $stato = 'disabled';
+                                            }
+                                        }
+                                    }
+                                }
+                                ?>
+                                
         
         <div class="c5 " style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">
             <div align="left">
 
             
-                <button class=" Bemail quicksand iphone " id="Bemail" type="text" size="22">Facci una domanda</button>
+                <button <?php echo $stato;?> class=" Bemail quicksand iphone " id="Bemail" type="text" size="22"> <?php echo $place;?> </button>
                 <h1 class=" cont iphone quicksand">
                     CONTATTACI: skaterss.ltw@gmail.com
                 </h1>
@@ -196,6 +217,7 @@
         
     </div>
     </div>
+    
     <div class="email iphone" id="email" style="display: none;"> 
         <h2 class="titemail iphone quicksand">
                 Facci una domanda
@@ -205,31 +227,13 @@
             <form class="quicksand" action="index.php" method="post" id="formemail">
                 <label class="label iphone" for="messaggio">Messaggio:</label><br>
                     <textarea class="messaggio iphone" id="messaggio" name="messaggio"></textarea><br>
-                <button type="submit" class=" binvia iphone btn btn-outline-primary quicksand">Invia</button>
+                <button  type="submit" class=" binvia iphone btn btn-outline-primary quicksand">Invia</button>
                 <img src="./immagini/x-removebg-preview.png" class="x iphone" alt="" id="xchiusura">
             </form>
              </div>
-             <?php
-             session_start();
-             if(isset($_SESSION['email'])) {
-             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
-                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                if ($connessione){
-                                    $email = $_SESSION["email"];
-                                        $messaggio = $_POST['messaggio'];
-                                        $q2="insert into messaggio (email, messaggio) values ($1, $2)";
-                                        $data=pg_query_params($connessione, $q2, array($email, $messaggio));
-                                        if ($data) {
-                                            echo "<br/><h1 style=\"font-size: medium;\"> Messaggio inviato! </h1> ";
-                                        }
-                                    }
-                                }
-                            }else{
-                                echo "";
-                            }
-                                
-                            
-                        ?>
+             
+             
+             
       
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>

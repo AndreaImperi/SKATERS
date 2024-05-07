@@ -73,7 +73,7 @@
     bottom: 5%;
     left: 0;
     width: 100%;
-    height: 75%;
+    height: 73%;
     background-color: rgba(0, 0, 0, 0.5); /* Velo semi-trasparente */
 }
 
@@ -189,7 +189,7 @@
     z-index: 9999;
     border-radius: 10px;
     width: 50%;
-    height: 50%;
+    height: 55%;
     background-color: #ffffff;
     border: 5px solid black;
     position: fixed;
@@ -243,7 +243,7 @@
 .x{
     position:fixed; 
     right:25.5%; 
-    bottom:68.5% ; 
+    bottom:67.5% ; 
     width:50px; 
     cursor: pointer;
 }
@@ -352,6 +352,22 @@
     margin-top: -0.6%; 
     margin-right: auto;
 }
+.Bfix.baccedi{
+    height: 50px;
+}
+.bprofilo{
+    background-image: url(./immagini/account.jpg); 
+    margin-left:35px; 
+    height: 50px; 
+    width: 50px; 
+    background-size: cover; 
+    background-position: center; 
+    border-radius:100px;
+}
+.Bfix{
+    margin-right: 5px;
+}
+
 
 
 
@@ -398,13 +414,32 @@
     @media screen and (max-width: 414px) {
         .logo.iphone{
             height: 60%;
-            margin-right: -4%;
+            margin-left: 0.3%;
         }
-        .Bfix.adjusted{
-            width: 10%;
+        .Bfix.iphone{
+            height: 30px;
+            width: 26.5%;
+            font-size: xx-small;
+            text-align: center;
+        }
+        .baccedi.Bfix.iphone{
+            height: 30px;
+            width: 25%;
             font-size: xx-small;
         }
-        .profilo.adjusted{
+        .bprofilo.iphone{
+            height: 30px;
+            width: 30px;
+            margin-left: 3%;
+        }
+        .username.iphone{
+            font-size: 12px;
+            top: 7%;
+            right:3%;
+        }
+        
+        
+        .profilo.iphone{
             height: 20px;
             width: 20px;
         }
@@ -486,11 +521,9 @@
             margin-top: 5%;
            
         }
-
         .avviso.iphone{
             margin-left:5%
         }
-
         .messaggio.iphone{
             width: 90%;
             margin-left: 5%
@@ -501,4 +534,9 @@
         .binvia.iphone{
             margin-left:5%;
         }
+        .baccedi.iphone{
+            height:5%;
+            width: 15%;
+        }
+        
     }

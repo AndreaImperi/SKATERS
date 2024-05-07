@@ -33,9 +33,9 @@
             <div style="margin-top: 10%;">
             <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
                     <option value="nessuna">Categoria</option>
-                    <option value="tutorial">Deck</option>
-                    <option value="part">Ruota</option>
-                    <option value="sls">Truck</option>
+                    <option value="decks">Deck</option>
+                    <option value="ruote">Ruota</option>
+                    <option value="trucks">Truck</option>
                 </select>
                 <input type="text" placeholder="Cerca" id="barra" style="border: 2px solid black; border-radius:5px; width: 200px;margin-left:0.5%">
                 <img id="searchInput" src='../immagini/lenteIngrandimento.png' class="lente" style="width: 50px;margin-bottom:0.3%; cursor: pointer;"></img>
