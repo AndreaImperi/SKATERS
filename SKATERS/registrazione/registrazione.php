@@ -18,25 +18,25 @@
         $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
     ?>
 
-    <div class="fixed-bar" style="margin-top: 0%;">
-        <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
+    <div class="fixed-bar iphone" style="margin-top: 0%;">
+        <div class="space iphone">
             <!-- <button>LOGO</button>  -->
             <a href="../index.php" style="margin-top:1.1%;">
-                <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
+                <img src="../immagini/logo.png" class="logo iphone">
             </a> 
         </div>
         <h2 style="color: black; font-weight: 700;">Registrati</h2>
-        <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+        <hr  class="linea" style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
     <img src="../immagini/ruota2.png" class="immaginesxU" >
     <img src="../immagini/ruota3.png" class="immaginesxD" >
 
     <div class="grid">
-        <div class="c1" style="overflow: hidden; text-align: center;">
+        <div class="c1 iphone">
             <form name="formReg" action="registrazione.php" method="POST" > 
                 
 
-                <table>
+                <table class="iphone">
                     <tr>
                         <td colspan='3' style="text-align: left;">Nome:</td>
                     </tr>
@@ -60,17 +60,17 @@
                         </td>
                     </tr>
                     <tr style="height: 20px; margin-bottom: 10%;">
-                        <td colspan='3' style="text-align: left;">Data di nascita:</td>
+                        <td colspan='3' class="sfondo data-tit" style="text-align: left;">Data di nascita:</td>
                     </tr>
                     
                     <tr>
                         <td style="width: 33%; text-align: left;"> 
-                            <label style="width: 30%;">Giorno:</label>
-                            <input type="text" name="giorno" maxlength="2" style="width:60%; margin: 0;" pattern="^(0?[1-9]|[12][0-9]|3[01])$" required>
+                            <label class="label iphone">Giorno:</label>
+                            <input type="text" name="giorno" maxlength="2" class="input iphone" pattern="^(0?[1-9]|[12][0-9]|3[01])$" required>
                         </td>
                         <td style="width: 33%; text-align: center;">
-                            <label style="margin-right: 5px;">Mese:</label>
-                            <select name="mese" size="1" cols="13" required>
+                            <label class="input-mese iphone">Mese:</label>
+                            <select name="mese" size="1" cols="13" required class="Smese">
                                 <option value="nessuna"></option>
                                 <option value="Gennaio">Gennaio</option>
                                 <option value="Febbraio">Febbraio</option>
@@ -87,8 +87,8 @@
                             </select>
                         </td>
                         <td style="width: 33%; text-align: left;">
-                            <label style="margin-right: 5px;" >Anno:</label>
-                            <input type="text" name="anno" maxlength="4" style="width: 80px; margin: 0;" required>
+                            <label class="label-anno iphone">Anno:</label>
+                            <input type="text" name="anno" maxlength="4"class="input-anno iphone" required>
                         </td>
                     </tr>
                     <tr>
@@ -110,11 +110,11 @@
                         </td>
                     </tr>
                     <tr>
-                    <td colspan='3' style="text-align: left;">E-mail:</td>
+                    <td colspan='3' class="labels" style="text-align: left;">E-mail:</td>
                     </tr>
                     <tr>
                         <td colspan='3' style="text-align: left;">
-                            <input type="email" name="email" size="30" maxlength="30" required>
+                            <input class="inputs" type="email" name="email" size="30" maxlength="30" required>
                         </td>
                     </tr>
                     <tr style="height: 60px; vertical-align: bottom;">
@@ -126,7 +126,7 @@
                         </td>
                     </tr>
                     <tr style="height: 60px; vertical-align: bottom;">
-                        <td colspan='3' style="text-align: left;">Conferma:</td>
+                        <td colspan='3' class="conferma-tit" style="text-align: left;">Conferma:</td>
                     </tr>
                     <tr>
                         <td colspan='3' style="text-align: left;">

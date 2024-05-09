@@ -19,10 +19,10 @@
             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
         ?>
 
-        <div class="fixed-bar">
+        <div class="fixed-bar iphone">
             <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
-            <a href="../index.php" style="margin-top:1.1%;">
-                <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
+            <a href="../index.php" style="margin-top:-5%;margin-left:38%">
+                <img src="../immagini/logo.png" class="logo iphone" >
             </a> 
             </div>
             <h2 style="color: black; font-weight: 700;">Accedi</h2>
@@ -30,16 +30,16 @@
         </div>
         
         <div class="grid">
-            <div class="c1" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div class="overlay" >
+            <div class="c1 iphone" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div class="overlay iphone" >
             <h3 style="margin-top: 2%; color:white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">SKATERS</h3>
                 <H1 style="font-size: small;margin-bottom:0%; color:white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">Entra con le tue credenziali</H1>
                 <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
                 <form name="formAcc" action="" method="POST">
-                    <label for="email" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">E-mail:</label><br>
-                    <input type="text" id="email" name="email"><br>
-                    <label for="password" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">Password:</label><br>
-                    <input type="password" id="password" name="password">
+                    <label for="email" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;" class="label">E-mail:</label><br>
+                    <input type="text" id="email" name="email" class="input iphone"><br>
+                    <label for="password" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;" >Password:</label><br>
+                    <input type="password" id="password" name="password" class="input iphone">
                     <input type="submit" value="Submit" class="btn btn-outline-primary quicksand" style="margin-top:5%">
                     </form>
                 <br>
@@ -80,10 +80,11 @@
             
                 ?>
 
-                <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 0%;margin-right: 15%;">
-            <div style="text-align: center;margin-bottom: 4%;">
-                <h1 style="font-size: small; color: rgb(255, 255, 255);display: inline-block">Non hai un account?</h1>
-                <a href="../registrazione/registrazione.php" id="Bregistrazione" style="margin-top: 0%;display: inline-block;font-size: small; color: #ffffff">REGISTRATI</a>
+                <hr class="linea iphone" id="linea-grigia">
+            <div  style="text-align: center;margin-bottom: 4%;">
+                <h1 class="reg iphone">Non hai un account?</h1>
+                <a class="reg iphone" href="../registrazione/registrazione.php" id="Bregistrazione">REGISTRATI</a>
+
             </div>
             </div>
                 
@@ -91,7 +92,7 @@
         
         <script src="script.js"></script>
        
-        <img src="../immagini/accesso1.png" class="basso" alt="">
+        <img src="../immagini/accesso1.png" class="basso iphone" alt="">
     </body>
 </html>
 
