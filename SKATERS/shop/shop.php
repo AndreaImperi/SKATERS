@@ -15,21 +15,22 @@
 </head>
 <body class="quicksand">
     <?php session_start(); ?>
-    <div class="fixed-bar" style="margin-top: 0%;">
-        <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
+    <div class="fixed-bar iphone">
+        <div class="toppa iphone">
             <!-- <button>LOGO</button>  -->
             <a href="../index.php" style="margin-top:1.1%;">
-                <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
+                <img src="../immagini/logo.png" class="logo iphone">
             </a>
         </div>
-        <h2 style="color: black; font-weight: 700;">Shop<div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
-            <button id="Bcarrello" ></button>
-        </div></h2>
+        <h2 class="shop"style="color: black; font-weight: 700;">Shop</h2>
+        <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
+            <button class="Bcarrello iphone" id="Bcarrello" ></button>
+        </div>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
 
     <div class="grid">
-        <div class="c1">
+        <div class="c1 iphone">
             <div style="margin-top: 10%;">
             <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
                     <option value="nessuna">Categoria</option>
@@ -160,7 +161,7 @@
     </div>
         <h2 id="novideo" style="display: none; margin-left:37%; margin-top: 5%; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
     <div class="carrelloSopra" id="carrelloSopra">
-        <div class="carrelloDentro" id="carrelloDentro">
+        <div class="carrelloDentro iphone" id="carrelloDentro">
             <!-- Contenuto del carrello -->
             <h2 class="titolo_carrello" style="align-self: flex-start; margin-bottom: 5%;">Il Tuo Carrello</h2>
             
@@ -233,21 +234,21 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
-    <div id="finale" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;bottom:0%;">
+    <div class="finale iphone" id="finale">
             <div align="left" style="margin-left:1%;">
                 
-                <input class="quicksand" type="text" placeholder="Facci una domanda" size="22" style="margin-bottom: 7%; border-radius: 5px;">
-                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+                
+                <h1 class="cont quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
                     CONTATTACI: skaters@gmail.com
                 </h1>
             </div>
            
             <!-- <button style="text-align: center;">LOGO</button> -->
-            <img src="../immagini/logo.png" style="height: 80%;">
+            <img src="../immagini/logo.png" class="logob iphone">
 
             <div style="margin-right:1%">
-                <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
+                <h1 class="creator quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
+                <h1 class="names quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);"> Finocchiaro Dario Imperi Andrea  </h1>
             </div>
     </div>
 </body>

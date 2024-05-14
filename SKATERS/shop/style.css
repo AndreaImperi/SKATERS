@@ -7,6 +7,7 @@
     width: 100%;
     height: 75px;
     z-index: 9999;
+    margin-top: 0%;
 }
 
 .linea {
@@ -14,7 +15,15 @@
     margin-bottom: 30px;
     opacity: 1;
 }
-
+.toppa{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 0vh; 
+    width: 96vw;
+    background-color: white; 
+    margin-top: 1%;
+}
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -216,24 +225,23 @@
     font-size: x-large;
   }
   
-
+.finale{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background-color: #181818; 
+    height: 100px;
+    overflow: hidden;
+    margin-top: 5%;
+    bottom:0%;
+}
 .quicksand {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
-#Bcarrello{
-    background-image: url('../immagini/carrello.png');
-    background-size: contain; 
-    position: fixed; 
-    z-index: 9999;
-    margin-right: 5px;
-    width: 50px;
-    height: 50px;
-    border:none;
-    background-color: white;
-}
+
 .btn.btn-outline-primary {
     color: #000000; 
     background-color: #ffffff; 
@@ -244,6 +252,68 @@
     color: #ffffff; 
     background-color: #000000; 
     border-color: #000; 
+}
+.logo{
+    height: 80px; 
+    margin-top:1.2%;
+}
+.logob{
+
+        height: 80%;
+    
+}
+.Bcarrello{
+    background-image: url('../immagini/carrello.png');
+    background-size: contain; 
+    position: fixed; 
+    z-index: 9999;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+    border:none;
+    background-color: white;
+}
+logoB{
+    height: 80%;
+}
+@media screen and (max-width: 414px) {
+    .fixed-bar.iphone{
+        margin-top: 0%;
+        width: 100%;
+    }
+    .toppa.iphone{
+        height: 120px;
+        width: 220x;
+        margin-top: -10%;
+        margin-bottom: -20%;
+        margin-left: -5%;
+        width: 140%;
+    }
+    .logo.iphone{
+        margin-top: 0%;
+        margin-left: -27%;
+    }
+    .Bcarrello.iphone{
+        width: 40px;
+        height: 40px;
+    }
+    .carrelloDentro.iphone{
+        margin-top: 7%;
+        height: 80%;
+    }
+    .shop{
+        margin-top: 8%;
+    }
+    .c1.iphone{
+        margin-top: 20%;
+    }
+    .names{
+        font-size: x-small;
+    }
+    .logob.iphone{
+        height: 55px;
+    }
+    
 }
 
 

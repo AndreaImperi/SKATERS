@@ -215,8 +215,7 @@
             </div>
         </div>
         
-    </div>
-    </div>
+
     
     <div class="email iphone" id="email" style="display: none;"> 
         <h2 class="titemail iphone quicksand">

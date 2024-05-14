@@ -473,6 +473,7 @@
             height: 30px;
             font-size: x-small;
             margin-bottom: 9%;
+            
         }
         .cont.iphone{
             font-size: x-small;
@@ -511,6 +512,7 @@
         .email.iphone{
             width: 80%;
             left: 10%;
+            overflow: hidden;
         }
         .x.iphone{
             right: 12.5%;

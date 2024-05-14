@@ -130,3 +130,82 @@
     background-color: #000000; 
     border-color: #000; 
 }
+.logo{
+    margin-top:1.5%;
+}
+.toppa{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 0vh; 
+    width: 96vw;
+    background-color: white; 
+    margin-top: 1%;
+}
+.finale{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background-color: #181818; 
+    height: 100px;
+    overflow: hidden;
+    margin-top: 5%;
+    bottom:0%;
+}
+.cont{
+    text-align: left; 
+    font-size: small; 
+    color: rgb(255, 255, 255);
+}
+.creator{
+    text-align: right; 
+    font-size: small; 
+    color: rgb(255, 255, 255);
+}
+.names{
+    text-align: left; 
+    font-size: small; 
+    color: rgb(255, 255, 255);
+}
+.logob{
+    height: 80%;
+}
+
+@media screen and (max-width: 414px) {
+    .fixed-bar.iphone{
+        top: 3%;
+    
+    }
+    .videos{
+        margin-top: -26px;
+    }
+    .toppa.iphone{
+        background-color: white;
+        height: 150px;
+        margin-top: -25%;
+        width: 110%;
+    }
+    .logo.iphone{
+        margin-top: 60px;
+        margin-left: -28px;
+    }
+    .c1.iphone{
+        margin-top: 20%;
+    }
+    .finale.iphone{
+        width: 110.7%;
+    }
+    .cont.iphone{
+        font-size: small;
+    }
+    .names.iphone{
+        font-size: small;
+        text-align: right; 
+    }
+    .logob.iphone{
+        height: 60%;
+        margin-top: -2%;
+    }
+    
+    
+}

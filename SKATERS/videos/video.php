@@ -15,18 +15,18 @@
 </head>
 <body class="quicksand">
 <?php session_start(); ?>
-    <div class="fixed-bar" style="margin-top: 0%;">
-        <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
+    <div class="fixed-bar iphone" style="margin-top: 0%;">
+        <div class="toppa iphone">
             <!-- <button>LOGO</button>  -->
-            <a href="../index.php" style="margin-top:1.1%;">
+            <a href="../index.php" class="logo iphone" >
                 <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
             </a>
         </div>
-        <h2 style="color: black; font-weight: 700;">Videos</h2>
+        <h2 class="videos" style="color: black; font-weight: 700;">Videos</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
     <div class="grid">
-        <div class="c1">
+        <div class="c1 iphone">
         <div style="margin-top: 10%;">
                 <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
                     <option value="nessuna">Categoria</option>
@@ -79,21 +79,21 @@
     <h2 id="novideo" style="display: none; margin-left:37%; margin-top: 5%; color: rgb(93, 83, 83)">Non ci sono video disponibili :(</h2>
 
             
-    <div   id="finale" style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;margin-top: 5%;bottom:0%;">
+    <div class="finale iphone"  id="finale" >
             <div align="left" style="margin-left:1%;">
                 
-            <button class="quicksand" id="Bemail" type="text" size="22" style="margin-bottom: 7%; border-radius: 5px; ">Facci una domanda</button>
-                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+           
+                <h1 class="cont quicksand iphone ">
                     CONTATTACI: skaters@gmail.com
                 </h1>
             </div>
            
             <!-- <button style="text-align: center;">LOGO</button> -->
-            <img src="../immagini/logo.png" style="height: 80%;">
+            <img src="../immagini/logo.png" class="logob iphone">
 
             <div style="margin-right:1%">
-                <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-                <h1 class="quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255);">Imperi Andrea e Dario Finocchiaro</h1>
+                <h1 class=" creator quicksand iphone">CREATORI:</h1>
+                <h1 class="names quicksand iphone">Finocchiaro Dario Imperi Andrea</h1>
             </div>
     </div>
     <div class="email" id="email" style="display: none;"> 
