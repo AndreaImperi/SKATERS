@@ -100,14 +100,24 @@ document.getElementById("sfondo").addEventListener("mouseenter", function(){
          document.getElementById("Bemail").onclick = function() {
             if (document.getElementById("email").style.display == "none") {
                 document.getElementById("email").style.display = "block";
+                document.getElementById("overlay").style.filter = "blur(5px)";
             } else {
                 document.getElementById("email").style.display = "none";
+                document.getElementById("overlay").style.filter = "none";
             }
         }
+        document.getElementById("overlay").onclick = function(event) {
+            if (event.target.id !== "email" && event.target.id !== "Bemail") {
+              document.getElementById("email").style.display = "none";
+              document.getElementById("overlay").style.filter = "none";
+            }
+          }
+          
 
 
         document.getElementById("xchiusura").onclick = function(){
             document.getElementById("email").style.display = "none";
+            document.getElementById("overlay").style.filter = "none";
         }
 
 
@@ -127,6 +137,7 @@ document.getElementById("sfondo").addEventListener("mouseenter", function(){
         });
     });
     
+   
 
     
 

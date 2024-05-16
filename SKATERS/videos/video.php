@@ -15,13 +15,12 @@
 </head>
 <body class="quicksand">
 <?php session_start(); ?>
-    <div class="fixed-bar iphone">
+<div class="fixed-bar iphone">
         <div class="toppa iphone">
             <!-- <button>LOGO</button>  -->
-            <a href="../index.php" class="vidfix">
+            <a href="../index.php" style="margin-top:1.1%;">
                 <img src="../immagini/logo.png" class="logo iphone">
             </a>
-            
         </div>
         <h2 class="videos" style="color: black; font-weight: 700;">Videos</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">

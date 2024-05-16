@@ -263,7 +263,7 @@
     border:none;
     background-color: white;
 }
-logoB{
+.logoB{
     height: 80%;
 }
 @media screen and (max-width: 1025px) {
@@ -298,8 +298,9 @@ logoB{
         width: 140%;
     }
     .logo.iphone{
-        margin-top: 0%;
-        margin-left: -27%;
+        margin-top: 10%;
+        margin-left: -30%;
+        height: 70px;
     }
     .Bcarrello.iphone{
         width: 40px;

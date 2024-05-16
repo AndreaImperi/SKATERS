@@ -19,10 +19,10 @@
             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
         ?>
 
-        <div class="fixed-bar iphone">
+        <div class="fixed-bar ipad iphone">
             <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
             <a href="../index.php" style="margin-top:-5%;margin-left:38%">
-                <img src="../immagini/logo.png" class="logo iphone" >
+                <img src="../immagini/logo.png" class="logo ipad iphone" >
             </a> 
             </div>
             <h2 style="color: black; font-weight: 700;">Accedi</h2>

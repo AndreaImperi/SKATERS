@@ -30,7 +30,7 @@
     background-size: contain;
     border-radius: 10px;
     grid-area: i;   
-    margin-top: 20%;
+    margin-top: 10%;
     height: 550px;
     width: 500px;
     margin-left: 4%;
@@ -158,8 +158,11 @@ input[type="text"], input[type="password"], input[type=email] {
     margin-right: 15%;
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1024px) {
     .grid { margin-top: 30%;}
+    .logo.ipad{
+        margin-top: 4%;
+    }
 }
 @media screen and (max-width: 414px) {
     .c1.iphone{
