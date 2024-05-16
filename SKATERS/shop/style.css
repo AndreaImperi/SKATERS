@@ -35,11 +35,7 @@
     text-align: center;
 }
 
-@media screen and (max-width: 1025px) {
-	.grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
+
 
 .c1 {
     grid-column: 1 / -1;
@@ -170,12 +166,6 @@
     overflow: auto;
 }
 
-@media screen and (max-width: 1025px) {
-	.carrelloDentro {
-        top: 10%;
-        width: 60%;
-    }
-}
   
 .articoloCarrello {
     display: flex;
@@ -276,7 +266,25 @@
 logoB{
     height: 80%;
 }
+@media screen and (max-width: 1025px) {
+	.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .carrelloDentro {
+        top: 10%;
+        width: 60%;
+    }
+}
+
 @media screen and (max-width: 414px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .carrelloDentro {
+        top: 10%;
+        right:6%;
+        width: 80%;
+    }
     .fixed-bar.iphone{
         margin-top: 0%;
         width: 100%;

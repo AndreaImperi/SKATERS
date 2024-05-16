@@ -11,16 +11,20 @@
     
 } */
 
+.logo{
+    height: 80px; 
+    margin-top:1.2%;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 40px;
     grid-row-gap: 50px;
-    width: 90%;
+    width: 100%;
     border: solid 0px;
     text-align: center;
-    margin-left: 5%;
 }
 
 /* .grid > div {
@@ -53,11 +57,11 @@
 } */
 
 .video{
-    width: 100%;
+    width: 93%;
     float: left;
     text-align: center;
     position: relative;
-    
+    margin-left:3.5%;
 }
 
 .copertina{
@@ -89,6 +93,7 @@
     width: 100%;
     height: 75px;
     z-index: 9999;
+    margin-top: 0%;
 }
 .anton {
     font-family: "Anton", sans-serif;
@@ -104,10 +109,10 @@
   font-weight: 700;
   font-style: normal;
 }
-.lente {
+/* .lente {
     margin-left: -0.5%;
     margin-top:-0.3%;
-}
+} */
 .email{
     z-index: 9999;
     border-radius: 10px;
@@ -130,16 +135,12 @@
     background-color: #000000; 
     border-color: #000; 
 }
-.logo{
-    margin-top:1.5%;
-}
 .toppa{
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    height: 0vh; 
+    height: 0px; 
     width: 96vw;
-    background-color: white; 
     margin-top: 1%;
 }
 .finale{
@@ -170,30 +171,43 @@
 .logob{
     height: 80%;
 }
+.vidfix{
+    margin-top:1.1%;
+}
 
 @media screen and (max-width: 414px) {
+    .vidfix{
+        margin-top:0%;
+    }
     .fixed-bar.iphone{
-        top: 3%;
-    
+        height: 115px;
+        margin-top: 0%;
     }
-    .videos{
+    /* .videos{
         margin-top: -26px;
-    }
+    } */
     .toppa.iphone{
-        background-color: white;
-        height: 150px;
-        margin-top: -25%;
-        width: 110%;
+        height: 125px;
+        margin-top: -15%;
+        width: 100%;
     }
+    /* .toppa{
+        height: 0px; 
+        width: 96vw;
+        margin-top: 1%;
+    } */
     .logo.iphone{
-        margin-top: 60px;
-        margin-left: -28px;
+        height: 50px;
+        margin-top: 150px;
     }
+    /* .immlogo {
+        height: 100%;
+    } */
     .c1.iphone{
         margin-top: 20%;
     }
     .finale.iphone{
-        width: 110.7%;
+        width: 100%;
     }
     .cont.iphone{
         font-size: small;
@@ -206,6 +220,11 @@
         height: 60%;
         margin-top: -2%;
     }
-    
-    
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .categ {
+        width: 120%;
+        margin-left: -8%;
+    }
 }

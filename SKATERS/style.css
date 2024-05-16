@@ -16,6 +16,7 @@
     border: 0px;
     padding: 2em 1em;
 }
+
 /* .c1 {
     grid-area: i;   
     margin-top: 74px;
@@ -88,7 +89,7 @@
     padding: 10px;
     width: 100%;
     height: 100px;
-    z-index: 9998;
+    z-index: 9997;
     display: flex;
 }
 
@@ -186,7 +187,7 @@
 
 
 .email{
-    z-index: 9999;
+    z-index: 9998;
     border-radius: 10px;
     width: 50%;
     height: 55%;
@@ -216,7 +217,7 @@
     background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
     color: #f1f0f6;
     padding: 1.5%;
-    width: 30%;
+    width: 32%;
     border-radius: 10px;
     height: 14%;
     font-size: 130%;
@@ -226,7 +227,7 @@
     text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
     position: absolute;
     top: 27%;
-    left:13%;
+    left:5%;
 }
 
 
@@ -263,7 +264,7 @@
     margin-left:1%
 }
 .avviso{
-    margin-left:2%;
+    margin-left:1%;
 }
 .binvia{
     margin-left:1%;
@@ -282,7 +283,7 @@
     background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
     color: #f1f0f6;
     padding: 3%;
-    width: 45%;
+    width: 54%;
     height: 14%;
     border-radius: 10px;
     font-size: 130%;
@@ -293,7 +294,7 @@
     text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
     position: absolute;
     top:27%;
-    left:8%;
+    left:3%;
 }
 
 
@@ -308,7 +309,7 @@
     background-color: rgba(26, 25, 25, 0.753); /* Velo semi-trasparente */
     color: #f1f0f6;
     padding: 1.5%;
-    width: 31%;
+    width: 35%;
     height: 15%;
     border-radius: 10px;
     font-size: 130%;
@@ -319,7 +320,7 @@
     text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;
     position: absolute;
     top:27%;
-    left:10%;
+    left:4%;
 }
 .bshop{
     position: absolute; 
@@ -368,6 +369,24 @@
     margin-right: 5px;
 }
 
+.sent-message {
+    position: absolute;
+    top: 0;
+    left: 1%;
+    width: 98%;
+    height: 97%;
+    background-color: rgba(128, 128, 128, 0.5); /* semi-transparent gray background */
+    color: #000000; /* white text */
+    text-align: center;
+    padding: 10px;
+    z-index: 9999;
+    border-radius: 1.5%;
+}
+  
+.message-container {
+    position: relative; /* to contain the absolute positioned sent-message */
+}
+
 
 
 
@@ -412,7 +431,15 @@
 
 /*IPHONE XR*/
 
-    @media screen and (max-width: 414px) {
+@media screen and (max-width: 414px) {
+        .grid > div:nth-child(2) {
+            /*padding: 0.5em 1em;*/
+            padding: 1.5em 1em 0.3em 1em;
+        }
+        .grid > div:nth-child(3) {
+            /*padding: 0.5em 1em;*/
+            padding: 0em 1em;
+        }
         .logo.iphone{
             height: 60%;
             margin-left: 0.3%;
@@ -481,9 +508,10 @@
         .creatori.iphone{
             font-size: 10px;
             text-align: end;
+            margin-bottom: -16px;
         }
         .logoB.iphone{
-            margin-bottom: 5%;
+            display:none;
         }
         .caption1.iphone{
             height: 25%;

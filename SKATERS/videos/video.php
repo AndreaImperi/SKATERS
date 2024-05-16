@@ -15,20 +15,21 @@
 </head>
 <body class="quicksand">
 <?php session_start(); ?>
-    <div class="fixed-bar iphone" style="margin-top: 0%;">
+    <div class="fixed-bar iphone">
         <div class="toppa iphone">
             <!-- <button>LOGO</button>  -->
-            <a href="../index.php" class="logo iphone" >
-                <img src="../immagini/logo.png" style="height: 80px; margin-top:1.2%;">
+            <a href="../index.php" class="vidfix">
+                <img src="../immagini/logo.png" class="logo iphone">
             </a>
+            
         </div>
         <h2 class="videos" style="color: black; font-weight: 700;">Videos</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
     </div>
     <div class="grid">
         <div class="c1 iphone">
-        <div style="margin-top: 10%;">
-                <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
+            <div style="margin-top: 10%;" class="categ">
+            <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
                     <option value="nessuna">Categoria</option>
                     <option value="tutorial">Tutorial</option>
                     <option value="part">Video Part</option>
@@ -39,8 +40,8 @@
             </div>
             
             <div style="margin-bottom: 5%;text-align: left; margin-top: 5%;">
-                    <h3 id="etichetta_tutorial" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Tutorial</h3>
-                    <h3 id="etichetta_part" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Video Part</h3>
+                    <!-- <h3 id="etichetta_tutorial" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Tutorial</h3>
+                    <h3 id="etichetta_part" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Video Part</h3> -->
                     <h3 id="etichetta_sls" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: none;" >Competizioni</h3>
                     <hr class="linea" id="linea-grigia" style="color: rgb(93, 83, 83) ;margin-top: 1%;">
             </div>

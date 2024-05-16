@@ -207,7 +207,7 @@
             </div>
            
             <!-- <button style="text-align: center;">LOGO</button> -->
-            <img src="immagini/logo.png" style="height: 170%;" class="logoB iphone">
+            <img src="immagini/logo.png" style="height: 170%" class="logoB iphone">
 
             <div>
                 <h1 class="quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
