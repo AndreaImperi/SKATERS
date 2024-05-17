@@ -32,10 +32,10 @@
 
 .linea {
     border-width: 3px;
-    margin-bottom: 30px;
+    margin-bottom: 30px; 
+    margin-top: 1px;
     opacity: 1;
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
 }
 #linea-grigia{
     width: 70%;
@@ -214,14 +214,15 @@ select{
         overflow: hidden;
     }
     .fixed-bar.iphone{
-        top: 5%;
+        top: 0%;
         
     }
     .logo.iphone{
         position:fixed;
-        top:0.3%;
-        right:33%;
-        height:65px;
+        height: auto; 
+        width: 40%;
+        top: 0%;
+        right: 3%
     }
     .label.iphone{
         margin-right: 20px;
@@ -264,8 +265,8 @@ select{
         
     }
     .linea{
-        width: 110%;
-        margin-left: -3%;
+        width: 100%;
+        margin-top: 3.3%;
     }
     
     .conferma-tit{
@@ -274,5 +275,9 @@ select{
         border-radius: 5px;
         /*background-color: rgba(255, 255, 255, 0.644);*/
         width:22%
+    }
+
+    .registrati_scritta{
+        margin-top: -2%;
     }
 }

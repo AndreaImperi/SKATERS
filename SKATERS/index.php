@@ -72,8 +72,8 @@
         
 
         </div>
-        <div id="profilo" style="background-color: #181818; height: 55px; width: 105px; position: absolute; margin-left: 89.5%; margin-top: 100px; border-radius: 10px;z-index: 9999; display:none; text-align:center; border-top-left-radius:0; border-top-right-radius:0; ">    
-            <button  type="submit" name="logout" id="logout" style="height: 45px; width: 100px; border:0px; margin-top: 7%" class="logout iphone btn btn-outline-light quicksand" >LOGOUT</button>
+        <div class="contieni_logout" id="profilo">    
+            <button  type="submit" name="logout" id="logout" class="logout iphone btn btn-outline-light quicksand" >LOGOUT</button>
         </div>
     </div>
     

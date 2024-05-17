@@ -25,8 +25,8 @@
                 <img src="../immagini/logo.png" class="logo ipad iphone" >
             </a> 
             </div>
-            <h2 style="color: black; font-weight: 700;">Accedi</h2>
-            <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+            <h2 class="accedi_scritta" style="color: black; font-weight: 700;">Accedi</h2>
+            <hr class="sotto_scritta" style="border-color: #333; border-width: 3px; opacity: 1;">
         </div>
         
         <div class="grid">

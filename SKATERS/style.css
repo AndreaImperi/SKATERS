@@ -390,44 +390,78 @@
     position: relative; /* to contain the absolute positioned sent-message */
 }
 
-
-
+.contieni_logout{
+    background-color: #181818; 
+    height: 55px; 
+    width: 105px; 
+    position: absolute; 
+    margin-left: 89.5%; 
+    margin-top: 100px; 
+    border-radius: 10px;
+    z-index: 9999; 
+    display:none; 
+    text-align:center; 
+    border-top-left-radius:0; 
+    border-top-right-radius:0; 
+}
+.logout{
+    height: 45px; 
+    width: 100px; 
+    border:0px; 
+    margin-top: 7%;
+}
 
 
 /* MEDIA QUERY*/
 
 /*IPAD PRO*/
 @media screen and (max-width: 1024px) {
+    .caption1{
+        width: 30%;
+    }
     .scritta1.ipad{
         font-size: 85%;
         left:11%
     }
-}
-
-@media screen and (max-width: 1024px) {
+    .caption2{
+        width: 45%;
+    }
     .scritta2.ipad{
         font-size: 80%;
         left:7%
     }
-}
-
-@media screen and (max-width: 1024px) {
+    .caption3{
+        width: 31%;
+    }
     .scritta3.ipad{
         font-size: 85%;
         left:8.5%;
     }
-}
 
-@media screen and (max-width: 1024px) {
     .nomeUtente.ipad{
         margin-right: -0.9%
     }
-}
-
-@media screen and (max-width: 1024px) {
+    
 	.sfondo-trasparente-shop.ipad { 
         height: 70%;
         top:25%;
+    }
+    .email{
+        width: 60%;
+        left: 20%;
+        height: 42%;
+        overflow: hidden;
+    }
+    .x{
+        right:21%; 
+        bottom:70.5% ; 
+    }
+    .bprofilo{
+        margin-left:25px; 
+        margin-right: 10px;
+    }
+    .username{
+        margin-right: 10px;
     }
 }
 
@@ -459,14 +493,14 @@
             font-size: xx-small;
         }
         .bprofilo.iphone{
-            height: 30px;
-            width: 30px;
-            margin-left: 3%;
+            height: 27px;
+            width: 32px;
+            margin-left: 18px;
         }
         .username.iphone{
             font-size: 12px;
             top: 7%;
-            right:3%;
+            margin-right:8px;
         }
         
         
@@ -543,6 +577,7 @@
         .email.iphone{
             width: 80%;
             left: 10%;
+            height: 51%;
             overflow: hidden;
         }
         .x.iphone{
@@ -572,5 +607,16 @@
             height:5%;
             width: 15%;
         }
-        
+        .fixed-bar {
+            height: 100px;
+        }
+        .contieni_logout{ 
+            height: 35px; 
+            width: 65px; 
+        }
+        .logout{
+            height: 27px; 
+            width:60px; 
+            font-size: x-small;
+        }
     }

@@ -26,7 +26,7 @@
         <div style="display: flex; justify-content: right; align-items: end; height: 0vh; width: 96vw;">
             <button class="Bcarrello iphone" id="Bcarrello" ></button>
         </div>
-        <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+        <hr class="sotto_scritta" style="border-color: #333; border-width: 3px; opacity: 1;">
     </div>
 
     <div class="grid">
@@ -115,8 +115,8 @@
                 echo '<img class="sinistra" src="' . $row['img_sx'] . '">';
                 echo '<img class="destra" src="' . $row['img_dx'] . '">';
                 echo '<div class="barra">';
-                echo '<button class="btn btn-outline-light quicksand Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>';
-                echo '<label>Taglia:</label>';
+                echo '<button class="btn btn-outline-light quicksand Bacquista">Acquista</button>';
+                echo '<label class="taglia_label">Taglia:</label>';
 
                 if ($row['categoria']=='deck') {
                     echo '<select class="Taglia" style="margin-left: 1%;border-radius: 5px;">';
@@ -159,7 +159,7 @@
 
 
     </div>
-        <h2 id="novideo" style="display: none; margin-left:37%; margin-top: 5%; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
+        <h2 class="novideo" id="novideo" style="display: none; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
     <div class="carrelloSopra" id="carrelloSopra">
         <div class="carrelloDentro iphone" id="carrelloDentro">
             <!-- Contenuto del carrello -->

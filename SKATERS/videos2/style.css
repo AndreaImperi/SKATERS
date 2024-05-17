@@ -1,0 +1,185 @@
+.fixed-bar {
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    height: 75px;
+    z-index: 9999;
+    margin-top: 0%;
+}
+
+.linea {
+    border-width: 3px;
+    margin-bottom: 30px;
+    opacity: 1;
+}
+.toppa{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 0vh; 
+    width: 96vw;
+    background-color: white; 
+    margin-top: 1%;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    grid-row-gap: 20px;
+    width: 100%;
+    border: solid 0px;
+    text-align: center;
+}
+
+.video{
+    width: 93%;
+    float: left;
+    text-align: center;
+    position: relative;
+    margin-left:3.5%;
+}
+
+.copertina{
+    width: 100%;   
+    margin-bottom: 2%;
+    border-radius: 5px;
+    
+
+}
+#black{
+    color: black;
+}
+.titolo{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.c1 {
+    grid-column: 1 / -1;
+    width: 90%;
+    margin: auto;
+    
+}
+
+.anton {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: x-large;
+}
+  
+.finale{
+    position: static;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    background-color: #181818; 
+    height: 100px;
+    overflow: hidden;
+    margin-top: 5%;
+    bottom:0;
+}
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.btn.btn-outline-primary {
+    color: #000000; 
+    background-color: #ffffff; 
+    border-color: #000;
+}
+
+.btn.btn-outline-primary:hover {
+    color: #ffffff; 
+    background-color: #000000; 
+    border-color: #000; 
+}
+.logo{
+    height: 80px; 
+    margin-top:1.2%;
+}
+.logob{
+
+        height: 80%;
+    
+}
+.logoB{
+    height: 80%;
+}
+
+.sotto_scritta{
+    margin-bottom: 30px; 
+    margin-top: 1px; 
+}
+.novideo{
+    margin-left:37%
+}
+@media screen and (max-width: 1025px) {
+	.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .carrelloDentro {
+        top: 10%;
+        width: 60%;
+    }
+    .logo{
+        margin-top: 1.5%;
+    }
+    .novideo{
+        margin-left:30%
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .fixed-bar.iphone{
+        margin-top: 0%;
+        width: 100%;
+    }
+    .toppa.iphone{
+        height: 120px;
+        width: 220x;
+        margin-top: -10%;
+        margin-bottom: -20%;
+        margin-left: -5%;
+        width: 140%;
+    }
+    .logo.iphone{
+        margin-top: 12%;
+        margin-left: 30%;
+        height: 70px;
+    }
+    .videos_scritta{
+        margin-top: 5%;
+    }
+    .c1.iphone{
+        margin-top: 20%;
+    }
+    .logob.iphone{
+        height: 55px;
+    }
+    .lente{
+        margin-left: -3%;
+    }
+    .titolo{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .sotto_scritta{
+        margin-bottom: 30px; 
+        margin-top: 6%; 
+    }
+}
+
+
+

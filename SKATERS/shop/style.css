@@ -252,6 +252,10 @@
         height: 80%;
     
 }
+.Bacquista{
+    margin-left: 1%; 
+    vertical-align: middle;
+}
 .Bcarrello{
     background-image: url('../immagini/carrello.png');
     background-size: contain; 
@@ -266,6 +270,14 @@
 .logoB{
     height: 80%;
 }
+.sotto_scritta{
+    margin-bottom: 30px; 
+    margin-top: 1px;
+}
+.novideo{
+    margin-left:37%; 
+    margin-top: 5%;
+}
 @media screen and (max-width: 1025px) {
 	.grid {
         grid-template-columns: repeat(3, 1fr);
@@ -273,6 +285,12 @@
     .carrelloDentro {
         top: 10%;
         width: 60%;
+    }
+    .novideo{
+        margin-left:30%
+    }
+    .messaggio_login{
+        bottom: 28%;
     }
 }
 
@@ -311,7 +329,7 @@
         height: 80%;
     }
     .shop{
-        margin-top: 8%;
+        margin-top: 5%;
     }
     .c1.iphone{
         margin-top: 20%;
@@ -322,7 +340,27 @@
     .logob.iphone{
         height: 55px;
     }
-    
+    .sotto_scritta{
+        margin-bottom: 30px; 
+        margin-top: 4%;
+    }
+    .Bacquista{
+        height: 10px;
+        font-size: x-small;
+        padding-bottom: 10%;
+        margin-top: 1px;
+    }
+    .taglia_label{
+        font-size: x-small;
+    }
+    .Taglia{
+        width: 45px;
+        font-size: x-small;
+    }
+    .messaggio_login{
+        font-size: x-small;
+        margin-bottom: 20%;
+    }
 }
 
 

@@ -25,8 +25,8 @@
                 <img src="../immagini/logo.png" class="logo iphone">
             </a> 
         </div>
-        <h2 style="color: black; font-weight: 700;">Registrati</h2>
-        <hr  class="linea" style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
+        <h2 class="registrati_scritta" style="color: black; font-weight: 700;">Registrati</h2>
+        <hr  class="linea" style="border-color: #333; border-width: 3px; opacity: 1;">
     </div>
     <img src="../immagini/ruota2.png" class="immaginesxU" >
     <img src="../immagini/ruota3.png" class="immaginesxD" >

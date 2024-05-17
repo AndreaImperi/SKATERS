@@ -30,7 +30,7 @@
     background-size: contain;
     border-radius: 10px;
     grid-area: i;   
-    margin-top: 10%;
+    margin-top: 6%;
     height: 550px;
     width: 500px;
     margin-left: 4%;
@@ -75,7 +75,7 @@
     width: 100%;
     height: 75px;
     z-index: 9999;
-    margin-top: 5%;
+    margin-top: 0%;
 }
 label {
     display: block;
@@ -110,7 +110,9 @@ input[type="text"], input[type="password"], input[type=email] {
     font-size: x-large;
   }
   .logo{
-    width: 40%;
+    height: 80px; 
+    margin-top:44%;
+    margin-left: -130%;
   }
 
 .quicksand {
@@ -157,11 +159,17 @@ input[type="text"], input[type="password"], input[type=email] {
     margin-top: 0%;
     margin-right: 15%;
 }
+.sotto_scritta{
+    margin-bottom: 30px; 
+    margin-top: 1px;
+}
 
 @media screen and (max-width: 1024px) {
     .grid { margin-top: 30%;}
     .logo.ipad{
-        margin-top: 4%;
+        height: 75px;
+        margin-top:42%;
+        margin-left: -100%;
     }
 }
 @media screen and (max-width: 414px) {
@@ -184,13 +192,16 @@ input[type="text"], input[type="password"], input[type=email] {
         right:-170px;
     }
     .fixed-bar.iphone{
-        top: 7%
+        margin-top: 5%;
     }
     .logo.iphone{
         position:fixed;
-        height: 80px; 
-        top: 1%;
-        right: 25%
+        height: auto;
+        width: 40%; 
+        top: -1%;
+        right: 3%;
+        margin-left: 0%;
+        margin-top:3%;
     }
     .input.iphone{
         width: 80%;
@@ -204,5 +215,12 @@ input[type="text"], input[type="password"], input[type=email] {
     }
     .linea.iphone{
         margin-bottom: 3%;
+    }
+    .accedi_scritta{
+        margin-top:-2%;
+    }
+    .sotto_scritta{
+        margin-bottom: 30px; 
+        margin-top: 5%;
     }
 }

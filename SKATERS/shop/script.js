@@ -280,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Itero su tutti i contenitori dei video
             var barra = document.getElementById('finale');
             var novideo = document.getElementById('novideo');
+            novideo.style.display = "none";
             var min = 0;
             videoContainers.forEach(function(videoContainer) {
                 var titoloVideo = videoContainer.querySelector(".nome").textContent.toLowerCase(); // Ottengo il testo del titolo del video e lo converto in minuscolo
@@ -297,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         barra.style.bottom = "0%";
                         barra.style.width = "100%";
                     }else{
-                        barra.style.position = "static";
+                        //barra.style.position = "static";
                         novideo.style.display = "none";
                         
                     }

@@ -1,9 +1,9 @@
 document.getElementById("Bvideo").addEventListener("click", function() {
-    apriPaginaVideo("videos/video.php")
+    apriPaginaVideo("videos2/video2.php")
 });
 
 document.getElementById("Tvideo").addEventListener("click", function() {
-    apriPaginaVideo("videos/video.php")
+    apriPaginaVideo("videos2/video2.php")
 });
 
 function apriPaginaVideo(url) {

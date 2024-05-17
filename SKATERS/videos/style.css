@@ -178,12 +178,17 @@
 }
 
 @media screen and (max-width: 414px) {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     .vidfix{
         margin-top:0%;
     }
     .fixed-bar.iphone{
         z-index: 9999;
-        width: 100%;
+        width: 414px;
         margin-top: 0%;
         overflow: hidden;
     }
@@ -196,7 +201,7 @@
         margin-top: -2%;
         margin-bottom: -20%;
         margin-left: -5%;
-        width: 140%;
+        width: 100%;
     }
     /* .toppa{
         height: 0px; 
@@ -219,7 +224,7 @@
         margin-top: 20%;
     }
     .finale.iphone{
-        width: 448px;
+        width: 100%;
         margin-left: 0%;
     }
     .cont.iphone{
@@ -235,7 +240,7 @@
     }
     .grid {
         grid-template-columns: repeat(2, 1fr);
-        margin-left: 3%;
+        margin-left: 0%;
     }
     .categ {
         width: 120%;
