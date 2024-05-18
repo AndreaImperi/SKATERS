@@ -44,41 +44,7 @@
                     </form>
                 <br>
 
-                <?php
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                        if ($connessione){
-                            $email = $_POST["email"];
-                            $q1 = "select * from utente where email = $1";
-                            $result=pg_query_params($connessione, $q1, array($email));
-                            if ($tuple=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                                $pswd = $_POST['password'];
-                                $q2= "select * from utente where email = $1 and pswd = $2";
-                                $data=pg_query_params($connessione, $q2, array($email, $pswd));
-                                
-                                if ($data) {
-                                    session_start();
-
-                                    $_SESSION['email'] = $email;
-                                    $nome = $tuple['nome'];
-                                    $_SESSION['nome'] = $nome;
-                                    //$session = $_SESSION['nome'];
-                                    //$ciao = $tuple['nome'];
-                                    //echo "benvenuto, $session";
-
-                                    
-                                    header("Location: ../index.php");
-
-                        
-                                    
-                            } else {
-                                $_SESSION['utente_loggato'] = false;
-                                echo "<h1 style=\"font-size: small; color: red;display: inline-block; font-size: small\">!l'indirizzo email non risulta registrato!</h1>";
-                            }
-                        }
-                    }
-                }
-            
-                ?>
+                
 
                 <hr class="linea iphone" id="linea-grigia">
             <div  style="text-align: center;margin-bottom: 4%;">
@@ -89,6 +55,71 @@
             </div>
                 
         </div>
+        <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        // if ($connessione){
+                        //     $email = $_POST["email"];
+                        //     $q1 = "select * from utente where email = $1";
+                        //     $result=pg_query_params($connessione, $q1, array($email));
+                        //     if ($tuple=pg_fetch_array($result, null, PGSQL_ASSOC)) {
+                        //         $pswd = $_POST['password'];
+                        //         $q2= "select * from utente where email = $1 and pswd = $2";
+                        //         $data=pg_query_params($connessione, $q2, array($email, $pswd));
+                                
+                        //         if ($data) {
+                        //             session_start();
+
+                        //             $_SESSION['email'] = $email;
+                        //             $nome = $tuple['nome'];
+                        //             $_SESSION['nome'] = $nome;
+                        //             //$session = $_SESSION['nome'];
+                        //             //$ciao = $tuple['nome'];
+                        //             //echo "benvenuto, $session";
+
+                                    
+                        //             header("Location: ../index.php");
+
+                        
+                                    
+                        //         } else {
+                        //             $_SESSION['utente_loggato'] = false;
+                        //             echo "<h1 style=\"font-size: small; color: red;display: inline-block; font-size: small\">!l'indirizzo email non risulta registrato!</h1>";
+                        //         }
+                        //     }
+                        // }
+                        $email = $_POST["email"];
+                        $pswd = $_POST['password'];
+                        $q1 = "SELECT * FROM utente WHERE email = $1";
+                        $result = pg_query_params($connessione, $q1, array($email));
+                        if ($result) {
+                            if (pg_num_rows($result) > 0) {
+                                $q2 = "SELECT * FROM utente WHERE email = $1 AND pswd = $2";
+                                $result_2 = pg_query_params($connessione, $q2, array($email, $pswd));
+                                if ($result_2) {
+                                    if (pg_num_rows($result_2) > 0) {
+                                        $tuple=pg_fetch_array($result_2, null, PGSQL_ASSOC);
+                                        session_start();
+                                        $_SESSION['email'] = $email;
+                                        $nome = $tuple['nome'];
+                                        $_SESSION['nome'] = $nome;
+                                        $session = $_SESSION['nome'];
+                                        $ciao = $tuple['nome'];
+                                        echo "benvenuto, $session";
+
+                                        header("Location: ../index.php");
+                                    } else {
+                                        $_SESSION['utente_loggato'] = false;
+                                        echo "<h1 class=\"mess_err\">!password errata!</h1>";
+                                    }
+                                }
+                            } else {
+                                $_SESSION['utente_loggato'] = false;
+                                echo "<h1 class=\"mess_err\">!l'indirizzo email non risulta registrato!</h1>";
+                            }
+                        }
+                    }
+            
+                ?>
         
         <script src="script.js"></script>
        

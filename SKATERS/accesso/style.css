@@ -163,6 +163,16 @@ input[type="text"], input[type="password"], input[type=email] {
     margin-bottom: 30px; 
     margin-top: 1px;
 }
+.mess_err {
+    font-size: small; 
+    font-weight: 800;
+    color: red;
+    display: inline-block;
+    font-size: small;
+    margin-top: -9%;
+    z-index: 9999;
+}
+
 
 @media screen and (max-width: 1024px) {
     .grid { margin-top: 30%;}
