@@ -167,10 +167,10 @@
                     
                 </div>
                 <?php
-                    $place = 'Facci una domanda';
-                    $stato = 'disabled';
+                    $but = 'disabled';
+                    $stato = 'none';
                     if(isset($_SESSION['email'])) {
-                        $stato = '';
+                        $but = '';
                         $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             if ($connessione){
@@ -179,24 +179,22 @@
                                 $q2="insert into messaggio (email, messaggio) values ($1, $2)";
                                 $data=pg_query_params($connessione, $q2, array($email, $messaggio));
                                 if ($data) {
-                                    $place = 'Messaggio inviato';
-                                    $stato = 'disabled';
+                                    $stato = 'block';
+                                }else{
+                                    $stato = 'none';
                                 }
                             }
                         }
                     }
                 ?>
-                <script>
-                    <?php if ($data): ?>
-                        alert("Messaggio inviato");
-                    <?php endif; ?>
-                </script>
+
+                
                                         
                 <div class="c5 " style="display: flex; align-items: center; justify-content: space-between; background-color: #181818; height: 100px;overflow: hidden;">
 
                     <div align="left">
-                        <button <?php echo $stato;?> class=" Bemail quicksand iphone " id="Bemail" type="text" size="22"> <?php echo $place;?> </button>
-                        <h1 class=" cont iphone quicksand">
+                    <button <?php echo $but;?> class=" Bemail quicksand iphone " id="Bemail" type="text" size="22"> Facci una domanda </button>
+                    <h1 class=" cont iphone quicksand">
                             CONTATTACI: skaterss.ltw@gmail.com
                         </h1>
                     </div>
@@ -224,6 +222,10 @@
             <button  type="submit" class=" binvia iphone btn btn-outline-primary quicksand">Invia</button>
             <img src="./immagini/x-removebg-preview.png" class="x iphone" alt="" id="xchiusura">
         </form>
+    </div>
+    <div class="alert iphone quicksand" id="alert" style="display:<?php echo $stato ?>;padding:20px">
+        MESSAGGIO INVIATO CON SUCCESSO!<br>
+        <button id="ok" class=" btn btn-outline-primary btn-sm quicksand" style="margin-left: 90%;margin-top:2%;margin-bottom:0%">OK</button>
     </div>
              
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

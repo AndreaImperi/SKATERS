@@ -110,6 +110,14 @@ document.addEventListener('DOMContentLoaded', function () {
         form.reset();
     }
 });
+document.getElementById("ok").onclick = function(){
+    document.getElementById("alert").style.display = "none";
+    
+}
+var div = document.getElementById("alert");
+setTimeout(() => {
+    div.style.display = "none";
+}, 4000);
 
 document.getElementById("logout").addEventListener("click", function() {
     $.post("logout.php", {}, function(data) {
