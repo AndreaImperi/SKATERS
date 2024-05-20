@@ -224,13 +224,3 @@ input[type="text"], input[type="password"], input[type=email] {
        margin-bottom: 5%;
     }
     .linea.iphone{
-        margin-bottom: 3%;
-    }
-    .accedi_scritta{
-        margin-top:-2%;
-    }
-    .sotto_scritta{
-        margin-bottom: 30px; 
-        margin-top: 5%;
-    }
-}

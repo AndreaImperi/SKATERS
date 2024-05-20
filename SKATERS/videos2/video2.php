@@ -152,9 +152,6 @@
                 etichetta_videos.innerText = "Competizioni";
             } 
         });
-        });
-        
-        document.addEventListener('DOMContentLoaded', function() {
         var searchButton = document.getElementById("searchInput"); 
         searchButton.addEventListener("click", function() { 
                 var ricerca = document.getElementById('barra');
@@ -171,20 +168,24 @@
                         min = 1;
                     } else {
                         videoContainer.style.display = "none"; // Nascondo il contenitore del video se non corrisponde alla ricerca
-                        min = 0;
+                           //min = 0;
                     }
-                    if (valore === '') min = 1;
-                    if (min === 0){
-                        novideo.style.display = "block";
-                        barra.style.position = "fixed";
-                        barra.style.bottom = "0%";
-                        barra.style.width = "100%";
-                    }else{
-                        barra.style.position = "static";
-                        novideo.style.display = "none";
-                        
-                    }
-            });
+                });
+            if (valore === '') min = 1;
+            if (min === 0){
+                novideo.style.display = "block";
+                barra.style.position = "fixed";
+                barra.style.bottom = "0%";
+                barra.style.width = "100%";
+                console.log("il min è 0 -> block");
+            }else{
+                //barra.style.position = "static";
+                barra.style.position = "absolute";
+                barra.style.bottom = "0%";
+                barra.style.width = "100%";
+                novideo.style.display = "none";
+                console.log("il min è 1 -> none");
+            }
         });
         document.getElementById("Bemail").onclick = function() {
             if (document.getElementById("email").style.display == "none") {

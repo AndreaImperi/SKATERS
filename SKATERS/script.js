@@ -36,122 +36,83 @@ document.getElementById("sfondo").addEventListener("mouseenter", function(){
     var bottone = document.getElementById("Bshop");
 });
     
-    document.querySelectorAll('.btn-check').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            var selectedMap = this.getAttribute('data-src');
-            document.getElementById('map-iframe').setAttribute('src', selectedMap);
-        });
+document.querySelectorAll('.btn-check').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        var selectedMap = this.getAttribute('data-src');
+        document.getElementById('map-iframe').setAttribute('src', selectedMap);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var skateparkRadio = document.getElementById('btnradio1');
+    var tutto = document.getElementById('btnradio2');
+    var skateshopRadio = document.getElementById('btnradio3');
+    var skateparkFrame = document.getElementById('skatepark');
+    var skateshopFrame = document.getElementById('skateshop');
+    var tuttoM = document.getElementById('tutto');
+
+    skateparkRadio.addEventListener('change', function () {
+        if (skateparkRadio.checked) {
+            skateparkFrame.style.display = 'block';
+            skateshopFrame.style.display = 'none';
+            tuttoM.style.display = 'none';
+        }
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        var skateparkRadio = document.getElementById('btnradio1');
-        var tutto = document.getElementById('btnradio2');
-        var skateshopRadio = document.getElementById('btnradio3');
-        var skateparkFrame = document.getElementById('skatepark');
-        var skateshopFrame = document.getElementById('skateshop');
-        var tuttoM = document.getElementById('tutto');
-
-        skateparkRadio.addEventListener('change', function () {
-            if (skateparkRadio.checked) {
-                skateparkFrame.style.display = 'block';
-                skateshopFrame.style.display = 'none';
-                tuttoM.style.display = 'none';
-            }
-        });
-
-        skateshopRadio.addEventListener('change', function () {
-            if (skateshopRadio.checked) {
-                skateshopFrame.style.display = 'block';
-                skateparkFrame.style.display = 'none';
-                tuttoM.style.display = 'none';
-            }
-        });
-
-        tutto.addEventListener('change', function(){
-            if (tutto.checked){
-                tuttoM.style.display = 'block';
-                skateparkFrame.style.display = 'none';
-                skateshopFrame.style.display = 'none';
-            }
-        })
-
-
-        document.getElementById("bruota").onclick = function() {
-            if (document.getElementById("profilo").style.display == "none") {
-                document.getElementById("profilo").style.display = "block";
-            } else {
-                document.getElementById("profilo").style.display = "none";
-            }
+    skateshopRadio.addEventListener('change', function () {
+        if (skateshopRadio.checked) {
+            skateshopFrame.style.display = 'block';
+            skateparkFrame.style.display = 'none';
+            tuttoM.style.display = 'none';
         }
+    });
 
-
-        // document.getElementById("logout").onclick = function() {
-        //     $.post("logout.php", {}, function(data) {
-        //         // Se la richiesta è riuscita, reindirizza l'utente alla pagina di accesso
-        //         if (data.errore) {
-        //             console.log('errore non so cosa');
-        //         } else {
-        //             console.log('Inserimento avvenuto con successo');
-        //         }
-        //         //window.location.href = "index.php";
-        //     });
-        // }
-
-         document.getElementById("Bemail").onclick = function() {
-            if (document.getElementById("email").style.display == "none") {
-                document.getElementById("email").style.display = "block";
-                document.getElementById("overlay").style.filter = "blur(5px)";
-            } else {
-                document.getElementById("email").style.display = "none";
-                document.getElementById("overlay").style.filter = "none";
-            }
+    tutto.addEventListener('change', function(){
+        if (tutto.checked){
+            tuttoM.style.display = 'block';
+            skateparkFrame.style.display = 'none';
+            skateshopFrame.style.display = 'none';
         }
-        document.getElementById("overlay").onclick = function(event) {
-            if (event.target.id !== "email" && event.target.id !== "Bemail") {
-              document.getElementById("email").style.display = "none";
-              document.getElementById("overlay").style.filter = "none";
-            }
-          }
-          
+    })
 
+    document.getElementById("bruota").onclick = function() {
+        if (document.getElementById("profilo").style.display == "none") {
+            document.getElementById("profilo").style.display = "block";
+        } else {
+            document.getElementById("profilo").style.display = "none";
+        }
+    }
 
-        document.getElementById("xchiusura").onclick = function(){
+    document.getElementById("Bemail").onclick = function() {
+        if (document.getElementById("email").style.display == "none") {
+            document.getElementById("email").style.display = "block";
+            document.getElementById("overlay").style.filter = "blur(5px)";
+        } else {
             document.getElementById("email").style.display = "none";
             document.getElementById("overlay").style.filter = "none";
         }
+    }
 
+    document.getElementById("overlay").onclick = function(event) {
+        if (event.target.id !== "email" && event.target.id !== "Bemail") {
+            document.getElementById("email").style.display = "none";
+            document.getElementById("overlay").style.filter = "none";
+        }
+    }
 
- 
-        function resetForm() {
+    document.getElementById("xchiusura").onclick = function(){
+        document.getElementById("email").style.display = "none";
+        document.getElementById("overlay").style.filter = "none";
+    }
+
+    function resetForm() {
         var form = document.getElementById("formemail");
         form.reset();
     }
+});
 
-
-        
+document.getElementById("logout").addEventListener("click", function() {
+    $.post("logout.php", {}, function(data) {
+        window.location.href = "index.php";
     });
-
-    document.getElementById("logout").addEventListener("click", function() {
-        $.post("logout.php", {}, function(data) {
-            window.location.href = "index.php";
-        });
-    });
-    
-   
-
-    
-
-        
-
-
-
-        // $.post("inserimento.php", { nome: nome, img: immagine, taglia: taglia, prezzo: prezzo, email: email}, function(data) {
-        //     console.log(data);
-        //     if (data.errore) {
-        //         console.log(data.errore);
-        //     } else {
-        //         console.log('Inserimento avvenuto con successo');
-        //     }
-        // });
-
-       
+});

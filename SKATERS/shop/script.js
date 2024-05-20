@@ -269,18 +269,14 @@ document.addEventListener('DOMContentLoaded', function() {
             etichetta_shop.innerText = "Trucks";
         } 
     });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
     var searchButton = document.getElementById("searchInput"); 
     searchButton.addEventListener("click", function() { 
             var ricerca = document.getElementById('barra');
             var valore = ricerca.value.toLowerCase(); // Converto il valore della ricerca in minuscolo per fare una ricerca case-insensitive
-            var videoContainers = document.querySelectorAll(".articolo"); // Seleziono tutti gli elementi con la classe "articolo"
+            var videoContainers = document.querySelectorAll(".articolo"); // Seleziono tutti gli elementi con la classe "video"
             // Itero su tutti i contenitori dei video
             var barra = document.getElementById('finale');
-            var novideo = document.getElementById('novideo');
-            novideo.style.display = "none";
+            var novideo =document.getElementById('novideo');
             var min = 0;
             videoContainers.forEach(function(videoContainer) {
                 var titoloVideo = videoContainer.querySelector(".nome").textContent.toLowerCase(); // Ottengo il testo del titolo del video e lo converto in minuscolo
@@ -289,21 +285,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     min = 1;
                 } else {
                     videoContainer.style.display = "none"; // Nascondo il contenitore del video se non corrisponde alla ricerca
-                    min = 0;
+                        //min = 0;
                 }
-                if (valore === '') min = 1;
-                    if (min === 0){
-                        novideo.style.display = "block";
-                        barra.style.position = "fixed";
-                        barra.style.bottom = "0%";
-                        barra.style.width = "100%";
-                    }else{
-                        //barra.style.position = "static";
-                        novideo.style.display = "none";
-                        
-                    }
-                
-        });
+            });
+        if (valore === '') min = 1;
+        if (min === 0){
+            novideo.style.display = "block";
+            barra.style.position = "fixed";
+            barra.style.bottom = "0%";
+            barra.style.width = "100%";
+            console.log("il min è 0 -> block");
+        }else{
+            //barra.style.position = "static";
+            barra.style.position = "absolute";
+            barra.style.bottom = "0%";
+            barra.style.width = "100%";
+            novideo.style.display = "none";
+            console.log("il min è 1 -> none");
+        }
     });
 });
 
