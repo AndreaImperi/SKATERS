@@ -3,9 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Collegamento bootstrap -->
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
         <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Collegamento foglio di stile -->
         <link rel="stylesheet" href="style.css">
+        <!-- Per i fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -14,10 +17,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body class="quicksand">
+    <!-- Inizializzazione sessione per utilizzare $_SESSION -->
     <?php session_start(); ?>
+    <!-- Barra Superiore con Logo e pulsanti per le altre pagine -->
     <div class="fixed-bar iphone">
         <div class="toppa iphone">
-            <!-- <button>LOGO</button>  -->
             <a href="../index.php" style="margin-top:1.1%;">
                 <img src="../immagini/logo.png" class="logo iphone">
             </a>
@@ -25,7 +29,7 @@
         <h2 class="videos_scritta"style="color: black; font-weight: 700;">Videos</h2>
         <hr class="sotto_scritta" style="border-color: #333; border-width: 3px; opacity: 1;">
     </div>
-
+    
     <div class="grid">
         <div class="c1 iphone">
             <div style="margin-top: 10%;">
@@ -55,11 +59,11 @@
                 // Itera su ogni riga del risultato
                 while ($row = pg_fetch_assoc($result)) {
                     if ($row['categoria']=='tutorial') {
-                        echo '<a class="video quicksand tutorial" style="color: white;" href="'. $row['link'] .'" target="_blank">';
+                        echo '<a class="video  tutorial" style="color: white;" href="'. $row['link'] .'" target="_blank">';
                     } else if ($row['categoria']=='part') {
-                        echo '<a class="video quicksand part" style="color: white;" href="'. $row['link'] .'" target="_blank">';
+                        echo '<a class="video  part" style="color: white;" href="'. $row['link'] .'" target="_blank">';
                     } if ($row['categoria']=='sls') {
-                        echo '<a class="video quicksand sls" style="color: white;" href="'. $row['link'] .'" target="_blank">';
+                        echo '<a class="video  sls" style="color: white;" href="'. $row['link'] .'" target="_blank">';
                     }
                     echo '<img class="copertina" src="'. $row['img'] .'">';
                     echo '<h2 class="titolo" id="black">'. $row['nome'] .'</h2>';
@@ -78,7 +82,7 @@
             <div align="left" style="margin-left:1%;">
                 
                 
-                <h1 class="cont quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+                <h1 class="cont " style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
                     CONTATTACI: skaters@gmail.com
                 </h1>
             </div>
@@ -87,8 +91,8 @@
             <img src="../immagini/logo.png" class="logob iphone">
 
             <div style="margin-right:1%">
-                <h1 class="creator quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-                <h1 class="names quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);"> Finocchiaro Dario Imperi Andrea  </h1>
+                <h1 class="creator " style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
+                <h1 class="names " style=" text-align: right; font-size: small; color: rgb(255, 255, 255);"> Finocchiaro Dario Imperi Andrea  </h1>
             </div>
     </div>
 

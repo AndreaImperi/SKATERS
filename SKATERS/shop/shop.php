@@ -17,7 +17,6 @@
     <?php session_start(); ?>
     <div class="fixed-bar iphone">
         <div class="toppa iphone">
-            <!-- <button>LOGO</button>  -->
             <a href="../index.php" style="margin-top:1.1%;">
                 <img src="../immagini/logo.png" class="logo iphone">
             </a>
@@ -41,50 +40,15 @@
                 <input type="text" placeholder="Cerca" id="barra" style="border: 2px solid black; border-radius:5px; width: 200px;margin-left:0.5%">
                 <img id="searchInput" src='../immagini/lenteIngrandimento.png' class="lente" style="width: 50px;margin-bottom:0.3%; cursor: pointer;"></img>
             </div>
-            <!-- <div style="margin-bottom: 5%;text-align: left;">
-                <hr class="linea" id="linea-grigia" style="color: darkgray;margin-top: 5%;">
-            </div> -->
             <div style="margin-bottom: 5%;text-align: left; margin-top: 5%;">
                     <h3 id="etichetta_shop" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: block;" ></h3> 
                     <hr class="linea" id="linea-grigia" style="color: rgb(93, 83, 83) ;margin-top: 1%;">
             </div>
         </div>
         
-        <!-- <div class="articolo">
-            <div class="messaggio_login">!non hai effettuato il login!</div>
-            <div class="immagine" align="center">
-                <img class="default" src="../immagini/scarpa1.webp">
-                <img class="sinistra" src="../immagini/scarpa2.webp">
-                <img class="destra" src="../immagini/scarpa3.webp">
-                
-                <div class="barra">
-                    <button class="Bacquista" style="margin-left: 1%; vertical-align: middle !important;">Acquista</button>
-                    <label>Taglia:</label>
-                    <select class="Taglia" id="select" style="margin-left: 1%;">
-                        <option value="S">S</option>
-                        <option value="M">M</option>
-                        <option value="L">L</option>
-                        <option value="nessuna" selected></option>
-                    </select> 
-                    
-                </div>
-                <div class="pallini">
-                    <div class="sinistra"></div>
-                    <div class="destra"></div>
-                </div>
-            </div>
-                <div class="marca" style>Marca</div>
-                <div class="nome">Nome dell'articolo</div>
-                <div><span>€</span><span class="prezzo">99.99</span></div> 
-        </div> -->
 
         <?php
         error_reporting(0);
-        //session_start();
-        
-
-        
-        // echo "Benvenuto, $nome_utente!";
         $nome_utente = $_SESSION['email'];
 
         // Connessione al database
@@ -99,8 +63,6 @@
             // Itera su ogni riga del risultato
             while ($row = pg_fetch_assoc($result)) {
                 // Stampa l'HTML per ogni articolo
-
-                
                 if ($row['categoria']=='deck') {
                     echo '<div class="articolo deck">';
                 } else if ($row['categoria']=='ruota') {
@@ -154,102 +116,75 @@
         } else {
             echo "Nessun articolo trovato.";
         }
-
-        ?>
-
-
+    ?>
     </div>
-        <h2 class="novideo" id="novideo" style="display: none; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
+    <h2 class="novideo" id="novideo" style="display: none; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
     <div class="carrelloSopra" id="carrelloSopra">
         <div class="carrelloDentro iphone" id="carrelloDentro">
             <!-- Contenuto del carrello -->
             <h2 class="titolo_carrello" style="align-self: flex-start; margin-bottom: 5%;">Il Tuo Carrello</h2>
-            
-            <!-- <div class="articoloCarrello">
-                <img src="../immagini/scarpa1.webp">
-                
-                <div class="dettagli" style="display: flex; flex-direction: column;">
-                    <div class="nome">Nome dell'articolo</div>
-                    <div class="taglia">Taglia: M</div>
-                    <div><span>€</span><span class="prezzo">99.99</span></div>
-                    <button class="Brimuovi-articolo">.</button>
-                </div>
-            </div> -->
-
             <?php
-            error_reporting(0);
-            if ($_SESSION['email']!=null){
-                // Query per selezionare tutti gli articoli dalla tabella articolo_shop
-                $nome_utente = $_SESSION['email'];
-                $query = "SELECT * FROM articolo_carrello WHERE email = $1";
-                $result = pg_query_params($connessione, $query, array($nome_utente));
-
-                // Verifica se ci sono risultati
-                if ($result) {
-                    // Itera su ogni riga del risultato
-                    while ($row = pg_fetch_assoc($result)) {
-                        // Stampa l'HTML per ogni articolo
-                        echo '<div class="articoloCarrello">';
-                        echo '<img src="' . $row['img'] . '">';
-                            
-                        echo '<div class="dettagli" style="display: flex; flex-direction: column;">';
-                        echo '<div class="nome">' . $row['nome'] . '</div>';
-                        echo '<div class="taglia">Taglia: ' . $row['taglia'] . '</div>';
-                        echo '<div><span>€</span><span class="prezzo">' . $row['prezzo'] . '</span></div>';
-                        echo '<button class="Brimuovi-articolo">.</button>';
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo "il carrello è vuoto";
-                }
-            }
-            
-
-            ?>
-
-            <div id="termine_carrello" style="align-self: flex-start;">
-            <?php
-            if (isset($_SESSION['email'])){
-                $query = "SELECT SUM(prezzo::numeric) as totale_prezzo FROM articolo_carrello WHERE email=$1";
-                $result = pg_query_params($connessione, $query, array($nome_utente));
-                if ($result) {
-                    $row = pg_fetch_assoc($result);
-                    if ($row['totale_prezzo']!='') {
-                        echo '<p>Totale: <span id="totale">' . $row['totale_prezzo'] . '</span> Euro</p>';
+                error_reporting(0);
+                if ($_SESSION['email']!=null){
+                    // Query per selezionare tutti gli articoli dalla tabella articolo_shop
+                    $nome_utente = $_SESSION['email'];
+                    $query = "SELECT * FROM articolo_carrello WHERE email = $1";
+                    $result = pg_query_params($connessione, $query, array($nome_utente));
+                    // Verifica se ci sono risultati
+                    if ($result) {
+                        // Itera su ogni riga del risultato
+                        while ($row = pg_fetch_assoc($result)) {
+                            // Stampa l'HTML per ogni articolo
+                            echo '<div class="articoloCarrello">';
+                            echo '<img src="' . $row['img'] . '">';                             
+                            echo '<div class="dettagli" style="display: flex; flex-direction: column;">';
+                            echo '<div class="nome">' . $row['nome'] . '</div>';
+                            echo '<div class="taglia">Taglia: ' . $row['taglia'] . '</div>';
+                            echo '<div><span>€</span><span class="prezzo">' . $row['prezzo'] . '</span></div>';
+                            echo '<button class="Brimuovi-articolo">.</button>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
                     } else {
-                        echo '<p>Totale: <span id="totale">0</span> Euro</p>';
+                        echo "il carrello è vuoto";
                     }
                 }
-            }else{
-                echo '<p>Totale: <span id="totale">0</span> Euro</p>';
-            }
-                
             ?>
+            <div id="termine_carrello" style="align-self: flex-start;">
+                <?php
+                if (isset($_SESSION['email'])){
+                    $query = "SELECT SUM(prezzo::numeric) as totale_prezzo FROM articolo_carrello WHERE email=$1";
+                    $result = pg_query_params($connessione, $query, array($nome_utente));
+                    if ($result) {
+                        $row = pg_fetch_assoc($result);
+                        if ($row['totale_prezzo']!='') {
+                            echo '<p>Totale: <span id="totale">' . $row['totale_prezzo'] . '</span> Euro</p>';
+                        }else {
+                            echo '<p>Totale: <span id="totale">0</span> Euro</p>';
+                        }
+                    }
+                }else{
+                    echo '<p>Totale: <span id="totale">0</span> Euro</p>';
+                }                   
+                ?>
                 <button class="Bsvuota_carrello btn btn-outline-primary quicksand">Svuota Carrello</button>
                 <button id="Bchiudi-carrello" class="btn btn-outline-primary quicksand">Chiudi Carrello</button>
             </div>
         </div>
     </div>
-    
+    <div class="finale iphone" id="finale">
+        <div align="left" style="margin-left:1%;">
+            <h1 class="cont quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+                CONTATTACI: skaters@gmail.com
+            </h1>
+        </div>
+        <img src="../immagini/logo.png" class="logob iphone">
+        <div style="margin-right:1%">
+            <h1 class="creator quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
+            <h1 class="names quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);"> Finocchiaro Dario Imperi Andrea  </h1>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
-    <div class="finale iphone" id="finale">
-            <div align="left" style="margin-left:1%;">
-                
-                
-                <h1 class="cont quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
-                    CONTATTACI: skaters@gmail.com
-                </h1>
-            </div>
-           
-            <!-- <button style="text-align: center;">LOGO</button> -->
-            <img src="../immagini/logo.png" class="logob iphone">
-
-            <div style="margin-right:1%">
-                <h1 class="creator quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-                <h1 class="names quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);"> Finocchiaro Dario Imperi Andrea  </h1>
-            </div>
-    </div>
 </body>
 </html>

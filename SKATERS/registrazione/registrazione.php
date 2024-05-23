@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Collegamento bootstrap -->
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Collegamento foglio di stile -->
     <link rel="stylesheet" href="style.css">
+    <!-- Per i fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -18,9 +21,9 @@
         $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
     ?>
 
+    <!-- Topbar con logo -->
     <div class="fixed-bar iphone" style="margin-top: 0%;">
         <div class="space iphone">
-            <!-- <button>LOGO</button>  -->
             <a href="../index.php" style="margin-top:1.1%;">
                 <img src="../immagini/logo.png" class="logo iphone">
             </a> 
@@ -28,14 +31,17 @@
         <h2 class="registrati_scritta" style="color: black; font-weight: 700;">Registrati</h2>
         <hr  class="linea" style="border-color: #333; border-width: 3px; opacity: 1;">
     </div>
+
+    <!-- Immagini ruote a sinistra -->
     <img src="../immagini/ruota2.png" class="immaginesxU" >
     <img src="../immagini/ruota3.png" class="immaginesxD" >
 
+    <!-- Utilizzo grid per il corpo della pagina (colonna singola) -->
     <div class="grid">
+
+        <!-- Riga unica della grid che continene la tabella con il form -->
         <div class="c1 iphone">
             <form name="formReg" action="registrazione.php" method="POST" > 
-                
-
                 <table class="iphone">
                     <tr>
                         <td colspan='3' style="text-align: left;">Nome:</td>
@@ -53,7 +59,6 @@
                             <input type="text" name="cognome" size="30" maxlength="30" pattern="[A-Za-z]+" required>
                         </td>
                     </tr>
-                    <!-- <hr class="linea" style="border-color: #c9c7c7; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 80%; margin-left: 25% ;"> -->
                     <tr style="height: 120px;">
                         <td colspan="3">
                                 <hr class="linea" style="border-color: #181818; border-width: 3px; margin-bottom: 1px; margin-top: 1px; opacity: 1;  width: 100%; margin-left: 0% ;">
@@ -62,7 +67,6 @@
                     <tr style="height: 20px; margin-bottom: 10%;">
                         <td colspan='3' class="sfondo data-tit" style="text-align: left;">Data di nascita:</td>
                     </tr>
-                    
                     <tr>
                         <td style="width: 33%; text-align: left;"> 
                             <label class="label iphone">Giorno:</label>
@@ -194,17 +198,16 @@
                             }
                         ?>
                         </td>
-
                     </tr>
                 </table>
-
             </form>
         </div>
 
+        <!-- Immagini ruote a destra -->
         <img src="../immagini/ruota4.png" class="immaginedxU"  >
         <img src="../immagini/ruota1.png" class="immaginedxD"  >
 
-
+        <!-- Immagini tavole skate a destra e sinistra -->
         <img src="../immagini/tavola_reg.JPG" class="angolosx" alt="">
         <img src="../immagini/tavola_reg.JPG" class="angolodx" alt="">
 
@@ -233,12 +236,14 @@
 
         });
 
-             //Conferma Password
+            //Controllo tra password e conferma password
+            //Password
             var password = document.getElementById("psw");
+            // Conferma password
             var c_password = document.getElementById("cpsw");
+            // Errore password
             var password_e = document.getElementById("epsw");
             var registrati = document.getElementById("registrati");
-
             function validatePassword(){
                 if (password.value != c_password.value){
                     password_e.innerHTML = "!Le Password non corrispondono!";
@@ -251,13 +256,14 @@
                     return true;
                 }
             }
+            // Evento utilizzato per chiamare la funzione validatePassword() ogni volta che l'utente rilascia una "chiave", (appena viene inserito un carattere da tastiera), all'interno dell'elemento c_password
             c_password.onkeyup = validatePassword;
 
-                document.addEventListener('DOMContentLoaded', function () {
+            // Funzione per il "mostra password"
+            document.addEventListener('DOMContentLoaded', function () {
                 var passwordV = document.getElementById('psw');
                 var passwordN = document.getElementById('cpsw');
-                var mostra =document.getElementById('mostra');
-                
+                var mostra =document.getElementById('mostra'); 
                 mostra.addEventListener('change', function(){
                     if (mostra.checked){
                         passwordV.type = 'text';
@@ -267,10 +273,7 @@
                         passwordN.type = 'password';
                     }
                 })
-
-
             });
-          
         </script>
 </body>
 </html>
