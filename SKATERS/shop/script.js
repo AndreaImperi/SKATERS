@@ -1,56 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     var immagini = document.querySelectorAll('.immagine');
     immagini.forEach(function(immagine) {
-    var pallinoSinistra = immagine.querySelector('.pallini .sinistra');
-    var pallinoDestra = immagine.querySelector('.pallini .destra');
-    immagine.addEventListener('mousemove', function(event) {
-        var x = event.clientX - immagine.getBoundingClientRect().left;
-        if(x < immagine.offsetWidth / 2){
-            immagine.querySelector('.default').style.display = 'none';
-            immagine.querySelector('.destra').style.display = 'none';
-            immagine.querySelector('.sinistra').style.display = 'block';
-            pallinoSinistra.classList.add('active');
-            pallinoDestra.classList.remove('active');
-        } else {
-            immagine.querySelector('.default').style.display = 'none';
+        var pallinoSinistra = immagine.querySelector('.pallini .sinistra');
+        var pallinoDestra = immagine.querySelector('.pallini .destra');
+
+        // Per visualizzare un'immagine diversa in base alla posizione del mouse e gestire i pallini
+        immagine.addEventListener('mousemove', function(event) {
+            var x = event.clientX - immagine.getBoundingClientRect().left;
+            if(x < immagine.offsetWidth / 2){
+                immagine.querySelector('.default').style.display = 'none';
+                immagine.querySelector('.destra').style.display = 'none';
+                immagine.querySelector('.sinistra').style.display = 'block';
+                pallinoSinistra.classList.add('active');
+                pallinoDestra.classList.remove('active');
+            } else {
+                immagine.querySelector('.default').style.display = 'none';
+                immagine.querySelector('.sinistra').style.display = 'none';
+                immagine.querySelector('.destra').style.display = 'block';
+                pallinoDestra.classList.add('active');
+                pallinoSinistra.classList.remove('active');
+            }
+        });
+        
+        // Per tornare alla normalità quando il mouse lascia l'immagine
+        immagine.addEventListener('mouseleave', function(){
+            var elemento = document.getElementById("select");
             immagine.querySelector('.sinistra').style.display = 'none';
-            immagine.querySelector('.destra').style.display = 'block';
-            pallinoDestra.classList.add('active');
+            immagine.querySelector('.destra').style.display = 'none';
+            immagine.querySelector('.default').style.display = 'block';
+            immagine.querySelector('.barra').querySelector('.Taglia').value="nessuna";
             pallinoSinistra.classList.remove('active');
-        }
-    });
-    immagine.addEventListener('mouseleave', function(){
-        var elemento = document.getElementById("select");
-    
-        // console.log(elemento.value);
-        immagine.querySelector('.sinistra').style.display = 'none';
-        immagine.querySelector('.destra').style.display = 'none';
-        immagine.querySelector('.default').style.display = 'block';
-        immagine.querySelector('.barra').querySelector('.Taglia').value="nessuna";
-        pallinoSinistra.classList.remove('active');
-        pallinoDestra.classList.remove('active');
-        var newbarra = immagine.querySelector('.barra');
-        newbarra.classList.remove('clicked');
+            pallinoDestra.classList.remove('active');
+            var newbarra = immagine.querySelector('.barra');
+            newbarra.classList.remove('clicked');
 
-        const articolo = immagine.closest('.articolo');
-        articolo.querySelector('.messaggio_login').style.display = 'none';
-        //articolo.querySelector('.messaggio_taglia').style.display = 'none';
-
-        // newbarra.querySelector('.Taglia').display = 'none'; 
-    });
+            const articolo = immagine.closest('.articolo');
+            articolo.querySelector('.messaggio_login').style.display = 'none';
+        });
     });
 
+    // Gestione della barra di ogni articolo dopo il click acquista
     var barre = document.querySelectorAll('.barra');
     for (var i = 0; i < barre.length; i++) {
         barre[i].querySelector('.Bacquista').addEventListener('click', function() {
-            // this.nextElementSibling.style.display = 'inline-block';
             this.parentElement.classList.add('clicked');
-        }
-    );
-        
+        });
     }
 
-    // Funzione per aprire e chiudere il carrello
+    // Per aprire e chiudere il carrello
     document.getElementById("Bcarrello").onclick = function() {
         if (document.getElementById("carrelloSopra").style.display == "block") {
             document.getElementById("carrelloSopra").style.display = "none";
@@ -59,24 +57,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Funzione per chiudere il carrello cliccando sull'overlay
+    // Per chiudere il carrello cliccando sull'overlay
     document.getElementById("carrelloSopra").onclick = function(event) {
         if (event.target == this) {
             this.style.display = "none";
         }
     }
 
-    // Funzione per chiudere il carrello
+    // Per chiudere il carrello con bottone
     document.getElementById("Bchiudi-carrello").onclick = function() {
             document.getElementById("carrelloSopra").style.display = "none";
     }
 
-    
-
-
+    // Eseguo una richiesta GET al file email.php usando JQuery
+    // la funzione di callback carica gli articoli nel carrello con le relative informazioni e aggiornare il totale
     $.get('email.php', function(data) {
         var email = data.email;
-        console.log(email);
+        //console.log(email);
 
         const buttons_acquista = document.querySelectorAll('.Bacquista');
         const carrello = document.getElementById('carrelloDentro');
@@ -93,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 //articolo.querySelector('.messaggio_login').style.display = 'none';
 
                 if (email === '') {
-                    // La variabile di sessione non è stata inizializzata
                     articolo.querySelector('.messaggio_login').style.display = 'block';
                 } else {
                                     
@@ -101,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const nome = articolo.querySelector('.nome').innerText;
                     const prezzo = articolo.querySelector('.prezzo').innerText;
 
-
+                    // Per l'inserimento vero e proprio eseguo una richiesta POST al file inserimento.php usando JQuery 
                     $.post("inserimento.php", { nome: nome, img: immagine, taglia: taglia, prezzo: prezzo, email: email}, function(data) {
                         console.log(data);
                         if (data.errore) {
@@ -139,40 +135,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         const termineCarrello = document.getElementById("termine_carrello");
                         carrello.insertBefore(articoloCarrello, termineCarrello);
-
-                        // var totale_cart = document.getElementById("totale");
-                        // var new_costo_carrello = Number(totale_cart) + Number(prezzo);
-
-                        // document.getElementById("totale") = new_costo_carrello.toString();
-
                         var totale = document.getElementById("totale");
                         var valoreAttuale = parseFloat(totale.textContent);
                         var valoreArticolo = parseFloat(prezzo);
                         var nuovoTotale = valoreAttuale + valoreArticolo;
                         totale.textContent = nuovoTotale.toString();
                     }
-
                 }
             });
         });
-
-
     });
 
-    
-
-            
-
-
+    // Eseguo una richiesta GET al file email.php usando JQuery
+    // la funzione di callback si occupa di rimuovere gli articoli dal carrello e aggiornare il totale
     $.get('email.php', function(data) {
         var email = data.email;
         document.addEventListener('click', function(event) {
             if (event.target.matches('.Brimuovi-articolo')) {
-                // This is a click on the Brimuovi-articolo button
                 const articoloCarrello = event.target.closest('.articoloCarrello');
                 const nome_art = articoloCarrello.querySelector('.nome').innerText;
                 articoloCarrello.remove();
 
+                // Per la rimozione viene fatta una richiesta POST a rimozione.php specificando l'attributo "rimuovi"
                 $.post("rimozione.php", { task: "rimuovi", nome: nome_art,email: email}, function(data) {
                     console.log(data);
                     if (data.errore) {
@@ -195,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     art.remove();
                 });
 
+                // Per la rimozione viene fatta una richiesta POST a rimozione.php specificando l'attributo "svuota"
                 $.post("rimozione.php", { task: "svuota", email: email}, function(data) {
                     console.log(data);
                     if (data.errore) {
@@ -211,6 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
+    // Funzione per la gestione delle scritte delle categorie
     var selectCategorie = document.getElementById("select_categorie");
     selectCategorie.addEventListener("change", function() {
         var valoreSelezionato = selectCategorie.value;
@@ -268,43 +254,71 @@ document.addEventListener('DOMContentLoaded', function() {
 
             etichetta_shop.innerText = "Trucks";
         } 
+        aggiusta_barra();
     });
+
+    // Funzione per la ricerca degli articoli 
     var searchButton = document.getElementById("searchInput"); 
     searchButton.addEventListener("click", function() { 
-            var ricerca = document.getElementById('barra');
-            var valore = ricerca.value.toLowerCase(); // Converto il valore della ricerca in minuscolo per fare una ricerca case-insensitive
-            var videoContainers = document.querySelectorAll(".articolo"); // Seleziono tutti gli elementi con la classe "video"
-            // Itero su tutti i contenitori dei video
-            var barra = document.getElementById('finale');
-            var novideo =document.getElementById('novideo');
-            var min = 0;
-            videoContainers.forEach(function(videoContainer) {
-                var titoloVideo = videoContainer.querySelector(".nome").textContent.toLowerCase(); // Ottengo il testo del titolo del video e lo converto in minuscolo
-                if (titoloVideo.includes(valore)) { // Controllo se il titolo del video contiene la stringa di ricerca
-                    videoContainer.style.display = "block"; // Mostro il contenitore del video
-                    min = 1;
-                } else {
-                    videoContainer.style.display = "none"; // Nascondo il contenitore del video se non corrisponde alla ricerca
-                        //min = 0;
-                }
-            });
-        if (valore === '') min = 1;
-        if (min === 0){
+        var valoreSelezionato = selectCategorie.value;
+        if (valoreSelezionato=="nessuna") {
+            var videoContainers = document.querySelectorAll(".articolo");
+        } else if (valoreSelezionato=="decks") {
+            var videoContainers = document.querySelectorAll(".deck");
+        } else if (valoreSelezionato=="ruote") {
+            var videoContainers =  document.querySelectorAll(".ruota");
+        } else if (valoreSelezionato=="trucks") {
+            var videoContainers = document.querySelectorAll(".truck");
+        } 
+
+        var ricerca = document.getElementById('barra');
+        var valore = ricerca.value.toLowerCase();
+        videoContainers.forEach(function(videoContainer) {
+            var titoloVideo = videoContainer.querySelector(".nome").textContent.toLowerCase(); 
+            if (titoloVideo.includes(valore)) { 
+                videoContainer.style.display = "block";
+            } else {
+                videoContainer.style.display = "none";
+            }
+        });
+        aggiusta_barra();
+    });
+
+    // Funzione per la gestione della barra finale in base ai video presenti
+    function aggiusta_barra() {
+        var videoContainers = document.querySelectorAll(".articolo");
+        var barra = document.getElementById('finale');
+        var novideo =document.getElementById('novideo');
+        var pageWidth = document.documentElement.clientWidth;
+        var num = 0;
+
+        for (const videoC of videoContainers) {
+            if (videoC.style.display === "block") {
+                num += 1;
+            }
+        }
+
+        if (num === 0){
             novideo.style.display = "block";
             barra.style.position = "fixed";
             barra.style.bottom = "0%";
             barra.style.width = "100%";
-            console.log("il min è 0 -> block");
         }else{
-            //barra.style.position = "static";
-            barra.style.position = "absolute";
+            if (pageWidth<420){
+                n_vid_m = 3;
+            } else if (pageWidth<1030){
+                n_vid_m = 7;
+            } else {
+                n_vid_m = 0;
+            }
+            if (num >= n_vid_m) {
+                barra.style.position = "static";
+            } else {
+                barra.style.position = "absolute";
+            }
             barra.style.bottom = "0%";
             barra.style.width = "100%";
             novideo.style.display = "none";
-            console.log("il min è 1 -> none");
         }
-    });
+    }
 });
-
-
-

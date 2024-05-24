@@ -34,7 +34,7 @@ document.getElementById("Bshop2").addEventListener("click", function() {
     window.location.href = "shop/shop.php";
 });
 
-// Funzione per far alternare le mappe
+// Per far alternare le mappe
 document.addEventListener('DOMContentLoaded', function () {
     var skateparkRadio = document.getElementById('btnradio1');
     var tutto = document.getElementById('btnradio2');
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 
-    // Funzione per far apparire e scomparire immagine e nome utente
+    // Per far apparire e scomparire immagine e nome utente
     document.getElementById("bprofilo").onclick = function() {
         if (document.getElementById("profilo").style.display == "none") {
             document.getElementById("profilo").style.display = "block";
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Funzione per far apparire e scomparire il div Facci una Domanda
+    // Per far apparire e scomparire il div Facci una Domanda
     document.getElementById("Bemail").onclick = function() {
         if (document.getElementById("email").style.display == "none") {
             document.getElementById("email").style.display = "block";
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Funzione per chiudere il layer overlay quando l'utente clicca al di fuori dell'area dell'input email o del pulsante "Facci una domanda".
+    // Per chiudere il layer overlay quando l'utente clicca al di fuori dell'area dell'input email o del pulsante "Facci una domanda".
     document.getElementById("overlay").onclick = function(event) {
         if (event.target.id !== "email" && event.target.id !== "Bemail") {
             document.getElementById("email").style.display = "none";
@@ -92,32 +92,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Funzione per chiudere il div email e togliere l'overlay
+    // Per chiudere il div email e togliere l'overlay
     document.getElementById("xchiusura").onclick = function(){
         document.getElementById("email").style.display = "none";
         document.getElementById("overlay").style.filter = "none";
     }
-
-    function resetForm() {
-        var form = document.getElementById("formemail");
-        form.reset();
-    }
 });
 
-// Funzione per chiudere Alert messaggio
+// Per chiudere Alert messaggio
 document.getElementById("ok").onclick = function(){
     document.getElementById("alert").style.display = "none";
     
 }
 
-// Funzione per far chiudere dopo 4 secondi l'alert in automatico
+// Per far chiudere dopo 4 secondi l'alert in automatico
 var div = document.getElementById("alert");
 setTimeout(() => {
     div.style.display = "none";
 }, 4000);
 
-
+// Per gestire il logout da pulsante
 document.getElementById("logout").addEventListener("click", function() {
+    // Eseguo una richiesta POST al file logout.php usando JQuery, la funzione di callback rimanda alla pagina principale
     $.post("logout.php", {}, function(data) {
         window.location.href = "index.php";
     });
