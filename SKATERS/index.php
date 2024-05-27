@@ -214,10 +214,36 @@
     </div>
 
     <!-- Alert "Messaggio inviato" -->
-    <div class="alert iphone quicksand" id="alert" style="display:<?php echo $stato ?>;padding:20px">
+
+    
+      <div class="alert modal-dialog quicksand" role="document"   id="alert" style="display:<?php echo $stato ?>;padding:20px">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h2 class="modal-title h5 " id="modal1Title">Messaggio inviato!</h2>
+            </div>
+            <div class="modal-body">
+               <p>Ti risponderemo appena possibile</p>
+            </div>
+            <div class="modal-footer">
+            <button id="ok" class=" btn btn-outline-primary btn-sm quicksand" style="margin-left: 90%;margin-top:2%;margin-bottom:0%">OK</button>
+            </div>
+         </div>
+      </div>
+ 
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="alert iphone quicksand" id="alert" style="display:<?php echo $stato ?>;padding:20px">
         MESSAGGIO INVIATO CON SUCCESSO!<br>
         <button id="ok" class=" btn btn-outline-primary btn-sm quicksand" style="margin-left: 90%;margin-top:2%;margin-bottom:0%">OK</button>
-    </div>
+    </div> -->
     
     <!-- Collegamento al file JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

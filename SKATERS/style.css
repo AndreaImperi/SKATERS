@@ -94,15 +94,18 @@
     
     
 }
+
 .alert {
     position: fixed;
+    width: 30%;
+    height: 18%;
     z-index: 9999;
     background-color: white;
     color: black;
     border-radius: 10px;
     border: solid black 2px;
     bottom: 45%;
-    left: 40%;
+    left: 35%;
   }
 .container_vid {
   display: flex;
@@ -444,6 +447,9 @@
     .username{
         margin-right: 10px;
     }
+    .alert{
+        height: 13% ;
+    }
 }
 
 /*IPHONE XR*/
@@ -593,5 +599,12 @@
         height: 27px; 
         width:60px; 
         font-size: x-small;
+    }
+    .alert{
+        width: 55%;
+        height: 21%;
+        border: solid black 2px;
+        bottom: 43%;
+        left: 25%; 
     }
 }
