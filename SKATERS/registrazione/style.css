@@ -187,6 +187,16 @@ select{
     width: 80px; 
     margin: 0;
 }
+
+@media screen and (max-width: 1400px) {
+    .angolodx { display: none;}
+    .angolosx { display: none;}
+    .immaginedxD { display: none;}
+    .immaginedxU { display: none;}
+    .immaginesxD { display: none;}
+    .immaginesxU { display: none;}
+}
+
 @media screen and (max-width: 1030px) {
 	.angolodx { display: none;}
     .angolosx { display: none;}

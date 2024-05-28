@@ -50,8 +50,11 @@
                     }
                 ?>
                 <button class="bprofilo iphone" style=" display:<?php echo $display1; ?>; margin-bottom:3px" id="bprofilo"></button>
-                <h5 class="username iphone quicksand" style="position: fixed; height:0vh"><?php echo $display2; ?></h5>
+                
                 <button class=" Bfix baccedi iphone btn btn-outline-light quicksand btn1" style="margin-right: 5px; display:<?php echo $display3; ?>; " id="Baccedi" onclick="location.href=\'accesso.php\'">ACCEDI</button>
+            </div>
+            <div class="contieni_username">
+                <h5 class="username iphone quicksand" style="position: fixed;"><?php echo $display2; ?></h5>
             </div>
             <div class="contieni_logout" id="profilo">    
                 <button  type="submit" name="logout" id="logout" class="logout iphone btn btn-outline-light quicksand" >LOGOUT</button>

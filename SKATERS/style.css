@@ -400,6 +400,16 @@
     margin-top: 7%;
 }
 
+.contieni_username{
+    height: 55px; 
+    width: 105px; 
+    position: absolute; 
+    margin-right: -25px; 
+    margin-top: 94px; 
+    z-index: 9999; 
+    text-align:center; 
+}
+
 /*IPAD PRO*/
 @media screen and (max-width: 1024px) {
     .caption1{
@@ -444,9 +454,6 @@
         margin-left:25px; 
         margin-right: 10px;
     }
-    .username{
-        margin-right: 10px;
-    }
     .alert{
         height: 13% ;
     }
@@ -482,7 +489,6 @@
     }
     .username.iphone{
         font-size: 12px;
-        top: 7%;
         margin-right:8px;
     }
     .profilo.iphone{
@@ -490,17 +496,14 @@
         width: 20px;
     }
     .sfondo-trasparente-shop.iphone{
-        height: 50%;
-        top:38%;
+        height: 42%;
+        top:45%;
     }
     .video.fantasma{
         display: none;
     }
     .lineshop{
         margin-bottom: 35px;
-    }
-    .sfondo-trasparente-shop.iphone{
-        top:42%;
     }
     .bshop.iphone{
         display: flex;
@@ -606,5 +609,74 @@
         border: solid black 2px;
         bottom: 43%;
         left: 25%; 
+    }
+    .contieni_username{
+        height: 55px; 
+        width: 105px; 
+        position: absolute; 
+        margin-right: -57px; 
+        margin-top: 90px; 
+        z-index: 9999; 
+        text-align:center; 
+    }
+}
+
+/*tra IPAD PRO e IPHONE XR*/
+@media screen and (max-width: 680px) {
+    .grid > div:nth-child(2) {
+        padding: 1.5em 1em 0.3em 1em;
+    }
+    .grid > div:nth-child(3) {
+        padding: 0em 1em;
+    }
+    .logo.iphone{
+        height: 60%;
+        margin-left: 0.3%;
+    }
+    .Bfix.iphone{
+        height: 30px;
+        width: 26.5%;
+        font-size: xx-small;
+        text-align: center;
+    }
+    .baccedi.Bfix.iphone{
+        height: 30px;
+        width: 25%;
+        font-size: xx-small;
+    }
+    .bprofilo.iphone{
+        height: 27px;
+        width: 32px;
+        margin-left: 18px;
+    }
+    .username.iphone{
+        font-size: 12px;
+        margin-right:8px;
+    }
+    .profilo.iphone{
+        height: 20px;
+        width: 20px;
+    }
+    .contieni_username{
+        height: 55px; 
+        width: 105px; 
+        position: absolute; 
+        margin-right: -55px; 
+        margin-top: 85px; 
+        z-index: 9999; 
+        text-align:center; 
+    }
+    .sfondo-trasparente-shop.iphone{
+        height: 56%;
+        top:34%;
+    }
+    .contieni_logout{ 
+        height: 35px; 
+        width: 65px; 
+    }
+    .logout{
+        height: 27px; 
+        width:60px; 
+        font-size: x-small;
     }
 }
