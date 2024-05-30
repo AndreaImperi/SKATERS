@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,17 @@
         <?php 
             session_start();
             error_reporting(0);
+
+            $timeout_duration = 1200; // 20 minuti
+
+            // Verifica se l'ultima attività è stata registrata
+            if (isset($_SESSION['email']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
+            // La sessione è scaduta, distruggi la sessione e fai il logout
+            unset($_SESSION['email']);
+            }
+
+            
+        
             // Per nome sotto immagine profilo
             $nomeUtente = $_SESSION['nome'];
         ?> 
@@ -217,8 +229,6 @@
     </div>
 
     <!-- Alert "Messaggio inviato" -->
-
-    
       <div class="alert modal-dialog quicksand" role="document"   id="alert" style="display:<?php echo $stato ?>;padding:20px">
          <div class="modal-content">
             <div class="modal-header">
@@ -233,20 +243,6 @@
          </div>
       </div>
  
-
-
-
-
-
-
-
-
-
-
-    <!-- <div class="alert iphone quicksand" id="alert" style="display:<?php echo $stato ?>;padding:20px">
-        MESSAGGIO INVIATO CON SUCCESSO!<br>
-        <button id="ok" class=" btn btn-outline-primary btn-sm quicksand" style="margin-left: 90%;margin-top:2%;margin-bottom:0%">OK</button>
-    </div> -->
     
     <!-- Collegamento al file JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

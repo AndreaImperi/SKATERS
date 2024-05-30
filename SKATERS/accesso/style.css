@@ -182,7 +182,7 @@ input[type="text"], input[type="password"], input[type=email] {
         margin-left: -100%;
     }
 }
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 508px) {
     .c1.iphone{
         width: 70%;
         height: 94%;

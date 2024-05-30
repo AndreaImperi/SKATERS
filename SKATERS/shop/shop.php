@@ -168,6 +168,26 @@
                 }                   
                 ?>
                 <button class="Bsvuota_carrello btn btn-outline-primary quicksand">Svuota Carrello</button>
+
+
+                <!-- ALERT SVUOTA CARRELLO -->
+                <div class="alert modal-dialog quicksand" role="document"   id="alert" style="display:block;padding:20px">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title h5 " id="modal1Title">Svuota carrello</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>Sei sicuro di voler svuotare il carrello?</p>
+                        </div>
+                        <div class="modal-footer" style="display: flex; justify-content: right; gap: 10px;">
+                            <button id="svuota" class=" btn btn-outline-danger btn-sm quicksand" style="margin-top:5%">SVUOTA</button>
+                            <button id="annulla" class=" btn btn-outline-primary btn-sm quicksand" style="margin-top:5%">ANNULLA</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                
                 <button id="Bchiudi-carrello" class="btn btn-outline-primary quicksand">Chiudi Carrello</button>
             </div>
         </div>

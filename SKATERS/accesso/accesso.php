@@ -81,7 +81,8 @@
                                 $session = $_SESSION['nome'];
                                 $ciao = $tuple['nome'];
                                 echo "benvenuto, $session";
-
+                                // Aggiorna il timestamp dell'ultima attività
+                                $_SESSION['LAST_ACTIVITY'] = time();
                                 header("Location: ../index.php");
                             } else {
                                 $_SESSION['utente_loggato'] = false;
