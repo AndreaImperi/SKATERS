@@ -126,7 +126,9 @@
             <?php
                 error_reporting(0);
                 $display_avviso="block";
+                $var_click = 'disabled';
                 if ($_SESSION['email']!=null){
+                    $var_click = '';
                     $display_avviso="none";
                     // Query per selezionare tutti gli articoli dalla tabella articolo_shop
                     $nome_utente = $_SESSION['email'];
@@ -173,7 +175,7 @@
                     echo '<p>Totale: <span id="totale">0</span> Euro</p>';
                 }                   
                 ?>
-                <button class="Bsvuota_carrello btn btn-outline-primary quicksand">Svuota Carrello</button>
+                <button <?php echo $var_click;?>  class="Bsvuota_carrello btn btn-outline-primary quicksand">Svuota Carrello</button>
 
 
                 <!-- Alert per svuotare il carrello -->

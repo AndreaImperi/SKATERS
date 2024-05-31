@@ -164,16 +164,24 @@
             </div>
 
             <!-- Riga della grid contenente anteprima dello shop -->
-            <div class="c4 " >
+            <div class="c4" style="position:relative; padding-left: 0; padding-right: 0;">
                 <h2  class="quicksand" style="text-align: left; margin-left: 5%;">
                     Shop
                 </h2>
                 <hr class="lineshop">
-                <div class="sezione-shop iphone" style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 2%;">
+
+                <div class="scorrevole">
+                    <div class="content_scorrevole">
+                        <h1 class="testo_scorrevole">SCEGLI I TUOI COMPONENTI PREFERITI E ASSEMBLA LO SKATEBOARD CHE FA PER TE</h1>
+                        <h1 class="testo_scorrevole">SCEGLI I TUOI COMPONENTI PREFERITI E ASSEMBLA LO SKATEBOARD CHE FA PER TE</h1>
+                    </div>
+                </div>
+
+                <div class="sezione-shop iphone" style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 3%;">
                     <img src="immagini/shop3.jpg" style="width: 78%;">
                     <button id="Bshop2" type="button" class="bshop iphone btn btn-outline-light quicksand">SHOP</button>
                 </div>
-                <div class="sfondo-trasparente-shop ipad iphone" id="sfondo" style="z-index: 1; position: absolute;"></div>
+                <div class="sfondo-trasparente-shop ipad iphone" id="sfondo" style="z-index: 1; position:absolute;"></div>
             </div>
             <!-- PHP per ricevere messaggi dagli utenti, far comparire banner di conferma e impedire di inviare messaggi senza il login-->
             <?php

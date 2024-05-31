@@ -56,14 +56,14 @@
     width: 100%;
     margin: auto;
     height: auto;
+    overflow: hidden;
 }
 
 .sfondo-trasparente-shop {
-    position: absolute;
-    bottom: 5%;
-    left: 0;
+    bottom: 3%;
     width: 100%;
-    height: 73%;
+    left:0;
+    height: 65.5%;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -410,8 +410,49 @@
     text-align:center; 
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.scorrevole {
+    margin-top: 1%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    background-color: #f3f3f3;
+    align-items: center;
+}
+
+.content_scorrevole {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scorri 10s linear infinite;
+    align-items: center;
+}
+
+.testo_scorrevole {
+    margin-top: 6px;
+    display: inline-block;
+    padding-right: 10%;
+    padding-left: 5%;
+    font-style: italic;
+}
+
+@keyframes scorri {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-65%);
+    }
+}
+
 /*IPAD PRO*/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1300px) {
     .caption1{
         width: 30%;
     }
@@ -436,9 +477,12 @@
     .nomeUtente.ipad{
         margin-right: -0.9%
     }
-	.sfondo-trasparente-shop.ipad { 
-        height: 70%;
-        top:25%;
+	.sfondo-trasparente-shop {
+        bottom: 3%;
+        width: 100%;
+        left:0;
+        height: 60%;
+        background-color: rgba(0, 0, 0, 0.5);
     }
     .email{
         width: 60%;
@@ -460,7 +504,7 @@
 }
 
 /*IPHONE XR*/
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 650px) {
     .grid > div:nth-child(2) {
         padding: 1.5em 1em 0.3em 1em;
     }
@@ -495,9 +539,12 @@
         height: 20px;
         width: 20px;
     }
-    .sfondo-trasparente-shop.iphone{
-        height: 42%;
-        top:45%;
+    .sfondo-trasparente-shop {
+        bottom: 9%;
+        width: 100%;
+        left:0;
+        height: 45% !important;
+        background-color: rgba(0, 0, 0, 0.5);
     }
     .video.fantasma{
         display: none;
@@ -619,10 +666,40 @@
         z-index: 9999; 
         text-align:center; 
     }
+    .scorrevole {
+        margin-top: -5%;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        border: 1px solid #000;
+        background-color: #f3f3f3;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .scorrevole {
+        margin-top: -6%;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        border: 1px solid #000;
+        background-color: #f3f3f3;
+        align-items: center;
+    }
+    .sfondo-trasparente-shop {
+        bottom: 9%;
+        width: 100%;
+        left:0;
+        height: 40% !important;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 
 /*tra IPAD PRO e IPHONE XR*/
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 800px) {
     .grid > div:nth-child(2) {
         padding: 1.5em 1em 0.3em 1em;
     }
@@ -666,9 +743,12 @@
         z-index: 9999; 
         text-align:center; 
     }
-    .sfondo-trasparente-shop.iphone{
-        height: 56%;
-        top:34%;
+    .sfondo-trasparente-shop {
+        bottom: 7%;
+        width: 100%;
+        left:0;
+        height: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
     }
     .contieni_logout{ 
         height: 35px; 
