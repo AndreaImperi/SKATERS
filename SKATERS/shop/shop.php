@@ -125,7 +125,9 @@
             <h2 class="titolo_carrello" style="align-self: flex-start; margin-bottom: 5%;">Il Tuo Carrello</h2>
             <?php
                 error_reporting(0);
+                $display_avviso="block";
                 if ($_SESSION['email']!=null){
+                    $display_avviso="none";
                     // Query per selezionare tutti gli articoli dalla tabella articolo_shop
                     $nome_utente = $_SESSION['email'];
                     $query = "SELECT * FROM articolo_carrello WHERE email = $1";
@@ -150,6 +152,10 @@
                     }
                 }
             ?>
+
+            <!-- Avviso in caso di login non effettuato -->
+            <h1 class="avviso_cart quicksand" style=" align-self: center; font-size: medium; color: #808080; text-align: center; display: <?php echo $display_avviso; ?>;">esegui il login per visualizzare il tuo carrello</h1>
+
             <div id="termine_carrello" style="align-self: flex-start;">
                 <?php
                 if (isset($_SESSION['email'])){
@@ -170,8 +176,8 @@
                 <button class="Bsvuota_carrello btn btn-outline-primary quicksand">Svuota Carrello</button>
 
 
-                <!-- ALERT SVUOTA CARRELLO -->
-                <div class="alert modal-dialog quicksand" role="document"   id="alert" style="display:block;padding:20px">
+                <!-- Alert per svuotare il carrello -->
+                <div class="alert modal-dialog quicksand" role="document"   id="alert" style="display:none; padding:20px;">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h2 class="modal-title h5 " id="modal1Title">Svuota carrello</h2>
@@ -180,8 +186,8 @@
                             <p>Sei sicuro di voler svuotare il carrello?</p>
                         </div>
                         <div class="modal-footer" style="display: flex; justify-content: right; gap: 10px;">
-                            <button id="svuota" class=" btn btn-outline-danger btn-sm quicksand" style="margin-top:5%">SVUOTA</button>
-                            <button id="annulla" class=" btn btn-outline-primary btn-sm quicksand" style="margin-top:5%">ANNULLA</button>
+                            <button id="svuota_conferma" class=" btn btn-outline-danger btn-sm quicksand" style="margin-top:5%">SVUOTA</button>
+                            <button id="annulla_svuotamento" class=" btn btn-outline-primary btn-sm quicksand" style="margin-top:5%">ANNULLA</button>
                         </div>
                     </div>
                 </div>

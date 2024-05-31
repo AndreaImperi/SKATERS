@@ -174,27 +174,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 totale.textContent = nuovoTotale.toString();
 
             } else if (event.target.matches('.Bsvuota_carrello')) {
-                const arts=document.querySelectorAll('.articoloCarrello');
-                arts.forEach(function(art) {
-                    art.remove();
-                });
-
-                // Per la rimozione viene fatta una richiesta POST a rimozione.php specificando l'attributo "svuota"
-                $.post("rimozione.php", { task: "svuota", email: email}, function(data) {
-                    console.log(data);
-                    if (data.errore) {
-                        console.log(data.errore);
-                    } else {
-                        console.log('Inserimento avvenuto con successo');
-                    }
-                });
-
-                var totale = document.getElementById("totale");
-                totale.textContent = "0";
+                const alert=document.getElementById("alert");
+                alert.style.display="block";
             }
         });
 
+        //conferma svuota carrello
+        var conferma_svuota = document.getElementById("svuota_conferma"); 
+        conferma_svuota.addEventListener("click", function() { 
+            const arts=document.querySelectorAll('.articoloCarrello');
+            arts.forEach(function(art) {
+                art.remove();
+            });
+    
+            // Per la rimozione viene fatta una richiesta POST a rimozione.php specificando l'attributo "svuota"
+            $.post("rimozione.php", { task: "svuota", email: email}, function(data) {
+                console.log(data);
+                if (data.errore) {
+                    console.log(data.errore);
+                } else {
+                    console.log('Inserimento avvenuto con successo');
+                }
+            });
+    
+            var totale = document.getElementById("totale");
+            totale.textContent = "0";
+
+            const alert=document.getElementById("alert");
+            alert.style.display="none";
+        });
     });
+
+    // Chiusura alert svuota carrello
+    document.getElementById("annulla_svuotamento").onclick = function() {
+        const alert=document.getElementById("alert");
+        alert.style.display="none";
+    }
 
     // Funzione per la gestione delle scritte delle categorie
     var selectCategorie = document.getElementById("select_categorie");
