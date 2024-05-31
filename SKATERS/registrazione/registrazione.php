@@ -65,15 +65,26 @@
                         </td>
                     </tr>
                     <tr style="height: 20px; margin-bottom: 10%;">
-                        <td colspan='3' class="sfondo data-tit" style="text-align: left;">Data di nascita:</td>
+                        <td colspan='3' style="text-align: left;">Data di nascita:</td>
                     </tr>
+
                     <tr>
-                        <td style="width: 33%; text-align: left;"> 
+                        <td style="text-align: left;"> 
                             <label class="label iphone">Giorno:</label>
+                        </td>
+                        <td style="text-align: left;">
+                            <label class="label iphone">Mese:</label>
+                        </td>
+                        <td style="width: 39%; text-align: left;">
+                            <label class="label iphone">Anno:</label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: left;"> 
                             <input type="text" name="giorno" maxlength="2" class="input iphone" pattern="^(0?[1-9]|[12][0-9]|3[01])$" required>
                         </td>
-                        <td style="width: 33%; text-align: center;">
-                            <label class="input-mese iphone">Mese:</label>
+                        <td style="text-align: left;">
                             <select name="mese" size="1" cols="13" required class="Smese">
                                 <option value="nessuna"></option>
                                 <option value="Gennaio">Gennaio</option>
@@ -90,8 +101,7 @@
                                 <option value="Dicembre">Dicembre</option>
                             </select>
                         </td>
-                        <td style="width: 33%; text-align: left;">
-                            <label class="label-anno iphone">Anno:</label>
+                        <td style="text-align: left;">
                             <input type="text" name="anno" maxlength="4"class="input-anno iphone" required>
                         </td>
                     </tr>
@@ -130,7 +140,7 @@
                         </td>
                     </tr>
                     <tr style="height: 60px; vertical-align: bottom;">
-                        <td colspan='3' class="conferma-tit" style="text-align: left;">Conferma:</td>
+                        <td colspan='3' style="text-align: left;">Conferma:</td>
                     </tr>
                     <tr>
                         <td colspan='3' style="text-align: left;">

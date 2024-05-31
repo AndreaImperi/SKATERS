@@ -4,8 +4,6 @@
         ' i ' / 1fr;
     border: solid 0px;
     text-align: center;
-    /* Imposta la terza riga per occupare tutto lo spazio disponibile */
-    grid-template-rows: auto;
     justify-items: center;
     top: 75px;
 }
@@ -14,7 +12,7 @@
     overflow: auto;
     border: 0px;
     padding: 2em 1em;
-    margin-top: 7%; /* Move the grid up */
+    margin-top: 7%;
 }
 
 .c1 {
@@ -63,7 +61,7 @@ table{
 }
 
 table td {
-    width: 33%; /* Imposta larghezza uguale per tutte le colonne */
+    width: 33%;
     text-align: left;
 }
 
@@ -177,12 +175,6 @@ select{
     width:60%; 
     margin: 0;
 }
-.input-mese{
-    margin-right: 5px;
-}
-.label-anno{
-    margin-right: 5px;
-}
 .input-anno{
     width: 80px; 
     margin: 0;
@@ -209,13 +201,13 @@ select{
 }
 
 /*IPHONE XR*/
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 650px) {
     body{
         background-color: #cccccc;
     }
     .c1.iphone{
         margin-top: 20%;
-        margin-left: -15%;
+        margin-left: -5%;
         width: 115%;
         height: 90%;
         background-size: 700px;
@@ -231,14 +223,13 @@ select{
         position:fixed;
         height: auto; 
         width: 40%;
-        top: 0%;
-        right: 3%
+        top: -0.5%;
+        right: 5%
     }
     .label.iphone{
         margin-right: 20px;
     }
     .label-anno.iphone{
-        position: absolute;
         top: 49.3%;
         right: 17%
     }
@@ -252,15 +243,8 @@ select{
     .Smese{
         width: 100px;
     }
-    .data-tit{
-        position: absolute;
-        top:45%;
-        border-radius: 5px;
-        
-    }
     .input-anno.iphone{
         width: 40px;
-        position: absolute;
         top: 49%;
         right: 7%
     }
@@ -277,14 +261,6 @@ select{
     .linea{
         width: 100%;
         margin-top: 3.3%;
-    }
-    
-    .conferma-tit{
-        position: absolute;
-        top:95%;
-        border-radius: 5px;
-        /*background-color: rgba(255, 255, 255, 0.644);*/
-        width:22%
     }
 
     .registrati_scritta{
