@@ -228,9 +228,9 @@
         <h2 class="titemail iphone quicksand">Facci una domanda</h2>
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 5%; margin-right:5%; margin-top:1%">
         <h5 class=" avviso iphone quicksand">TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
-        <form class="quicksand" action="index.php" method="post" id="formemail">
+        <form class="quicksand" action="index.php" method="post" id="formemail" onsubmit="MinCaratteri(event)">
             <label class="label iphone" for="messaggio">Messaggio:</label><br>
-            <textarea class="messaggio iphone" id="messaggio" name="messaggio"></textarea><br>
+            <textarea class="messaggio iphone" id="messaggio" name="messaggio" oninput="ContaCaratteri()"></textarea><br>
             <button  type="submit" class=" binvia iphone btn btn-outline-primary quicksand">Invia</button>
             <img src="./immagini/x-removebg-preview.png" class="x iphone" alt="" id="xchiusura">
         </form>

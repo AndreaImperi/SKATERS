@@ -97,6 +97,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("email").style.display = "none";
         document.getElementById("overlay").style.filter = "none";
     }
+
+
+
+
 });
 
 // Per chiudere Alert
@@ -117,3 +121,23 @@ document.getElementById("logout").addEventListener("click", function() {
         window.location.href = "index.php";
     });
 });
+
+
+//Per controllare il numero massimo di caratteri 
+function MaxCaratteri() {
+    var messaggio = document.getElementById("messaggio").value;
+    var massimo = 1000;
+    
+    if (messaggio.length > massimo) {
+        alert("Troppi caratteri!");
+    }
+}
+//Per controllare il numero minimo di caratteri 
+function MinCaratteri(event) {
+    var messaggio = document.getElementById("messaggio").value;
+
+    if (messaggio.length === 0) {
+        alert("Il messaggio è vuoto!");
+        event.preventDefault(); 
+    }
+}
