@@ -7,6 +7,7 @@ $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres
 $task = $_POST['task'];
 $email = $_POST['email'];
 
+// Rimuovo dal database in base al comando che mi è stato passato
 if ($task == "rimuovi") {
     $nome = $_POST['nome'];
 
@@ -26,6 +27,4 @@ if ($task == "rimuovi") {
         error_log(json_encode($risposta));
     }
 }
-
-
 ?>

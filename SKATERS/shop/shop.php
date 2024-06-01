@@ -41,7 +41,7 @@
                 <img id="searchInput" src='../immagini/lenteIngrandimento.png' class="lente" style="width: 50px;margin-bottom:0.3%; cursor: pointer;"></img>
             </div>
             <div style="margin-bottom: 5%;text-align: left; margin-top: 5%;">
-                    <h3 id="etichetta_shop" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: block;" ></h3> 
+                    <h3 id="etichetta_shop" style="margin-left: 2%; color: rgb(93, 83, 83); display: block;" ></h3> 
                     <hr class="linea" id="linea-grigia" style="color: rgb(93, 83, 83) ;margin-top: 1%;">
             </div>
         </div>
@@ -77,7 +77,7 @@
                 echo '<img class="sinistra" src="' . $row['img_sx'] . '">';
                 echo '<img class="destra" src="' . $row['img_dx'] . '">';
                 echo '<div class="barra">';
-                echo '<button class="btn btn-outline-light quicksand Bacquista">Acquista</button>';
+                echo '<button class="btn btn-outline-light Bacquista">Acquista</button>';
                 echo '<label class="taglia_label">Taglia:</label>';
 
                 if ($row['categoria']=='deck') {
@@ -118,7 +118,10 @@
         }
     ?>
     </div>
-    <h2 class="novideo" id="novideo" style="display: none; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
+
+    <!-- Avviso che compare nel caso non ci siano video corrispondenti alla ricerca -->
+    <h2 class="noart" id="noart" style="display: none; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
+
     <div class="carrelloSopra" id="carrelloSopra">
         <div class="carrelloDentro iphone" id="carrelloDentro">
             <!-- Contenuto del carrello -->
@@ -156,7 +159,7 @@
             ?>
 
             <!-- Avviso in caso di login non effettuato -->
-            <h1 class="avviso_cart quicksand" style=" align-self: center; font-size: medium; color: #808080; text-align: center; display: <?php echo $display_avviso; ?>;">esegui il login per visualizzare il tuo carrello</h1>
+            <h1 class="avviso_cart" style=" align-self: center; font-size: medium; color: #808080; text-align: center; display: <?php echo $display_avviso; ?>;">esegui il login per visualizzare il tuo carrello</h1>
 
             <div id="termine_carrello" style="align-self: flex-start;">
                 <?php
@@ -175,11 +178,11 @@
                     echo '<p>Totale: <span id="totale">0</span> Euro</p>';
                 }                   
                 ?>
-                <button <?php echo $var_click;?>  class="Bsvuota_carrello btn btn-outline-primary quicksand">Svuota Carrello</button>
+                <button <?php echo $var_click;?>  class="Bsvuota_carrello btn btn-outline-primary ">Svuota Carrello</button>
 
 
                 <!-- Alert per svuotare il carrello -->
-                <div class="alert modal-dialog quicksand" role="document"   id="alert" style="display:none; padding:20px;">
+                <div class="alert modal-dialog " role="document" id="alert" style="display:none; padding:20px;">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h2 class="modal-title h5 " id="modal1Title">Svuota carrello</h2>
@@ -188,30 +191,34 @@
                             <p>Sei sicuro di voler svuotare il carrello?</p>
                         </div>
                         <div class="modal-footer" style="display: flex; justify-content: right; gap: 10px;">
-                            <button id="svuota_conferma" class=" btn btn-outline-danger btn-sm quicksand" style="margin-top:5%">SVUOTA</button>
-                            <button id="annulla_svuotamento" class=" btn btn-outline-primary btn-sm quicksand" style="margin-top:5%">ANNULLA</button>
+                            <button id="svuota_conferma" class=" btn btn-outline-danger btn-sm " style="margin-top:5%">SVUOTA</button>
+                            <button id="annulla_svuotamento" class=" btn btn-outline-primary btn-sm " style="margin-top:5%">ANNULLA</button>
                         </div>
                     </div>
                 </div>
 
 
                 
-                <button id="Bchiudi-carrello" class="btn btn-outline-primary quicksand">Chiudi Carrello</button>
+                <button id="Bchiudi-carrello" class="btn btn-outline-primary ">Chiudi Carrello</button>
             </div>
         </div>
     </div>
+
+    <!-- div per la barra finale-->
     <div class="finale iphone" id="finale">
         <div align="left" style="margin-left:1%;">
-            <h1 class="cont quicksand" style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
+            <h1 class="cont " style=" text-align: left; font-size: small; color: rgb(255, 255, 255); ">
                 CONTATTACI: skaters@gmail.com
             </h1>
         </div>
         <img src="../immagini/logo.png" class="logob iphone">
         <div style="margin-right:1%">
-            <h1 class="creator quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
-            <h1 class="names quicksand" style=" text-align: right; font-size: small; color: rgb(255, 255, 255);"> Finocchiaro Dario Imperi Andrea  </h1>
+            <h1 class="creator " style=" text-align: right; font-size: small; color: rgb(255, 255, 255);">CREATORI:</h1>
+            <h1 class="names " style=" text-align: right; font-size: small; color: rgb(255, 255, 255);"> Finocchiaro Dario Imperi Andrea  </h1>
         </div>
     </div>
+
+    <!-- Collegamento al file JavaScrip -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </body>

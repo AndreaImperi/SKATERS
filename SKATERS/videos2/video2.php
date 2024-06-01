@@ -47,7 +47,7 @@
             </div>
             <!-- Etichetta che compare in base alla categoria selezionata -->
             <div style="margin-bottom: 5%;text-align: left; margin-top: 5%;">
-                    <h3 id="etichetta_videos" class="quicksand" style="margin-left: 2%; color: rgb(93, 83, 83); display: block;" ></h3> 
+                    <h3 id="etichetta_videos" style="margin-left: 2%; color: rgb(93, 83, 83); display: block;" ></h3> 
                     <hr class="linea" id="linea-grigia" style="color: rgb(93, 83, 83) ;margin-top: 1%;">
             </div>
         </div>
@@ -69,7 +69,7 @@
                         echo '<a class="video  sls" style="color: white;" href="'. $row['link'] .'" target="_blank">';
                     }
                     echo '<img class="copertina" src="'. $row['img'] .'">';
-                    echo '<h2 class="titolo" id="black">'. $row['nome'] .'</h2>';
+                    echo '<h2 class="titolo">'. $row['nome'] .'</h2>';
                     echo '</a>';
                 }
             } else {
@@ -97,6 +97,7 @@
             </div>
     </div>
 
+    <!-- Collegamento al file JavaScrip -->
     <script src="script.js"></script>
 </body>
 </html>

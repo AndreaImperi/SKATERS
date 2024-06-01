@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var videoContainers = document.querySelectorAll(".video");
         var barra = document.getElementById('finale');
         var novideo =document.getElementById('novideo');
-        var pageWidth = document.documentElement.clientWidth;
+        var larghezza_pagina = document.documentElement.clientWidth;
         var num = 0;
 
         for (const videoC of videoContainers) {
@@ -107,9 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
             barra.style.bottom = "0%";
             barra.style.width = "100%";
         }else{
-            if (pageWidth<420){
+            if (larghezza_pagina<420){
                 n_vid_m = 7;
-            } else if (pageWidth<1030){
+            } else if (larghezza_pagina<1030){
                 n_vid_m = 13;
             } else {
                 n_vid_m = 0;

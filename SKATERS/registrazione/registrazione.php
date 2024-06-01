@@ -23,7 +23,7 @@
 
     <!-- Topbar con logo -->
     <div class="fixed-bar iphone" style="margin-top: 0%;">
-        <div class="space iphone">
+        <div class="spazio iphone">
             <a href="../index.php" style="margin-top:1.1%;">
                 <img src="../immagini/logo.png" class="logo iphone">
             </a> 
@@ -41,6 +41,7 @@
 
         <!-- Riga unica della grid che continene la tabella con il form -->
         <div class="c1 iphone">
+            <!-- Specifico POST come metodo per il form indirizzato a registrazione.php -->
             <form name="formReg" action="registrazione.php" method="POST" > 
                 <table class="iphone">
                     <tr>
@@ -167,7 +168,6 @@
                                 <option value="italia">Italia</option>
                                 <option value="francia">Francia</option>
                                 <option value="germania">Germania</option>
-                                <!-- Aggiungere altre -->
                             </select>
                         </td>
                         <td align="left" style="text-align: left;">
@@ -179,6 +179,8 @@
                             <button type="submit" id="registrati" style="margin-top: 10%;" class="btn btn-outline-primary quicksand"> REGISTRATI </button>
                         </td>
                         <td colspan="4" style="vertical-align: middle;">
+
+                        <!-- Gestisco la richiesta POST e registro i dati dell'utente nel database -->
                         <?php
                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 if ($connessione){
@@ -221,7 +223,7 @@
         <img src="../immagini/tavola_reg.JPG" class="angolosx" alt="">
         <img src="../immagini/tavola_reg.JPG" class="angolodx" alt="">
 
-        
+        <!-- Collegamento al file JavaScrip -->
         <script src="script.js"></script>
 </body>
 </html>

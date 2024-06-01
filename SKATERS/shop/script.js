@@ -73,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // la funzione di callback carica gli articoli nel carrello con le relative informazioni e aggiornare il totale
     $.get('email.php', function(data) {
         var email = data.email;
-        //console.log(email);
 
         const buttons_acquista = document.querySelectorAll('.Bacquista');
         const carrello = document.getElementById('carrelloDentro');
@@ -84,10 +83,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const taglia = articolo.querySelector('.Taglia').value;
 
                 if (taglia === "nessuna") {
-                    //articolo.querySelector('.messaggio_taglia').style.display = 'block';
                     return;
                 }
-                //articolo.querySelector('.messaggio_login').style.display = 'none';
 
                 if (email === '') {
                     articolo.querySelector('.messaggio_login').style.display = 'block';
@@ -147,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Eseguo una richiesta GET al file email.php usando JQuery
-    // la funzione di callback si occupa di rimuovere gli articoli dal carrello e aggiornare il totale
+    // La funzione di callback si occupa di rimuovere gli articoli dal carrello e aggiornare il totale
     $.get('email.php', function(data) {
         var email = data.email;
         document.addEventListener('click', function(event) {
@@ -156,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const nome_art = articoloCarrello.querySelector('.nome').innerText;
                 articoloCarrello.remove();
 
-                // Per la rimozione viene fatta una richiesta POST a rimozione.php specificando l'attributo "rimuovi"
+                // La rimozione viene fatta una richiesta POST a rimozione.php specificando l'attributo "rimuovi"
                 $.post("rimozione.php", { task: "rimuovi", nome: nome_art,email: email}, function(data) {
                     console.log(data);
                     if (data.errore) {
@@ -179,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        //conferma svuota carrello
+        // Conferma svuota carrello
         var conferma_svuota = document.getElementById("svuota_conferma"); 
         conferma_svuota.addEventListener("click", function() { 
             const arts=document.querySelectorAll('.articoloCarrello');
@@ -187,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 art.remove();
             });
     
-            // Per la rimozione viene fatta una richiesta POST a rimozione.php specificando l'attributo "svuota"
+            // La rimozione di tutti gli articoli viene fatta una richiesta POST a rimozione.php specificando l'attributo "svuota"
             $.post("rimozione.php", { task: "svuota", email: email}, function(data) {
                 console.log(data);
                 if (data.errore) {
@@ -211,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert.style.display="none";
     }
 
-    // Funzione per la gestione delle scritte delle categorie
+    // Per la gestione delle scritte delle categorie
     var selectCategorie = document.getElementById("select_categorie");
     selectCategorie.addEventListener("change", function() {
         var valoreSelezionato = selectCategorie.value;
@@ -272,56 +269,56 @@ document.addEventListener('DOMContentLoaded', function() {
         aggiusta_barra();
     });
 
-    // Funzione per la ricerca degli articoli 
+    // Per la ricerca degli articoli 
     var searchButton = document.getElementById("searchInput"); 
     searchButton.addEventListener("click", function() { 
         var valoreSelezionato = selectCategorie.value;
         if (valoreSelezionato=="nessuna") {
-            var videoContainers = document.querySelectorAll(".articolo");
+            var artContainers = document.querySelectorAll(".articolo");
         } else if (valoreSelezionato=="decks") {
-            var videoContainers = document.querySelectorAll(".deck");
+            var artContainers = document.querySelectorAll(".deck");
         } else if (valoreSelezionato=="ruote") {
-            var videoContainers =  document.querySelectorAll(".ruota");
+            var artContainers =  document.querySelectorAll(".ruota");
         } else if (valoreSelezionato=="trucks") {
-            var videoContainers = document.querySelectorAll(".truck");
+            var artContainers = document.querySelectorAll(".truck");
         } 
 
         var ricerca = document.getElementById('barra');
         var valore = ricerca.value.toLowerCase();
-        videoContainers.forEach(function(videoContainer) {
-            var titoloVideo = videoContainer.querySelector(".nome").textContent.toLowerCase(); 
-            if (titoloVideo.includes(valore)) { 
-                videoContainer.style.display = "block";
+        artContainers.forEach(function(artContainer) {
+            var titoloart = artContainer.querySelector(".nome").textContent.toLowerCase(); 
+            if (titoloart.includes(valore)) { 
+                artContainer.style.display = "block";
             } else {
-                videoContainer.style.display = "none";
+                artContainer.style.display = "none";
             }
         });
         aggiusta_barra();
     });
 
-    // Funzione per la gestione della barra finale in base ai video presenti
+    // Funzione per la gestione della barra finale in base agli articoli presenti
     function aggiusta_barra() {
-        var videoContainers = document.querySelectorAll(".articolo");
+        var artContainers = document.querySelectorAll(".articolo");
         var barra = document.getElementById('finale');
-        var novideo =document.getElementById('novideo');
-        var pageWidth = document.documentElement.clientWidth;
+        var noart =document.getElementById('noart');
+        var larghezza_pagina = document.documentElement.clientWidth;
         var num = 0;
 
-        for (const videoC of videoContainers) {
-            if (videoC.style.display === "block") {
+        for (const artC of artContainers) {
+            if (artC.style.display === "block") {
                 num += 1;
             }
         }
 
         if (num === 0){
-            novideo.style.display = "block";
+            noart.style.display = "block";
             barra.style.position = "fixed";
             barra.style.bottom = "0%";
             barra.style.width = "100%";
         }else{
-            if (pageWidth<420){
+            if (larghezza_pagina<420){
                 n_vid_m = 3;
-            } else if (pageWidth<1030){
+            } else if (larghezza_pagina<1030){
                 n_vid_m = 7;
             } else {
                 n_vid_m = 0;
@@ -333,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             barra.style.bottom = "0%";
             barra.style.width = "100%";
-            novideo.style.display = "none";
+            noart.style.display = "none";
         }
     }
 });

@@ -15,6 +15,7 @@
     margin-bottom: 30px;
     opacity: 1;
 }
+
 .toppa{
     display: flex; 
     justify-content: center; 
@@ -24,6 +25,7 @@
     background-color: white; 
     margin-top: 1%;
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -47,17 +49,13 @@
     width: 100%;   
     margin-bottom: 2%;
     border-radius: 5px;
-    
+}
 
-}
-#black{
-    color: black;
-}
 .titolo{
     font-size: 20px;
     font-weight: 600;
+    color: black;
 }
-
 
 .c1 {
     grid-column: 1 / -1;
@@ -84,6 +82,7 @@
     margin-top: 5%;
     bottom:0;
 }
+
 .quicksand {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;
@@ -102,26 +101,27 @@
     background-color: #000000; 
     border-color: #000; 
 }
+
 .logo{
     height: 80px; 
     margin-top:1.2%;
 }
+
 .logob{
 
         height: 80%;
     
-}
-.logoB{
-    height: 80%;
 }
 
 .sotto_scritta{
     margin-bottom: 30px; 
     margin-top: 1px; 
 }
+
 .novideo{
     margin-left:37%
 }
+
 @media screen and (max-width: 1025px) {
 	.grid {
         grid-template-columns: repeat(3, 1fr);
@@ -180,6 +180,3 @@
         margin-top: 6%; 
     }
 }
-
-
-

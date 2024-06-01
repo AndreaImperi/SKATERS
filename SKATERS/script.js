@@ -99,10 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Per chiudere Alert messaggio
+// Per chiudere Alert
 document.getElementById("ok").onclick = function(){
     document.getElementById("alert").style.display = "none";
-    
 }
 
 // Per far chiudere dopo 4 secondi l'alert in automatico

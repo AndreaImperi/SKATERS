@@ -19,6 +19,7 @@
     </head>
     <body class="quicksand" style="overflow: hidden;">
 
+        <!-- Mi connetto al database -->
         <?php
             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
         ?>
@@ -42,25 +43,29 @@
 
                 <!-- Velo nero trasparente -->
                 <div class="overlay iphone" >
-                    <h3 style="margin-top: 2%; color:white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">SKATERS</h3>
-                    <h1 style="font-size: small;margin-bottom:0%; color:white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;">Entra con le tue credenziali</h1>
-                    <hr class="linea" id="linea-grigia" style="color: rgb(255, 255, 255);margin-top: 5%;margin-right: 15%;">
+                    <h3 class="label" style="margin-top: 2%;">SKATERS</h3>
+                    <h1 class="label" style="font-size: small;">Entra con le tue credenziali</h1>
+                    <hr class="linea1">
+
+                    <!-- Specifico il metodo POST per il form -->
                     <form name="formAcc" action="" method="POST">
-                        <label for="email" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;" class="label">E-mail:</label><br>
+                        <label for="email" class="label">E-mail:</label><br>
                         <input type="text" id="email" name="email" class="input iphone"><br>
-                        <label for="password" style="color: white; text-shadow: -0.5px -0.5px 0 black, 0.5px -0.5px 0 black, -0.5px 0.5px 0 black, 0.5px 0.5px 0 black;" >Password:</label><br>
+                        <label for="password" class="label">Password:</label><br>
                         <input type="password" id="password" name="password" class="input iphone">
-                        <input type="submit" value="Submit" class="btn btn-outline-primary quicksand" style="margin-top:5%">
-                        </form>
+                        <input type="submit" value="Submit" class="btn btn-outline-primary" style="margin-top:5%">
+                    </form>
                     <br>
-                    <hr class="linea iphone" id="linea-grigia">
+                    <hr class="linea2">
                     <div  style="text-align: center;margin-bottom: 4%;">
                         <h1 class="reg iphone">Non hai un account?</h1>
                         <a class="reg iphone" href="../registrazione/registrazione.php" id="Bregistrazione">REGISTRATI</a>
                     </div>
                 </div>
-                
+            </div>
         </div>
+
+        <!-- Gestisco la richiesta POST rimandando al sito se è tutto corretto o mostro l'errore -->
         <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $email = $_POST["email"];
@@ -81,7 +86,6 @@
                                 $session = $_SESSION['nome'];
                                 $ciao = $tuple['nome'];
                                 echo "benvenuto, $session";
-                                // Aggiorna il timestamp dell'ultima attività
                                 $_SESSION['LAST_ACTIVITY'] = time();
                                 header("Location: ../index.php");
                             } else {
@@ -97,6 +101,7 @@
             }
     
         ?>
+
         <!-- Collegamento al file JavaScript -->
         <script src="script.js"></script>
         

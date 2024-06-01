@@ -106,7 +106,8 @@
     border: solid black 2px;
     bottom: 45%;
     left: 35%;
-  }
+}
+
 .container_vid {
   display: flex;
   justify-content: space-between;
@@ -422,7 +423,10 @@ body {
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
-    border: 1px solid #000;
+    border-top: 1px solid #000;   
+    border-bottom: 1px solid #000;
+    border-left: none;            
+    border-right: none; 
     background-color: #f3f3f3;
     align-items: center;
 }
@@ -442,6 +446,7 @@ body {
     font-style: italic;
 }
 
+/*Utilizzo una regola CSS per definire l'animazione del blocco con il testo*/
 @keyframes scorri {
     from {
         transform: translateX(0%);
@@ -672,7 +677,10 @@ body {
         overflow: hidden;
         white-space: nowrap;
         box-sizing: border-box;
-        border: 1px solid #000;
+        border-top: 1px solid #000;   
+        border-bottom: 1px solid #000;
+        border-left: none;            
+        border-right: none; 
         background-color: #f3f3f3;
         align-items: center;
     }
@@ -685,7 +693,10 @@ body {
         overflow: hidden;
         white-space: nowrap;
         box-sizing: border-box;
-        border: 1px solid #000;
+        border-top: 1px solid #000;   
+        border-bottom: 1px solid #000;
+        border-left: none;            
+        border-right: none; 
         background-color: #f3f3f3;
         align-items: center;
     }

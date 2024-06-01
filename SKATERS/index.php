@@ -169,7 +169,7 @@
                     Shop
                 </h2>
                 <hr class="lineshop">
-
+                <!-- Scritta scorrevole-->
                 <div class="scorrevole">
                     <div class="content_scorrevole">
                         <h1 class="testo_scorrevole">SCEGLI I TUOI COMPONENTI PREFERITI E ASSEMBLA LO SKATEBOARD CHE FA PER TE</h1>
