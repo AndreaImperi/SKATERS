@@ -43,12 +43,14 @@
 
                 <!-- Velo nero trasparente -->
                 <div class="overlay iphone" >
-                    <h3 class="label" style="margin-top: 2%;">SKATERS</h3>
-                    <h1 class="label" style="font-size: small;">Entra con le tue credenziali</h1>
-                    <hr class="linea1">
+                    <div class="titolo_c1">
+                        <h3 class="label" style="margin-top: 2%;">SKATERS</h3>
+                        <h1 class="label" style="font-size: small;">Entra con le tue credenziali</h1>
+                        <hr class="linea1">
+                    </div>
 
                     <!-- Specifico il metodo POST per il form -->
-                    <form name="formAcc" action="" method="POST">
+                    <form name="formAcc" action="" method="POST" class="form">
                         <label for="email" class="label">E-mail:</label><br>
                         <input type="text" id="email" name="email" class="input iphone" required><br>
                         <label for="password" class="label">Password:</label><br>

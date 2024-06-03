@@ -226,15 +226,25 @@ input[type="text"], input[type="password"], input[type=email] {
         border-radius: 10px;
         grid-area: i;   
         margin-top: 20%;
+    
         height: 500px;
         width: 300px;
         z-index:2;
         border: 2px solid black;
     }
+    .titolo_c1{
+        padding: 3%;
+
+    }
+    .titolo_c1 h3, .titolo_c1 h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+    }
     .overlay{
         background-color: rgba(72, 71, 71, 0.458);
         border-radius: 10px;
-        padding: 1%;
+        padding: 5%;
         height: 600px;
         width: 300px;
         margin-left: 4%;
@@ -263,12 +273,11 @@ input[type="text"], input[type="password"], input[type=email] {
         margin-top: -15%;
     }
     .label{
-        margin-top: -8%;
+        margin-top: 1%;
     }
     .reg.iphone{
        margin-bottom: 5%;
     }
-
     .spazio{
         display: grid; 
         justify-content: right; 
@@ -277,7 +286,6 @@ input[type="text"], input[type="password"], input[type=email] {
         width: 96vw;
         background-color: white; 
     }
-    
     .logo_f{
         margin-top: -15px;
         height: 65px;

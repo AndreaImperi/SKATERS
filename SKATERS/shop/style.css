@@ -296,6 +296,21 @@
     margin-top: 5%;
 }
 
+@media screen and (max-width: 800px) {
+    .c1{
+        margin-top: 3%;
+    }
+    .logo{
+        margin-top: 5.5%;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .c1{
+        margin-top: 7%;
+    }
+}
+
 @media screen and (max-width: 1025px) {
 	.grid {
         grid-template-columns: repeat(3, 1fr);
@@ -340,7 +355,7 @@
     .toppa.iphone{
         height: 120px;
         width: 220x;
-        margin-top: -10%;
+        margin-top: -8%;
         margin-bottom: -20%;
         margin-left: -5%;
         width: 140%;
@@ -348,7 +363,7 @@
     .logo.iphone{
         margin-top: 10%;
         margin-left: -30%;
-        height: 70px;
+        height: 55px;
     }
     .Bcarrello.iphone{
         width: 40px;
@@ -362,7 +377,7 @@
         margin-top: 5%;
     }
     .c1.iphone{
-        margin-top: 20%;
+        margin-top: 40%;
     }
     .names{
         font-size: x-small;
