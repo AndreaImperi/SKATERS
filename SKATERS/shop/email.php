@@ -1,6 +1,7 @@
-<!-- PHP che restituisce l'email dell'account loggato se è stato effettuato il login, altrimenti restituisce la stringa vuota -->
+
 
 <?php
+    //PHP che restituisce l'email dell'account loggato se è stato effettuato il login, altrimenti restituisce la stringa vuota
     session_start();
     if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];

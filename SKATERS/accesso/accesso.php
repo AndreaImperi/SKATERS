@@ -50,9 +50,9 @@
                     <!-- Specifico il metodo POST per il form -->
                     <form name="formAcc" action="" method="POST">
                         <label for="email" class="label">E-mail:</label><br>
-                        <input type="text" id="email" name="email" class="input iphone"><br>
+                        <input type="text" id="email" name="email" class="input iphone" required><br>
                         <label for="password" class="label">Password:</label><br>
-                        <input type="password" id="password" name="password" class="input iphone">
+                        <input type="password" id="password" name="password" class="input iphone" required>
                         <input type="submit" value="Submit" class="btn btn-outline-primary" style="margin-top:5%">
                     </form>
                     <br>
@@ -63,45 +63,44 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Gestisco la richiesta POST rimandando al sito se è tutto corretto o mostro l'errore -->
-        <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $email = $_POST["email"];
-                $pswd = $_POST['password'];
-                $q1 = "SELECT * FROM utente WHERE email = $1";
-                $result = pg_query_params($connessione, $q1, array($email));
-                if ($result) {
-                    if (pg_num_rows($result) > 0) {
-                        $q2 = "SELECT * FROM utente WHERE email = $1 AND pswd = $2";
-                        $result_2 = pg_query_params($connessione, $q2, array($email, $pswd));
-                        if ($result_2) {
-                            if (pg_num_rows($result_2) > 0) {
-                                $tuple=pg_fetch_array($result_2, null, PGSQL_ASSOC);
-                                session_start();
-                                $_SESSION['email'] = $email;
-                                $nome = $tuple['nome'];
-                                $_SESSION['nome'] = $nome;
-                                $session = $_SESSION['nome'];
-                                $ciao = $tuple['nome'];
-                                echo "benvenuto, $session";
-                                $_SESSION['LAST_ACTIVITY'] = time();
-                                header("Location: ../index.php");
-                            } else {
-                                $_SESSION['utente_loggato'] = false;
-                                echo "<h1 class=\"mess_err\">!password errata!</h1>";
+            <!-- Gestisco la richiesta POST rimandando al sito se è tutto corretto o mostro l'errore -->
+            <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    $email = $_POST["email"];
+                    $pswd = $_POST['password'];
+                    $q1 = "SELECT * FROM utente WHERE email = $1";
+                    $result = pg_query_params($connessione, $q1, array($email));
+                    if ($result) {
+                        if (pg_num_rows($result) > 0) {
+                            $q2 = "SELECT * FROM utente WHERE email = $1 AND pswd = $2";
+                            $result_2 = pg_query_params($connessione, $q2, array($email, $pswd));
+                            if ($result_2) {
+                                if (pg_num_rows($result_2) > 0) {
+                                    $tuple=pg_fetch_array($result_2, null, PGSQL_ASSOC);
+                                    session_start();
+                                    $_SESSION['email'] = $email;
+                                    $nome = $tuple['nome'];
+                                    $_SESSION['nome'] = $nome;
+                                    $session = $_SESSION['nome'];
+                                    $ciao = $tuple['nome'];
+                                    echo "benvenuto, $session";
+                                    $_SESSION['LAST_ACTIVITY'] = time();
+                                    header("Location: ../index.php");
+                                } else {
+                                    $_SESSION['utente_loggato'] = false;
+                                    echo "<h1 class=\"mess_err\">!password errata!</h1>";
+                                }
                             }
+                        } else {
+                            $_SESSION['utente_loggato'] = false;
+                            echo "<h1 class=\"mess_err\">!l'indirizzo email non risulta registrato!</h1>";
                         }
-                    } else {
-                        $_SESSION['utente_loggato'] = false;
-                        echo "<h1 class=\"mess_err\">!l'indirizzo email non risulta registrato!</h1>";
                     }
                 }
-            }
-    
-        ?>
-
+        
+            ?>
+        </div>
+        
         <!-- Collegamento al file JavaScript -->
         <script src="script.js"></script>
         

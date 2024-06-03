@@ -446,6 +446,18 @@ body {
     font-style: italic;
 }
 
+.mappe{
+    margin-top: -100px;
+    position: relative;
+    display: none;
+    margin-left:5%;
+}
+
+
+
+
+
+
 /*Utilizzo una regola CSS per definire l'animazione del blocco con il testo*/
 @keyframes scorri {
     from {

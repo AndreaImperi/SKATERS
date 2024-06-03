@@ -33,34 +33,38 @@ document.getElementById("Bshop").addEventListener("click", function() {
 document.getElementById("Bshop2").addEventListener("click", function() {
     window.location.href = "shop/shop.php";
 });
+// Collegamento alla pagina Shop tramite scritta
+document.getElementById("Tshop").addEventListener("click", function() {
+    window.location.href = "shop/shop.php"
+});
 
 // Per far alternare le mappe
 document.addEventListener('DOMContentLoaded', function () {
-    var skateparkRadio = document.getElementById('btnradio1');
-    var tutto = document.getElementById('btnradio2');
-    var skateshopRadio = document.getElementById('btnradio3');
-    var skateparkFrame = document.getElementById('skatepark');
-    var skateshopFrame = document.getElementById('skateshop');
-    var tuttoM = document.getElementById('tutto');
-    skateparkRadio.addEventListener('change', function () {
-        if (skateparkRadio.checked) {
-            skateparkFrame.style.display = 'block';
-            skateshopFrame.style.display = 'none';
-            tuttoM.style.display = 'none';
+    var sel_park = document.getElementById('btnradio1');
+    var sel_tutto = document.getElementById('btnradio2');
+    var sel_shop = document.getElementById('btnradio3');
+    var mappa_park = document.getElementById('skatepark');
+    var mappa_shop = document.getElementById('skateshop');
+    var mappa_tutto = document.getElementById('tutto');
+    sel_park.addEventListener('change', function () {
+        if (sel_park.checked) {
+            mappa_park.style.display = 'block';
+            mappa_shop.style.display = 'none';
+            mappa_tutto.style.display = 'none';
         }
     });
-    skateshopRadio.addEventListener('change', function () {
-        if (skateshopRadio.checked) {
-            skateshopFrame.style.display = 'block';
-            skateparkFrame.style.display = 'none';
-            tuttoM.style.display = 'none';
+    sel_shop.addEventListener('change', function () {
+        if (sel_shop.checked) {
+            mappa_shop.style.display = 'block';
+            mappa_park.style.display = 'none';
+            mappa_tutto.style.display = 'none';
         }
     });
-    tutto.addEventListener('change', function(){
-        if (tutto.checked){
-            tuttoM.style.display = 'block';
-            skateparkFrame.style.display = 'none';
-            skateshopFrame.style.display = 'none';
+    sel_tutto.addEventListener('change', function(){
+        if (sel_tutto.checked){
+            mappa_tutto.style.display = 'block';
+            mappa_park.style.display = 'none';
+            mappa_shop.style.display = 'none';
         }
     })
 

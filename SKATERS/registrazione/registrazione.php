@@ -42,7 +42,7 @@
         <!-- Riga unica della grid che continene la tabella con il form -->
         <div class="c1 iphone">
             <!-- Specifico POST come metodo per il form indirizzato a registrazione.php -->
-            <form name="formReg" action="registrazione.php" method="POST" > 
+            <form name="formReg" action="" method="POST" > 
                 <table class="iphone">
                     <tr>
                         <td colspan='3' style="text-align: left;">Nome:</td>
@@ -171,7 +171,7 @@
                             </select>
                         </td>
                         <td align="left" style="text-align: left;">
-                            <input type="text" name="n_telefono" id="n_telefono" pattern="^\+?[0-9\s()-]{6,20}$" size="22" required>
+                            <input type="text" name="n_telefono" id="n_telefono" pattern="^\+?[0-9\s()-]{6,20}$" size="22" required placeholder="Numero di Telefono">
                         </td>
                     </tr>
                     <tr>

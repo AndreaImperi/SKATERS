@@ -156,16 +156,16 @@
                     </div>
                 </div>
                 <!-- Collegamento a MyMaps -->
-                <div class="mappe" style="height: 390px; overflow: hidden; text-align: center;">
-                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tbl_kXUfzK2p4hQvXCgcGO_ineV_2ks&ehbc=2E312F" width="90%" height="490" style="margin-top: -100px; display:none; position: relative;" id="skateshop"></iframe>
-                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c8j8WkH4jeMGuteNeM0njMlEE4byEwM&ehbc=2E312F"width="90%" height="490" style="margin-top: -100px; display:none; position: relative;" id="skatepark"></iframe>
-                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=155q4x6fTGhEwpfhM4LlcNZPMwiq_G2w&ehbc=2E312F" width="90%" height="490"  style="margin-top: -100px; position: relative; " id="tutto"></iframe>
+                <div style="height: 390px; overflow: hidden; text-align: center;">
+                    <iframe class="mappe" src="https://www.google.com/maps/d/u/0/embed?mid=1tbl_kXUfzK2p4hQvXCgcGO_ineV_2ks&ehbc=2E312F" width="90%" height="490" id="skateshop"></iframe>
+                    <iframe class="mappe" src="https://www.google.com/maps/d/u/0/embed?mid=1c8j8WkH4jeMGuteNeM0njMlEE4byEwM&ehbc=2E312F" width="90%" height="490"id="skatepark"></iframe>
+                    <iframe class="mappe" src="https://www.google.com/maps/d/u/0/embed?mid=155q4x6fTGhEwpfhM4LlcNZPMwiq_G2w&ehbc=2E312F" width="90%" height="490" style="display:block" id="tutto"></iframe>
                 </div>
             </div>
 
             <!-- Riga della grid contenente anteprima dello shop -->
             <div class="c4" style="position:relative; padding-left: 0; padding-right: 0;">
-                <h2  class="quicksand" style="text-align: left; margin-left: 5%;">
+                <h2  class="quicksand" id="Tshop" style="text-align: left; margin-left: 5%;">
                     Shop
                 </h2>
                 <hr class="lineshop">
@@ -230,7 +230,7 @@
         <h5 class=" avviso iphone quicksand">TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
         <form class="quicksand" action="index.php" method="post" id="formemail" onsubmit="MinCaratteri(event)">
             <label class="label iphone" for="messaggio">Messaggio:</label><br>
-            <textarea class="messaggio iphone" id="messaggio" name="messaggio" oninput="ContaCaratteri()"></textarea><br>
+            <textarea class="messaggio iphone" id="messaggio" name="messaggio" oninput="ContaCaratteri()" required></textarea><br>
             <button  type="submit" class=" binvia iphone btn btn-outline-primary quicksand">Invia</button>
             <img src="./immagini/x-removebg-preview.png" class="x iphone" alt="" id="xchiusura">
         </form>

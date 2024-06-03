@@ -1,6 +1,6 @@
-<!-- PHP per eseguire il logout (consiste nello svuotare la variabile $_SESSION['email']) -->
-<!-- mi accorgo che il login è stato eseguito se la variabile $_SESSION['email'] è settata -->
 <?php
+// PHP per eseguire il logout (consiste nello svuotare la variabile $_SESSION['email'])
+// mi accorgo che il login è stato eseguito se la variabile $_SESSION['email'] è settata
 session_start();
 unset($_SESSION['email']);
 

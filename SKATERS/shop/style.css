@@ -214,17 +214,7 @@
 
 .messaggio_login {
     position: absolute;
-    bottom: 26%;
-    left: 1%;
-    font-size: medium;
-    color: red;
-    z-index: 1000;
-    display: none;
-}
-
-.messaggio_taglia {
-    position: absolute;
-    bottom: 26%;
+    bottom: 30%;
     left: 1%;
     font-size: medium;
     color: red;
