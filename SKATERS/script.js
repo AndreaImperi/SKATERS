@@ -102,9 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("overlay").style.filter = "none";
     }
 
-
-
-
 });
 
 // Per chiudere Alert

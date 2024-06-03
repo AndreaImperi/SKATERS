@@ -88,20 +88,20 @@
                     <div class="carousel-inner" >
                         <div class="carousel-item active">
                             <img src="immagini/Carosello1.jpg" class="d-block w-100" alt="...">
-                            <div class="caption1 iphone">
-                                <h5 class="scritta1 ipad iphone anton" >IMPARA I TUOI PRIMI TRICK</h5>
+                            <div class="caption iphone anton">
+                                IMPARA I TUOI PRIMI TRICK
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="immagini/Carosello2.jpg" class="d-block w-100" alt="...">
-                            <div class="caption2 iphone">
-                                <h5 class="scritta2 ipad iphone anton">SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI</h5>
+                            <div class="caption iphone anton" style=" width: 56%;">
+                                SCOPRI GLI SKATEPARK E SKATESHOP PIU' VICINI
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="immagini/Carosello3.jpg" class="d-block w-100" alt="...">
-                            <div class="caption3 iphone">
-                                <h5 class="scritta3 ipad iphone anton">COMPRA TUTTO IL NECESSARIO</h5>
+                            <div class="caption iphone anton">
+                                COMPRA TUTTO IL NECESSARIO
                             </div>
                         </div>
                     </div>
@@ -177,11 +177,13 @@
                     </div>
                 </div>
 
-                <div class="sezione-shop iphone" style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 3%;">
-                    <img src="immagini/shop3.jpg" style="width: 78%;">
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-top: 3%;">
+                    <div style="width:100%; position:relative;">
+                        <img src="immagini/shop3.jpg" style="width: 78%;">
+                        <div class="sfondo_shop"></div>
+                    </div>
                     <button id="Bshop2" type="button" class="bshop iphone btn btn-outline-light quicksand">SHOP</button>
                 </div>
-                <div class="sfondo-trasparente-shop ipad iphone" id="sfondo" style="z-index: 1; position:absolute;"></div>
             </div>
             <!-- PHP per ricevere messaggi dagli utenti, far comparire banner di conferma e impedire di inviare messaggi senza il login-->
             <?php
@@ -225,14 +227,14 @@
 
     <!-- Div contenente la textArea per far inviare messaggi agli utenti   -->
     <div class="email iphone" id="email" style="display: none;"> 
-        <h2 class="titemail iphone quicksand">Facci una domanda</h2>
+        <h2 class="titemail iphone quicksand" style="position:relative;">Facci una domanda</h2>
+        <img src="./immagini/x-removebg-preview.png" class="x iphone" alt="" id="xchiusura">
         <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1; width: 90%; margin-left: 5%; margin-right:5%; margin-top:1%">
-        <h5 class=" avviso iphone quicksand">TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
+        <h5 class="avviso iphone quicksand" >TI RISPONDEREMO IL PRIMA POSSIBILE VIA EMAIL :)</h5>
         <form class="quicksand" action="index.php" method="post" id="formemail" onsubmit="MinCaratteri(event)">
             <label class="label iphone" for="messaggio">Messaggio:</label><br>
             <textarea class="messaggio iphone" id="messaggio" name="messaggio" oninput="ContaCaratteri()" required></textarea><br>
             <button  type="submit" class=" binvia iphone btn btn-outline-primary quicksand">Invia</button>
-            <img src="./immagini/x-removebg-preview.png" class="x iphone" alt="" id="xchiusura">
         </form>
     </div>
 
