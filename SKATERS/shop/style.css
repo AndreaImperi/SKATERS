@@ -179,7 +179,7 @@
     position: absolute;
     width: 30%;
     height: 85%;
-    top: 11%;
+    top: 85px;
     right: 1%;
     background-color: white;
     padding: 20px;
@@ -214,7 +214,7 @@
 
 .messaggio_login {
     position: absolute;
-    bottom: 30%;
+    top:60%;
     left: 1%;
     font-size: medium;
     color: red;
@@ -311,19 +311,42 @@
     }
 }
 
-@media screen and (max-width: 1025px) {
+
+@media screen and (max-width: 735px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Bacquista{
+        height: 10px;
+        font-size: small;
+        padding-bottom: 8%;
+        margin-top: 1px;
+    }
+    .taglia_label{
+        font-size: small;
+    }
+    .Taglia{
+        width: 55px;
+        font-size: small;
+    }
+    .messaggio_login{
+    top:55%;
+    }
+}
+
+@media screen and (max-width: 1070px) {
 	.grid {
         grid-template-columns: repeat(3, 1fr);
     }
     .carrelloDentro {
-        top: 10%;
+        top: 85px;
         width: 60%;
     }
     .noart{
         margin-left:30%
     }
     .messaggio_login{
-        bottom: 28%;
+        top:58%;
     }
     .alert {
         display: inline-block;
@@ -337,14 +360,28 @@
         bottom: 45%;
         left: 20%;
     }
+    .Bacquista{
+        height: 10px;
+        font-size: small;
+        padding-bottom: 8%;
+        margin-top: 1px;
+    }
+    .taglia_label{
+        font-size: small;
+    }
+    .Taglia{
+        width: 55px;
+        font-size:small;
+    }
+    
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 450px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
     .carrelloDentro {
-        top: 10%;
+        top: 80px;
         right:6%;
         width: 80%;
     }
@@ -404,7 +441,7 @@
     }
     .messaggio_login{
         font-size: x-small;
-        margin-bottom: 20%;
+        top:50%;
     }
     .alert {
         display: inline-block;

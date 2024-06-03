@@ -204,7 +204,17 @@
                                         $data=pg_query_params($connessione, $q2, array($email, $nome, $cognome, $giorno, $mese, $anno, $genere, $pswd, $n_tel));
                                         $_SESSION['$nome'] = $nome;
                                         if ($data) {
-                                            echo "<br/><h1 style=\"font-size: medium;\"> Registrazione completata. <a href=../accesso/accesso.php style=\"font-size: medium; color: red; \"> clicca qui per loggarti </a></h1> ";
+                                            echo "<br/>
+                                            <div class= \"alert modal-dialog quicksand \" role= \"document \"   id= \"alert \" style= \"padding:20px; \">
+                                            <div class= \"modal-content \">
+                                                <div class= \"modal-header \">
+                                                    <h2 class= \"modal-title h5  \" id= \"modal1Title \">UTENTE REGISTRATO!</h2>
+                                                </div>
+                                                <div class= \"modal-body \" style=\"padding-top:10px;text-align: center; \">
+                                                    <a style=\"color:black;\" href=\"../accesso/accesso.php\";>Clicca qui per loggarti!</a>
+                                                </div>
+                                            </div>
+                                        </div>  ";
                                         }
                                     }
                                 }
@@ -224,6 +234,8 @@
         <!-- Immagini tavole skate a destra e sinistra -->
         <img src="../immagini/tavola_reg.JPG" class="angolosx" alt="">
         <img src="../immagini/tavola_reg.JPG" class="angolodx" alt="">
+
+        
 
         <!-- Collegamento al file JavaScrip -->
         <script src="script.js"></script>

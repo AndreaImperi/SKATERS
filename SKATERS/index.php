@@ -117,7 +117,7 @@
 
             <!-- Riga della grid contenente anteprima per i video -->
             <div class="c2">
-                <h2 id="Tvideo" class="quicksand" style=" text-align: left;">
+                <h2 id="Tvideo" class="quicksand" style=" text-align: left;cursor:pointer">
                     Videos
                 </h2>
                 <hr style="border-color: #333; border-width: 3px; margin-bottom: 30px; margin-top: 1px; opacity: 1;">
@@ -165,7 +165,7 @@
 
             <!-- Riga della grid contenente anteprima dello shop -->
             <div class="c4" style="position:relative; padding-left: 0; padding-right: 0;">
-                <h2  class="quicksand" id="Tshop" style="text-align: left; margin-left: 5%;">
+                <h2  class="quicksand" id="Tshop" style="text-align: left; margin-left: 5%;cursor:pointer">
                     Shop
                 </h2>
                 <hr class="lineshop">
