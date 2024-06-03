@@ -25,13 +25,13 @@
         ?>
 
         <!-- Topbar con logo e scritta Accedi -->
-        <div class="fixed-bar ipad iphone">
-            <div style="display: flex; justify-content: center; align-items: center; height: 0vh; width: 96vw;background-color: white; margin-top: 1%;">
-                <a href="../index.php" style="margin-top:-5%;margin-left:38%">
-                    <img src="../immagini/logo.png" class="logo ipad iphone" >
+        <div class="fixed-bar-f ipad iphone">
+            <div class="spazio iphone">
+                <a href="../index.php">
+                    <img src="../immagini/logo.png" class="logo_f iphone">
                 </a> 
             </div>
-            <h2 class="accedi_scritta" style="color: black; font-weight: 700;">Accedi</h2>
+            <div class="accedi_scritta" style="color: black; font-weight: 700; font-size: xx-large; width:300px;">Accedi</div>
             <hr class="sotto_scritta" style="border-color: #333; border-width: 3px; opacity: 1;">
         </div>
         
@@ -105,7 +105,7 @@
         <script src="script.js"></script>
         
         <!-- Sfondo  pagina -->
-        <img src="../immagini/accesso1.png" class="basso iphone" alt="">
+        <img src="../immagini/accesso1.png" class="basso_f iphone" alt="">
     </body>
 </html>
 

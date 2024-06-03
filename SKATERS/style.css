@@ -226,7 +226,8 @@
 
 .titemail{
     text-align: center; 
-    margin-top: 3%
+    margin-top: 3%;
+    margin-right:3%;
 }
 
 .messaggio{
@@ -500,7 +501,9 @@ body {
     .titemail.iphone{
         font-size: large;
         margin-top: 5%;
-        
+        text-align: left;
+        margin-left: 5%;
+        margin-right: 18%;
     }
     .avviso.iphone{
         margin-left:5%

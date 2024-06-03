@@ -8,15 +8,13 @@
     grid-template-rows: auto, auto;
     grid-template-columns: 1fr; 
     justify-items: center; 
-   padding-top: 60px;
-    
+    align-items: center;
+    padding-top: 60px;
 }
 
 .overlay{
     background-color: rgba(72, 71, 71, 0.458);
-    width: 500px;
     border-radius: 10px;
-    margin-top: 0%;
     padding: 5%;
     height: 1200px;
     width: 500px;
@@ -37,7 +35,6 @@
     margin-right: 4%;
     z-index:2;
     border: 2px solid black;
-   
 }
 
 .c2{
@@ -56,7 +53,7 @@
     margin-left: 0%;
 }
 
-.fixed-bar {
+.fixed-bar-f {
     position: fixed;
     top: 0;
     background-color: #fff;
@@ -64,8 +61,23 @@
     padding: 10px;
     width: 100%;
     height: 75px;
+    margin-top: 20px;
     z-index: 9999;
-    margin-top: 0%;
+}
+
+.spazio{
+    
+    display: grid; 
+    justify-content: center; 
+    align-items: top; 
+    height: 0vh; 
+    width: 96vw;
+    background-color: white; 
+}
+
+.logo_f{
+    margin-top: -25px;
+    height: 80px;
 }
 
 .label {
@@ -104,10 +116,9 @@ input[type="text"], input[type="password"], input[type=email] {
     font-size: x-large;
 }
 
-.logo{
+.logo1{
     height: 80px; 
-    margin-top:44%;
-    margin-left: -130%;
+    margin-top:1.2%;
 }
 
 .quicksand {
@@ -117,8 +128,8 @@ input[type="text"], input[type="password"], input[type=email] {
   font-style: normal;
 }
 
-.basso{
-    position: fixed;
+.basso_f{
+    position: absolute;
     width: 1200px;
     top: 100px;
     right:50px;
@@ -174,8 +185,11 @@ input[type="text"], input[type="password"], input[type=email] {
 }
 
 .sotto_scritta{
+    border-width: 3px;
     margin-bottom: 30px; 
     margin-top: 1px;
+    opacity: 1;
+    width: 100%;
 }
 
 .mess_err {
@@ -189,27 +203,44 @@ input[type="text"], input[type="password"], input[type=email] {
 }
 
 @media screen and (max-width: 1024px) {
-    .grid { margin-top: 30%;}
-    .logo.ipad{
-        height: 75px;
-        margin-top:42%;
-        margin-left: -100%;
+    .c1 {
+        background-color: #181818b9;
+        background-image: url('../immagini/sfondo_accesso.jpg');
+        background-size: contain;
+        border-radius: 10px;
+        grid-area: i;   
+        margin-top: 13%;
+        height: 550px;
+        width: 500px;
+        margin-left: 4%;
+        margin-right: 4%;
+        z-index:2;
+        border: 2px solid black;
     }
 }
 @media screen and (max-width: 508px) {
-    .c1.iphone{
-        width: 70%;
-        height: 94%;
-        margin-right: 11%;
+    .c1 {
+        background-color: #181818b9;
+        background-image: url('../immagini/sfondo_accesso.jpg');
+        background-size: contain;
+        border-radius: 10px;
+        grid-area: i;   
+        margin-top: 20%;
+        height: 500px;
+        width: 300px;
+        z-index:2;
         border: 2px solid black;
-        margin-top: 0%;
     }
-    .overlay.iphone{
-        width: 100.8%;
-        height: 100%;
-        margin-right: 4.4%;
-        margin-top: 0%;
+    .overlay{
+        background-color: rgba(72, 71, 71, 0.458);
+        border-radius: 10px;
+        padding: 1%;
+        height: 600px;
+        width: 300px;
+        margin-left: 4%;
+        margin-right: 4%;
     }
+
     .basso.iphone{
         width: 800px;
         top: 580px;
@@ -236,5 +267,19 @@ input[type="text"], input[type="password"], input[type=email] {
     }
     .reg.iphone{
        margin-bottom: 5%;
+    }
+
+    .spazio{
+        display: grid; 
+        justify-content: right; 
+        align-items: top; 
+        height: 0vh; 
+        width: 96vw;
+        background-color: white; 
+    }
+    
+    .logo_f{
+        margin-top: -15px;
+        height: 65px;
     }
 }
