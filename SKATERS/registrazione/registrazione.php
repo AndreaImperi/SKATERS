@@ -23,13 +23,13 @@
 
     <!-- Topbar con logo -->
     <div class="fixed-bar iphone" style="margin-top: 0%;">
-        <div class="spazio iphone">
             <a href="../index.php" style="margin-top:1.1%;">
-                <img src="../immagini/logo.png" class="logo iphone">
+                <img src="../immagini/logo.png" class="logo iphone se">
             </a> 
-        </div>
+        <div style="background-color:white;">
         <h2 class="registrati_scritta" style="color: black; font-weight: 700;">Registrati</h2>
         <hr  class="linea" style="border-color: #333; border-width: 3px; opacity: 1;">
+        </div>
     </div>
 
     <!-- Immagini ruote a sinistra -->
@@ -42,7 +42,7 @@
         <!-- Riga unica della grid che continene la tabella con il form -->
         <div class="c1 iphone">
             <!-- Specifico POST come metodo per il form indirizzato a registrazione.php -->
-            <form name="formReg" action="" method="POST" > 
+            <form name="formReg" action="" method="POST" class="form" > 
                 <table class="iphone">
                     <tr>
                         <td colspan='3' style="text-align: left;">Nome:</td>
