@@ -22,13 +22,15 @@
     ?>
 
     <!-- Topbar con logo -->
-    <div class="fixed-bar iphone" style="margin-top: 0%;">
-            <a href="../index.php" style="margin-top:1.1%;">
-                <img src="../immagini/logo.png" class="logo iphone se">
+    <div class="fixed-bar-f iphone">
+        <div class="spazio iphone">
+            <a href="../index.php">
+                <img src="../immagini/logo.png" class="logo_f iphone">
             </a> 
+        </div>
         <div style="background-color:white;">
-        <h2 class="registrati_scritta" style="color: black; font-weight: 700;">Registrati</h2>
-        <hr  class="linea" style="border-color: #333; border-width: 3px; opacity: 1;">
+        <div style="color: black; font-weight: 700; font-size: xx-large; width:300px;">Registrati</div>
+        <hr  class="sotto_scritta" style="border-color: #333; border-width: 3px; opacity: 1;">
         </div>
     </div>
 

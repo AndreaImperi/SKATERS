@@ -22,13 +22,27 @@
     background-position: center;
     width: 90%;
     grid-area: i;   
-    margin-top: 4%;
+    margin-top: 1%;
     margin-left: 2%;
     margin-bottom: 2%;
     
 }
 
-.linea {
+.spazio{
+    display: grid; 
+    justify-content: center; 
+    align-items: top; 
+    height: 0vh; 
+    width: 96vw;
+    background-color: white; 
+}
+
+.logo_f{
+    margin-top: -20px;
+    height: 75px;
+}
+
+.sotto_scritta{
     border-width: 3px;
     margin-bottom: 30px; 
     margin-top: 1px;
@@ -36,19 +50,15 @@
     width: 100%;
 }
 
-
-.fixed-bar {
+.fixed-bar-f {
     position: fixed;
     top: 0;
     background-color: #fff;
     color: #fff;
     padding: 10px;
-    width: 120%;
-    
-    height: 75px;
-    margin-bottom: 0%;
+    width: 100%;
+    height: 7px;
     z-index: 9999;
-    
 }
 
 table{
@@ -207,24 +217,13 @@ select{
 @media screen and (max-width: 650px) {
 
     .c1.iphone{
-        margin-top: 15%;
+        margin-top: 45px;
         margin-left: 15%;
         width: 115%;
         height: 100%;
         background-size: 700px;
         background-position: 20%;
-        overflow-x: hidden;
-        overflow: hidden;
-    }
-    .fixed-bar.iphone{
-        top: 0%;
-    }
-    .logo.iphone{
-        position:fixed;
-        height: 8%;
-        top:0.2;
-        right: 5%
-    }
+    } 
     .label.iphone{
         margin-right: 20px;
     }
@@ -250,20 +249,28 @@ select{
     table.iphone{
         width: 20%;
     }
-
-    .linea{
+    .spazio{
+        display: grid; 
+        justify-content: right; 
+        align-items: top; 
+        height: 0vh; 
+        width: 96vw;
+        background-color: white; 
+    }
+    .logo_f{
+        margin-top: -15px;
+        height: 65px;
+        margin-right: -80px;
+    }
+    .fixed-bar-f {
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        color: #fff;
+        padding: 10px;
         width: 100%;
-        margin-top: 3.3%;
-    }
-    .registrati_scritta{
-        margin-top: 4%;
-    }
-}
-@media screen and (max-width: 500px) {
-    .logo.se{
-        position:fixed;
-        height: 6%;
-        top:0.2;
-        right: 5%
+        height: 65px;
+        margin-top: 0px;
+        z-index: 9999;
     }
 }
