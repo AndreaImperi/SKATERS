@@ -51,7 +51,6 @@
 }
 
 .c4{
-    padding-bottom: 1em !important;
     position: relative;
     grid-area: t;
     width: 100%;
@@ -410,7 +409,6 @@ body {
     }
 }
 
-/*IPAD PRO*/
 @media screen and (max-width: 1300px) {
     .caption{
         font-size: x-large;
@@ -422,9 +420,17 @@ body {
         margin-left:25px; 
         margin-right: 10px;
     }
+    .c4{
+        padding-bottom: 1em !important;
+        position: relative;
+        grid-area: t;
+        width: 100%;
+        margin: auto;
+        height: auto;
+        overflow: hidden;
+    }
 }
 
-/*IPHONE XR*/
 @media screen and (max-width: 750px) {
     .grid > div:nth-child(2) {
         padding: 1.5em 1em 0.3em 1em;
@@ -549,5 +555,25 @@ body {
         top:0; 
         width:40px; 
         cursor: pointer;
+    }
+
+    .alert {
+        display: inline-block;
+        position: fixed;
+        width: 50%;
+        z-index: 9999;
+        background-color: white;
+        color: black;
+        border-radius: 10px;
+        border: solid black 2px;
+        bottom: 45%;
+        left: 35%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .logo.iphone{
+        height: 48%;
+        margin-left: 0%;
     }
 }

@@ -316,9 +316,9 @@ document.addEventListener('DOMContentLoaded', function() {
             barra.style.bottom = "0%";
             barra.style.width = "100%";
         }else{
-            if (larghezza_pagina<420){
+            if (larghezza_pagina<735){
                 n_vid_m = 3;
-            } else if (larghezza_pagina<1030){
+            } else if (larghezza_pagina<1070){
                 n_vid_m = 7;
             } else {
                 n_vid_m = 0;

@@ -296,44 +296,6 @@
     margin-top: 5%;
 }
 
-@media screen and (max-width: 800px) {
-    .c1{
-        margin-top: 3%;
-    }
-    .logo{
-        margin-top: 5.5%;
-        height: 60px;
-    }
-}
-@media screen and (max-width: 550px) {
-    .c1{
-        margin-top: 7%;
-    }
-}
-
-
-@media screen and (max-width: 735px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .Bacquista{
-        height: 10px;
-        font-size: small;
-        padding-bottom: 8%;
-        margin-top: 1px;
-    }
-    .taglia_label{
-        font-size: small;
-    }
-    .Taglia{
-        width: 55px;
-        font-size: small;
-    }
-    .messaggio_login{
-    top:55%;
-    }
-}
-
 @media screen and (max-width: 1070px) {
 	.grid {
         grid-template-columns: repeat(3, 1fr);
@@ -376,6 +338,41 @@
     
 }
 
+@media screen and (max-width: 735px) {
+    .c1{
+        margin-top: 3%;
+    }
+    .logo{
+        margin-top: 5.5%;
+        height: 60px;
+    }
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Bacquista{
+        height: 10px;
+        font-size: small;
+        padding-bottom: 8%;
+        margin-top: 1px;
+    }
+    .taglia_label{
+        font-size: small;
+    }
+    .Taglia{
+        width: 55px;
+        font-size: small;
+    }
+    .messaggio_login{
+    top:55%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .c1{
+        margin-top: 7%;
+    }
+}
+
 @media screen and (max-width: 450px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
@@ -414,7 +411,7 @@
         margin-top: 5%;
     }
     .c1.iphone{
-        margin-top: 40%;
+        margin-top: 25%;
     }
     .names{
         font-size: x-small;
@@ -454,6 +451,10 @@
         border: solid black 2px;
         bottom: 45%;
         left: 10%;
+    }
+    .barra.clicked label {
+        display: inline-block;
+        margin-left: 6%;
     }
 }
 

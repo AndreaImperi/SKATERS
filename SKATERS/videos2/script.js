@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             barra.style.bottom = "0%";
             barra.style.width = "100%";
         }else{
-            if (larghezza_pagina<420){
+            if (larghezza_pagina<450){
                 n_vid_m = 7;
             } else if (larghezza_pagina<1030){
                 n_vid_m = 13;
