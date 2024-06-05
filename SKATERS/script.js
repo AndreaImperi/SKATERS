@@ -123,7 +123,6 @@ document.getElementById("logout").addEventListener("click", function() {
     });
 });
 
-
 //Per controllare il numero massimo di caratteri 
 function MaxCaratteri() {
     var messaggio = document.getElementById("messaggio").value;
@@ -133,6 +132,7 @@ function MaxCaratteri() {
         alert("Troppi caratteri!");
     }
 }
+
 //Per controllare il numero minimo di caratteri 
 function MinCaratteri(event) {
     var messaggio = document.getElementById("messaggio").value;

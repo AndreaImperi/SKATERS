@@ -293,6 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 artContainer.style.display = "none";
             }
         });
+        ricerca.value="";
         aggiusta_barra();
     });
 

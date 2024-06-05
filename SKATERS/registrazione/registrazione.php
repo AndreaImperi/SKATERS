@@ -190,7 +190,19 @@
                                     $q1 = "select * from utente where email = $1";
                                     $result=pg_query_params($connessione, $q1, array($email));
                                     if ($tuple=pg_fetch_array($result, null, PGSQL_ASSOC)) {
-                                        echo "<br/><h1 style=\"font-size: medium; color: red;\"> !esiste già un account con questo indirizzo email! <br/> <a href=../accesso/accesso.php style=\"font-size: medium; color: red; \"> vai al login </a></h1> ";
+                                        echo "<br/>
+                                            <div class= \"alert modal-dialog quicksand \" role= \"document \"   id= \"alert2 \" style= \"padding:20px; \">
+                                                <div class= \"modal-content \">
+                                                    <div class= \"modal-header \">
+                                                        <h2 class= \"modal-title h5  \" id= \"modal2Title \">EMAIL NON VALIDA!</h2>
+                                                    </div>
+                                                    <div class= \"modal-body \" style=\"padding-top:10px;text-align: center; \">
+                                                        <a>Esiste già un account con questa email</a> 
+                                                        <br>
+                                                        <a style=\"color:black;\" href=\"../accesso/accesso.php\";>Clicca qui per loggarti!</a>
+                                                    </div>
+                                                </div>
+                                            </div>  ";
                                     } else {
                                         $nome = $_POST['nome'];
                                         $cognome = $_POST['cognome'];
@@ -206,15 +218,15 @@
                                         if ($data) {
                                             echo "<br/>
                                             <div class= \"alert modal-dialog quicksand \" role= \"document \"   id= \"alert \" style= \"padding:20px; \">
-                                            <div class= \"modal-content \">
-                                                <div class= \"modal-header \">
-                                                    <h2 class= \"modal-title h5  \" id= \"modal1Title \">UTENTE REGISTRATO!</h2>
+                                                <div class= \"modal-content \">
+                                                    <div class= \"modal-header \">
+                                                        <h2 class= \"modal-title h5  \" id= \"modal1Title \">UTENTE REGISTRATO!</h2>
+                                                    </div>
+                                                    <div class= \"modal-body \" style=\"padding-top:10px;text-align: center; \">
+                                                        <a style=\"color:black;\" href=\"../accesso/accesso.php\";>Clicca qui per loggarti!</a>
+                                                    </div>
                                                 </div>
-                                                <div class= \"modal-body \" style=\"padding-top:10px;text-align: center; \">
-                                                    <a style=\"color:black;\" href=\"../accesso/accesso.php\";>Clicca qui per loggarti!</a>
-                                                </div>
-                                            </div>
-                                        </div>  ";
+                                            </div>  ";
                                         }
                                     }
                                 }

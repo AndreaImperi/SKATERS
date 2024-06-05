@@ -25,16 +25,12 @@
             session_start();
             error_reporting(0);
 
-            $timeout_duration = 1200; // 20 minuti
+            $timeout_duration = 1200;
 
-            // Verifica se l'ultima attività è stata registrata
             if (isset($_SESSION['email']) && (time() - $_SESSION['LAST_ACTIVITY']) > $timeout_duration) {
-            // La sessione è scaduta, distruggi la sessione e fai il logout
-            unset($_SESSION['email']);
+                unset($_SESSION['email']);
             }
 
-            
-        
             // Per nome sotto immagine profilo
             $nomeUtente = $_SESSION['nome'];
         ?> 

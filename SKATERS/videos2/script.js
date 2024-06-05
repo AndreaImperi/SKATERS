@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 videoContainer.style.display = "none"; 
             }
         });
+        ricerca.value="";
         aggiusta_barra();
     });
 
