@@ -18,8 +18,6 @@
         <title>ACCESSO</title>
     </head>
     <body class="quicksand" style="overflow: hidden;">
-
-        <!-- Mi connetto al database -->
         <?php
             $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("errore di connessione: " . pg_last_error() );
         ?>
@@ -106,7 +104,7 @@
         <!-- Collegamento al file JavaScript -->
         <script src="script.js"></script>
         
-        <!-- Sfondo  pagina -->
+        <!-- Sfondo pagina -->
         <img src="../immagini/accesso1.png" class="basso_f iphone" alt="">
     </body>
 </html>

@@ -34,7 +34,7 @@ function controllaPassword(){
 }
 c_password.onkeyup = controllaPassword;
 
-// Funzione per il "mostra password"
+// Per mostrare la password
 document.addEventListener('DOMContentLoaded', function () {
     var passwordV = document.getElementById('psw');
     var passwordN = document.getElementById('cpsw');

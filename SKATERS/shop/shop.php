@@ -3,9 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Collegamento bootstrap -->
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
         <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Collegamento foglio di stile -->
         <link rel="stylesheet" href="style.css">
+        <!-- Per i fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
@@ -14,7 +17,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body class="quicksand">
+    <!-- Inizializzazione sessione per utilizzare $_SESSION -->
     <?php session_start(); ?>
+    <!-- Barra Superiore con Logo -->
     <div class="fixed-bar iphone">
         <div class="toppa iphone">
             <a href="../index.php" style="margin-top:1.1%;">
@@ -28,7 +33,10 @@
         <hr class="sotto_scritta" style="border-color: #333; border-width: 3px; opacity: 1;">
     </div>
 
+    <!-- Utilizzo grid per il corpo della pagina (4,3 o 2 colonne in base alla dimensione) -->
     <div class="grid">
+
+        <!-- Riga della grid contenente la barra di ricerca e la select con le categorie -->
         <div class="c1 iphone">
             <div style="margin-top: 10%;">
             <select name="categorie" id="select_categorie" size="1" cols="4" style=" border: 2px solid black;border-radius:5px; height:30px">
@@ -46,23 +54,15 @@
             </div>
         </div>
         
-
+        <!-- Elementi della grid contenenti articoli che vengono caricati dinamicamente dal database  -->
         <?php
         error_reporting(0);
-        $nome_utente = $_SESSION['email'];
-
-        // Connessione al database
+        $nome_utente = $_SESSION['email']; 
         $connessione = pg_connect("host=localhost port=5432 dbname=Skaters user=postgres password=biar") or die("Errore di connessione al database: " . pg_last_error());
-
-        // Query per selezionare tutti gli articoli dalla tabella articolo_shop
         $query = "SELECT * FROM articolo_shop";
         $result = pg_query($connessione, $query);
-
-        // Verifica se ci sono risultati
         if ($result) {
-            // Itera su ogni riga del risultato
             while ($row = pg_fetch_assoc($result)) {
-                // Stampa l'HTML per ogni articolo
                 if ($row['categoria']=='deck') {
                     echo '<div class="articolo deck">';
                 } else if ($row['categoria']=='ruota') {
@@ -122,10 +122,12 @@
     <!-- Avviso che compare nel caso non ci siano video corrispondenti alla ricerca -->
     <h2 class="noart" id="noart" style="display: none; color: rgb(93, 83, 83)">Non ci sono articoli disponibili :(</h2>
 
+    <!-- Per il carrello  -->
     <div class="carrelloSopra" id="carrelloSopra">
         <div class="carrelloDentro iphone" id="carrelloDentro">
-            <!-- Contenuto del carrello -->
             <h2 class="titolo_carrello" style="align-self: flex-start; margin-bottom: 5%;">Il Tuo Carrello</h2>
+            
+            <!-- Articoli del carrello caricati dinamicamente dal database  -->
             <?php
                 error_reporting(0);
                 $display_avviso="block";
@@ -133,15 +135,11 @@
                 if ($_SESSION['email']!=null){
                     $var_click = '';
                     $display_avviso="none";
-                    // Query per selezionare tutti gli articoli dalla tabella articolo_shop
                     $nome_utente = $_SESSION['email'];
                     $query = "SELECT * FROM articolo_carrello WHERE email = $1";
                     $result = pg_query_params($connessione, $query, array($nome_utente));
-                    // Verifica se ci sono risultati
                     if ($result) {
-                        // Itera su ogni riga del risultato
                         while ($row = pg_fetch_assoc($result)) {
-                            // Stampa l'HTML per ogni articolo
                             echo '<div class="articoloCarrello">';
                             echo '<img src="' . $row['img'] . '">';                             
                             echo '<div class="dettagli" style="display: flex; flex-direction: column;">';
@@ -162,6 +160,7 @@
             <h1 class="avviso_cart" style=" align-self: center; font-size: medium; color: #808080; text-align: center; display: <?php echo $display_avviso; ?>;">esegui il login per visualizzare il tuo carrello</h1>
 
             <div id="termine_carrello" style="align-self: flex-start;">
+                <!-- Totale di costo del carrello calcolato dinamicamente -->
                 <?php
                 if (isset($_SESSION['email'])){
                     $query = "SELECT SUM(prezzo::numeric) as totale_prezzo FROM articolo_carrello WHERE email=$1";
